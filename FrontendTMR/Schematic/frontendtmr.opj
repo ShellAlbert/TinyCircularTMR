@@ -1,0 +1,229 @@
+(ExpressProject "PSU"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "25.1 S020 (4396590)  [2/5/2026]-[05/12/26]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\library1.olb"
+        (Type "Schematic Library")
+        (DisplayName ".\library1.olb"))
+      (File "f:\myjob\dpu_poe_version\schematic\latticeplds.olb"
+        (Type "Schematic Library")
+        (DisplayName "f:\myjob\dpu_poe_version\schematic\latticeplds.olb")))
+    ("Allegro Netlist Directory" "D:\TMR_QuantumStation\netlist")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\frontendtmr.dsn"
+      (Type "Schematic Design")
+      (DisplayName ".\frontendtmr.DSN"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File "D:\TMR_QuantumStation\psu.bom")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{Reference}\t{Value}\t{PCB Footprint}")
+    (BOM_Header "Item\tQuantity\tReference\tPart\tPCBFootprint")
+    (BOM_Include_File
+       "F:\MYTEMPORARY\GITHUB\POFDUALCAM\1-PSU\SCHEMATIC\PSU.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE")
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Output Board File" ".\allegro\psu.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "255")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
+    ("Allegro Backannotation Run Genfeed" "TRUE")
+    ("Allegro Backannotation Board File"
+       "D:\TMR_QuantumStation\PCB\TMR_Tiny_4-25.brd")
+    ("Allegro Backannotation Netlist Directory" "D:\TMR_QuantumStation\netlist")
+    ("Allegro Backannotation Output File" "allegro\PSU.swp")
+    ("Allegro Backannotation Update Schematic" "TRUE")
+    ("Allegro Backannotation View Output" "FALSE")
+    ("Allegro Setup Output Warnings" "FALSE")
+    (Backannotation_TAB "0")
+    (Board_sim_option "VHDL_flow")
+    (ANNOTATE_Scope "1")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "0")
+    (Annotate_Page_Order "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (ANNOTATE_PreserveDesignator "FALSE")
+    (ANNOTATE_PreserveUserEdits "FALSE")
+    (ANNOTATE_Refdes_Control_Required "FALSE")
+    (Update_Instace_for_External_Design "FALSE")
+    (Annotate_type "Default")
+    (width_pages "100")
+    (width_start "80")
+    (width_End "80"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\psu.bom"
+      (Type "Report")
+      (DisplayName ".\psu.bom"))
+    (File ".\netlist\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\netlist\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\netlist\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat"))
+    (File ".\netlist\pinview.dat"
+      (Type "Report")
+      (DisplayName "pinView.dat"))
+    (File ".\netlist\netview.dat"
+      (Type "Report")
+      (DisplayName "netView.dat"))
+    (File ".\netlist\funcview.dat"
+      (Type "Report")
+      (DisplayName "funcView.dat"))
+    (File ".\netlist\compview.dat"
+      (Type "Report")
+      (DisplayName "compView.dat"))
+    (File ".\allegro\psu.swp"
+      (Type "Report")
+      (DisplayName "PSU.swp"))
+    (File ".\pof_tmr_a1\pcb\psu.bom"
+      (Type "Report")
+      (DisplayName ".\pof_tmr_a1\pcb\psu.bom")))
+  (Folder "Referenced Projects")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs"
+    (File ".\netlist\swp.log"
+      (Type "Log File")
+      (LogFile "D:\TMR_QuantumStation\netlist\swp.log")))
+  (PartMRUSelector
+    (DIODE
+      (FullPartName "DIODE.Normal")
+      (LibraryName "F:\MYSOFTWARE\CADENCE\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "D:\MYAPP\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (TXS0102DCUR
+      (FullPartName "TXS0102DCUR.Normal")
+      (LibraryName "D:\TMR_QUANTUMSTATION\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (LIFCL-17-QFN72
+      (FullPartName "LIFCL-17-QFN72.Normal")
+      (LibraryName "F:\MYJOB\DPU_POE_VERSION\SCHEMATIC\LATTICEPLDS.OLB")
+      (DeviceIndex "0"))
+    (Connector_1x10P
+      (FullPartName "Connector_1x10P.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (TPS76933DBVR
+      (FullPartName "TPS76933DBVR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (TPS76925DBVR
+      (FullPartName "TPS76925DBVR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (XC6202P332MR
+      (FullPartName "XC6202P332MR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (XC6206P252MR
+      (FullPartName "XC6206P252MR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (REF3025AIDBZR
+      (FullPartName "REF3025AIDBZR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (GND_EARTH
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    ("T POINT R"
+      (FullPartName "T POINT R.Normal")
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (HEADER_2X7P
+      (FullPartName "HEADER_2X7P.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    ("GND_FIELD SIGNAL"
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (Magic7001
+      (FullPartName "Magic7001.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-L
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (Magic2956
+      (FullPartName "Magic2956.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (GND_SIGNAL
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (INA236AIDDFR
+      (FullPartName "INA236AIDDFR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (INDUCTOR
+      (FullPartName "INDUCTOR.Normal")
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (AFBR-2418TZ
+      (FullPartName "AFBR-2418TZ.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-R
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VCC_BAR
+      (LibraryName "C:\CADENCE\SPB_22.1\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (REF35250QDBVR
+      (FullPartName "REF35250QDBVR.Normal")
+      (LibraryName "F:\MYJOB\POF_TMR_A1\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\frontendtmr.dsn")
+      (Path "Design Resources" ".\frontendtmr.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Logs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 650"))
+      (Tab 0)))
+  (MPSSessionName "SNIPER")
+  (LastUsedLibraryBrowseDirectory "C:\Cadence\SPB_22.1\tools\capture\library")
+  (ISPCBBASICLICENSE "false"))
