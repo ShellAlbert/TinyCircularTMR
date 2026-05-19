@@ -1,12 +1,13 @@
 (ExpressProject "OpticalRx"
   (ProjectVersion "19981106")
-  (SoftwareVersion "25.1 S020 (4396590)  [2/5/2026]-[05/12/26]")
+  (SoftwareVersion "25.1 S020 (4396590)  [2/5/2026]-[05/19/26]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
       (File ".\library1.olb"
         (Type "Schematic Library")))
-    ("Allegro Netlist Directory" "D:\OpticalRx\Schematic\Netlist")
+    ("Allegro Netlist Directory"
+       "Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\OpticalRx\Schematic\netlist")
     (DOCKED "TRUE")
     (DOCKING_POSITION "59420")
     (NoModify)
@@ -94,6 +95,9 @@
       (LogFile "D:\OpticalRx\Schematic\Netlist\swp.log")))
   (MPSSessionName "SNIPER")
   (PartMRUSelector
+    (GND_SIGNAL
+      (LibraryName "D:\MYAPP\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
     (GND
       (LibraryName "D:\MYAPP\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
       (DeviceIndex "0"))
@@ -118,17 +122,30 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" ".\opticalrx.dsn")
-      (Path "Design Resources" ".\opticalrx.dsn" "SCHEMATIC1")
+      (Path "Design Resources"
+         "Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\OpticalRx\Schematic\opticalrx.dsn")
+      (Path "Design Resources"
+         "Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\OpticalRx\Schematic\opticalrx.dsn"
+         "SCHEMATIC1")
       (Path "Design Resources" "Library")
       (Path "Outputs")
-      (Path "Logs")
-      (Select "Design Resources" ".\opticalrx.dsn" "SCHEMATIC1" "PAGE2"))
+      (Path "Logs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -1 -1 0 200 0 650"))
-      (Tab 0)))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1501 24 668")
+        (Scroll "1327 1821")
+        (Zoom "208")
+        (Occurrence "/"))
+      (Path
+         "Z:\MYMANJARO\HDISK\MYGITHUB\TINYCIRCULARTMR\OPTICALRX\SCHEMATIC\OPTICALRX.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE2")))
   (ISPCBBASICLICENSE "false")
   (LastUsedLibraryBrowseDirectory "D:\MyApp\tools\capture\library"))

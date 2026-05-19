@@ -1,0 +1,23 @@
+M48
+METRIC,TZ
+T01C.3
+T02C.7
+T03C.8
+T04C1.
+T05C1.2
+T06C1.5
+T07C2.2
+T08C3.3
+;LEADER: 12 
+;HEADER: 
+;CODE  : ASCII 
+;FILE  : OpticalInOut-May-19-sq-1-4.drl for board Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/OpticalRx/PCB/#Taaacrw06640.tmp ... layers TOP and BOTTOM, Square Drill, Roation 0
+;T03 Holesize 1. = 0.800000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 4
+%
+G90
+T03
+X5027500Y-310000
+Y-730000
+X5892500
+Y-310000
+M30
