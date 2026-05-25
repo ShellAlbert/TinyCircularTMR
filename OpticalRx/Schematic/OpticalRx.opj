@@ -122,14 +122,12 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\OpticalRx\Schematic\opticalrx.dsn")
-      (Path "Design Resources"
-         "Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\OpticalRx\Schematic\opticalrx.dsn"
-         "SCHEMATIC1")
+      (Path "Design Resources" ".\opticalrx.dsn")
+      (Path "Design Resources" ".\opticalrx.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
       (Path "Outputs")
-      (Path "Logs"))
+      (Path "Logs")
+      (Select "Design Resources" ".\opticalrx.dsn" "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -140,12 +138,23 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 5 24 5 1501 24 668")
-        (Scroll "1327 1821")
+        (Scroll "1327 1811")
         (Zoom "208")
         (Occurrence "/"))
       (Path
          "Z:\MYMANJARO\HDISK\MYGITHUB\TINYCIRCULARTMR\OPTICALRX\SCHEMATIC\OPTICALRX.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE2")))
+      (Page "PAGE2"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1501 24 668")
+        (Scroll "0 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "Z:\MYMANJARO\HDISK\MYGITHUB\TINYCIRCULARTMR\OPTICALRX\SCHEMATIC\OPTICALRX.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
   (ISPCBBASICLICENSE "false")
   (LastUsedLibraryBrowseDirectory "D:\MyApp\tools\capture\library"))

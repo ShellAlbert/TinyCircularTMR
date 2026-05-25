@@ -1,0 +1,120 @@
+/*
+ * Real-time 3-curve gnuplot pipe — sliding x-window (scroll left).
+ *
+ *   gcc gnuplot_abc.c -o gnuplot_abc -lm
+ *   ./gnuplot_abc
+ *
+ * If the plot only updates when you click/resize the window (common on
+ * GNOME + Wayland + wxt), use one of:
+ *   GDK_BACKEND=x11 ./gnuplot_abc
+ *   or switch terminal to qt below (set term qt).
+ *
+ * Each frame: set xrange, plot 3x '-', pause 0, fflush.
+ */
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <signal.h>
+
+#define N 256
+
+volatile int g_Exit=0; 
+void signal_handler(int signo)
+{
+    if(signo==SIGINT)
+    {
+        printf("Caught SIGINT...\n");
+        g_Exit=1;
+    }
+}
+
+typedef struct {
+    double buf[N];
+    int pos;
+} channel_t;
+
+static void push(channel_t *ch, double v)
+{
+    ch->buf[ch->pos] = v;
+    ch->pos = (ch->pos + 1) % N;
+}
+
+static void send_series(FILE *gp, const channel_t *ch, long long n)
+{
+    long long x0 = (n > N) ? (n - N + 1) : 1;
+    int count = (n > N) ? N : (int)n;
+    int k;
+
+    for (k = 0; k < count; k++) {
+        int idx = (n > N) ? (ch->pos + k) % N : k;
+        fprintf(gp, "%lld %f\n", x0 + k, ch->buf[idx]);
+    }
+    fprintf(gp, "e\n");
+}
+
+static int gp_ok(FILE *gp)
+{
+    return gp && !ferror(gp) && !feof(gp);
+}
+
+int main(void)
+{
+    FILE *gp;
+    channel_t ch1 = {0}, ch2 = {0}, ch3 = {0};
+    long long n = 0;
+
+    setenv("GDK_BACKEND", "x11", 0);
+
+    //gp = popen("gnuplot -persist", "w");
+    gp = popen("gnuplot", "w");
+    if (!gp) {
+        perror("gnuplot");
+        return 1;
+    }
+
+    setvbuf(gp, NULL, _IONBF, 0);
+    srand((unsigned)time(NULL));
+
+    fprintf(gp,
+        "set term qt noraise\n"
+        "set title '3-Phases Current Monitoring Curve'\n"
+        "set xlabel 'Sample/Time'\n"
+        "set ylabel 'Value/Current'\n"
+        "set yrange [-10:10]\n"
+        "unset autoscale\n"
+        "set key top left\n"
+        "set style line 1 lc rgb '#FF0000' lw 2\n"
+        "set style line 2 lc rgb '#0000FF' lw 2\n"
+        "set style line 3 lc rgb '#000000' lw 2\n");
+
+    signal(SIGINT,signal_handler);
+    while (!g_Exit) {
+        push(&ch1, fmod((double)(n % 64), 64.0) / 64.0);
+        push(&ch2, 0.5 + 0.5 * sin(2.0 * M_PI * (double)n / 32.0));
+        push(&ch3, (double)rand() / RAND_MAX);
+        n++;
+
+        fprintf(gp, "set xrange [%lld:%lld]\n",
+                (n > N) ? (n - N + 1) : 1, n);
+        fprintf(gp,
+            "plot '-' title 'Phase A' with lines ls 1, "
+            "     '-' title 'Phase B' with lines ls 2, "
+            "     '-' title 'Phase C' with lines ls 3\n");
+        send_series(gp, &ch1, n);
+        send_series(gp, &ch2, n);
+        send_series(gp, &ch3, n);
+
+        fprintf(gp, "pause 0\n");
+
+        if (fflush(gp) != 0 || !gp_ok(gp))
+            break;
+
+        usleep(20000);
+    }
+    fprintf(gp,"exit\n");
+    fflush(gp);
+    pclose(gp);
+    return 0;
+}

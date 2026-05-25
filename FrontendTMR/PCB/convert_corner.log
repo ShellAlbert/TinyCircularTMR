@@ -1,0 +1,38 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Auto-interactive Convert Corner - Aicc                           )
+(                                                                     )
+(    Drawing          : TMR_Tiny_May-15.brd                           )
+(    Software Version : 25.1S020                                      )
+(    Date/Time        : Fri May 22 15:02:28 2026                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+CommandStart AiCC ************************************************************
+
+Convert Corner Parameters:
+Convert Type:           ARC
+Allow in cns areas:     Yes
+Preferred Radius Size:  5x Line Width
+Min Radius Size:        1x Line Width
+Allow DRCs:             No
+
+Result: 14 of 69 failed to convert
+
+Cline vertex:xy (25.5000 -39.8000)	subclass: TOP	net_name: P3V3 
+Cline vertex:xy (23.3000 -39.3000)	subclass: TOP	net_name: P3V3 
+Cline vertex:xy (17.5700 -46.4196)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (17.5700 -46.6196)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (-15.3000 -38.0094)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (-7.5000 -38.8000)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (-15.5000 -38.1000)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (-19.5000 -43.6000)	subclass: PWR-4	net_name: P3V3 
+Cline vertex:xy (21.2000 -46.0730)	subclass: BOTTOM	net_name: P3V3 
+Cline vertex:xy (20.6560 -47.4560)	subclass: BOTTOM	net_name: P3V3 
+Cline vertex:xy (23.8000 -39.1000)	subclass: BOTTOM	net_name: P3V3 
+Cline vertex:xy (23.5000 -39.1000)	subclass: BOTTOM	net_name: P3V3 
+Cline vertex:xy (16.8000 -35.1000)	subclass: BOTTOM	net_name: P3V3 
+Cline vertex:xy (16.0270 -38.1000)	subclass: BOTTOM	net_name: P3V3 
+
+CommandEnd AiCC **************************************************************

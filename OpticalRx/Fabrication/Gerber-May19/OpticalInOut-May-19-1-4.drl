@@ -6,19 +6,17 @@ T03C.8
 T04C1.
 T05C1.2
 T06C1.5
-T07C2.2
-T08C3.3
+T07C3.3
 ;LEADER: 12 
 ;HEADER: 
 ;CODE  : ASCII 
-;FILE  : OpticalInOut-May-19-1-4.drl for board Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/OpticalRx/PCB/#Taaacrw06640.tmp ... layers TOP and BOTTOM
+;FILE  : OpticalInOut-May-19-1-4.drl for board Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/OpticalRx/PCB/#Taaaala06980.tmp ... layers TOP and BOTTOM
 ;T01 Holesize 1. = 0.300000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 203
 ;T02 Holesize 2. = 0.700000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 32
 ;T04 Holesize 3. = 1.000000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 8
 ;T05 Holesize 4. = 1.200000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 7
 ;T06 Holesize 5. = 1.500000 Tolerance = +0.000000/-0.000000 PLATED MM Quantity = 2
-;T07 Holesize 6. = 2.200000 Tolerance = +0.000000/-0.000000 NON_PLATED MM Quantity = 4
-;T08 Holesize 7. = 3.300000 Tolerance = +0.000000/-0.000000 NON_PLATED MM Quantity = 2
+;T07 Holesize 6. = 3.300000 Tolerance = +0.000000/-0.000000 NON_PLATED MM Quantity = 6
 %
 G90
 T01
@@ -275,11 +273,10 @@ T06
 X840000Y-320000
 X1630000
 T07
-X300000Y-300000
-Y-3700000
-X7700000
+X300000Y-3700000
 Y-300000
-T08
 X1300000Y800000
 X6600000
+X7700000Y-300000
+Y-3700000
 M30

@@ -1,0 +1,117 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Auto-interactive Convert Corner - Aicc                           )
+(                                                                     )
+(    Drawing          : TMR_Tiny_May-15.brd                           )
+(    Software Version : 25.1S020                                      )
+(    Date/Time        : Fri May 22 14:48:16 2026                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+CommandStart AiCC ************************************************************
+
+Convert Corner Parameters:
+Convert Type:           ARC
+Allow in cns areas:     Yes
+Preferred Radius Size:  5x Line Width
+Min Radius Size:        1x Line Width
+Allow DRCs:             No
+
+Result: 0 of 7 failed to convert
+
+
+CommandEnd AiCC **************************************************************
+CommandStart AiCC ************************************************************
+
+Convert Corner Parameters:
+Convert Type:           ARC
+Allow in cns areas:     Yes
+Preferred Radius Size:  5x Line Width
+Min Radius Size:        1x Line Width
+Allow DRCs:             No
+
+Result: 0 of 4 failed to convert
+
+
+CommandEnd AiCC **************************************************************
+CommandStart AiCC ************************************************************
+
+Convert Corner Parameters:
+Convert Type:           ARC
+Allow in cns areas:     Yes
+Preferred Radius Size:  5x Line Width
+Min Radius Size:        1x Line Width
+Allow DRCs:             No
+
+Result: 0 of 4 failed to convert
+
+
+CommandEnd AiCC **************************************************************
+CommandStart AiCC ************************************************************
+
+Convert Corner Parameters:
+Convert Type:           ARC
+Allow in cns areas:     Yes
+Preferred Radius Size:  5x Line Width
+Min Radius Size:        1x Line Width
+Allow DRCs:             No
+
+Result: 54 of 115 failed to convert
+
+Cline vertex:xy (-23.8000 -42.9000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (5.1000 -38.4000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (5.4000 -38.7000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (6.7900 -38.9900)	subclass: TOP	net_name: GND 
+Cline vertex:xy (6.5000 -38.7000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-10.0500 -47.3500)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-0.1000 -52.4504)	subclass: TOP	net_name: GND 
+Cline vertex:xy (0.1000 -52.6504)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-11.5500 -37.1500)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-10.0500 -37.1500)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-9.8594 -47.5500)	subclass: TOP	net_name: GND 
+Cline vertex:xy (-9.9094 -47.6000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (16.0094 -52.1000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (15.8000 -52.4000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (6.3094 -53.6000)	subclass: TOP	net_name: GND 
+Cline vertex:xy (6.1004 -53.3910)	subclass: TOP	net_name: GND 
+Cline vertex:xy (27.2000 -49.5906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (27.3000 -49.6906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-0.1867 -38.0304)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-0.1867 -38.3134)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-0.4656 -38.3500)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-0.4756 -38.3400)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (1.3594 -37.6560)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (1.3254 -37.6900)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (10.7000 -47.8000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (7.6000 -47.6906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (7.3306 -47.9600)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-10.1000 -37.2000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-24.9000 -36.9000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-24.7000 -36.7000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (1.6560 -37.6120)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-22.9000 -40.9000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-14.1000 -35.2094)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-14.3000 -35.0094)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-11.1000 -37.2000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (22.2000 -38.9906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (22.4000 -38.7906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-10.7000 -39.1000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-11.4000 -40.0906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-11.3000 -39.9906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (6.1000 -45.5034)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (6.0440 -45.5594)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-6.4000 -42.2906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-6.5000 -42.3906)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (10.3440 -45.3440)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (10.2440 -45.2440)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-1.6906 -44.9000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-1.5906 -44.8000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-11.9500 -46.9000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-11.5500 -47.3000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-10.3000 -47.0000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-12.6270 -49.8000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-10.6730 -50.0000)	subclass: BOTTOM	net_name: GND 
+Cline vertex:xy (-10.7730 -49.9000)	subclass: BOTTOM	net_name: GND 
+
+CommandEnd AiCC **************************************************************
