@@ -17,21 +17,14 @@
 #include <time.h>
 #include <unistd.h>
 #include <signal.h>
-#include <string.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <error.h>
-#include <errno.h>
 
 //How many samples in one chart.
 #define SAMPLES (256)
 typedef struct {
-    char *file_name;
-    FILE *fp;
     double buf[SAMPLES];
     int pos;
 } channel_t;
+
 
 //Signal handler to exit.
 volatile int g_Exit=0; 
@@ -72,12 +65,7 @@ static int gp_ok(FILE *gp)
 int main(void)
 {
     FILE *gp;
-    int i;
-    channel_t channels[3]={
-        {"/tmp/phase_a_plot.fifo",0},
-        {"/tmp/phase_b_plot.fifo",0},
-        {"/tmp/phase_c_plot.fifo",0}
-    };
+    channel_t ch1 = {0}, ch2 = {0}, ch3 = {0};
     long long n = 0;
 
     setenv("GDK_BACKEND", "x11", 0);
@@ -90,11 +78,11 @@ int main(void)
     }
 
     setvbuf(gp, NULL, _IONBF, 0);
-    
+    srand((unsigned)time(NULL));
 
     fprintf(gp,
-        "set term qt noraise\n" //The plot is updated in the background. 
-        "set title '3-Phases Current Monitoring Curve' font 'Arial,20' \n"
+        "set term qt noraise\n"
+        "set title '3-Phases Current Monitoring Curve'\n"
         "set xlabel 'Sample/Time'\n"
         "set ylabel 'Value/Current'\n"
         "set yrange [-10:10]\n"
@@ -104,49 +92,23 @@ int main(void)
         "set style line 2 lc rgb '#0000FF' lw 2\n"
         "set style line 3 lc rgb '#000000' lw 2\n");
 
-    //install signal handler.
     signal(SIGINT,signal_handler);
-
-    //open FIFO for reading.
-    for(i=0;i<3;i++)
-    {
-        channels[i].fp=fopen(channels[i].file_name,"r");
-        if(!channels[i].fp)
-        {
-            fprintf(stderr, "Error opening file %s %s.\n",channels[i].file_name, strerror(errno));
-            return -1;
-        }
-    }
-
     while (!g_Exit) {
+        push(&ch1, fmod((double)(n % 64), 64.0) / 64.0);
+        push(&ch2, 0.5 + 0.5 * sin(2.0 * M_PI * (double)n / 32.0));
+        push(&ch3, (double)rand() / RAND_MAX);
+        n++;
 
         //adjust xrange.
-        fprintf(gp, "set xrange [%lld:%lld]\n",(n > SAMPLES) ? (n - SAMPLES + 1) : 1, n);
+        fprintf(gp, "set xrange [%lld:%lld]\n",
+                (n > SAMPLES) ? (n - SAMPLES + 1) : 1, n);
         fprintf(gp,
             "plot '-' title 'Phase A' with lines ls 1, "
             "     '-' title 'Phase B' with lines ls 2, "
             "     '-' title 'Phase C' with lines ls 3\n");
-
-        //read data from FIFO.
-        for(i=0;i<3;i++)
-        {
-            float phase_value;
-            size_t byte_read=fread(&phase_value, sizeof(float),1, channels[i].fp);
-            if(byte_read!=1)
-            {
-                if(feof(channels[i].fp))
-                {
-                    fprintf(stderr,"Channel %d, End of file reached %s\n",i,channels[i].file_name);
-                }else{
-                    perror("fread()");
-                }
-            }else{
-                push(&channels[i], phase_value);
-                send_series(gp,&channels[i],n);
-                printf("Channel %d, get new value: %.2f\n", i, phase_value);
-            }
-        }
-        n++;
+        send_series(gp, &ch1, n);
+        send_series(gp, &ch2, n);
+        send_series(gp, &ch3, n);
 
         fprintf(gp, "pause 0\n");
 
@@ -159,10 +121,5 @@ int main(void)
     fprintf(gp,"exit\n");
     fflush(gp);
     pclose(gp);
-    for(i=0;i<3;i++)
-    {
-        fclose(channels[i].fp);
-        unlink(channels[i].file_name);
-    }
     return 0;
 }
