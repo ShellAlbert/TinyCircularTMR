@@ -1,5 +1,5 @@
-//filename: uart_dump.c
-//function: dump 3 uarts data to different files.
+//filename: uart_dump_process.c
+//function: dump 3 uarts data to different named FIFO.
 //date: May 25, 2025.
 //author: anonymous.
 #include <stdio.h>
@@ -49,12 +49,14 @@ void signal_handler(int signo)
     }
 }
 
-int setup_uart(int fd, speed_t baud_rate) {
+int setup_uart(int fd, speed_t baud_rate) 
+{
     struct termios tty;
     memset(&tty, 0, sizeof(tty));
 
     //get-modify-set.
-    if (tcgetattr(fd, &tty) != 0) {
+    if (tcgetattr(fd, &tty) != 0)
+    {
         //perror(), short format for fprintf(stderr, "%s: %s\n", str, strerror(errno));
         perror("Error from tcgetattr");
         return -1;
@@ -78,15 +80,17 @@ int setup_uart(int fd, speed_t baud_rate) {
     tty.c_cc[VMIN]  = 0;  
     tty.c_cc[VTIME] = 1; //timeout 100ms.
 
-    if (tcsetattr(fd, TCSANOW, &tty) != 0) {
+    if (tcsetattr(fd, TCSANOW, &tty) != 0) 
+    {
         perror("Error from tcsetattr");
         return -1;
     }
-
     return 0;
 }
+
 //simulation thread function.
-void *simulation_thread_func(void *arg) {
+void *simulation_thread_func(void *arg)
+{
     uart_config_t *config = (uart_config_t *)arg;
     printf("[Thread] Starting for device: %s, dumping to: %s and %s.\n", config->device_path, config->tcp_fifo, config->plot_fifo);
 
@@ -211,13 +215,16 @@ void *hw_thread_func(void *arg) {
     //loop to read data.
     char buffer[128];
     ssize_t bytes_read;
-    while (1) {
+    while (1) 
+    {
         //read data from UART.
         bytes_read = read(fd, buffer, sizeof(buffer));
-        if (bytes_read > 0) {
+        if (bytes_read > 0) 
+        {
             //write data to tcp FIFO.
             size_t wr_bytes1 = fwrite(buffer, 1, bytes_read, fp_tcp);
-            if (wr_bytes1 != (size_t)bytes_read) {
+            if (wr_bytes1 != (size_t)bytes_read) 
+            {
                 perror("Error writing to file");
                 break;
             }
@@ -225,13 +232,16 @@ void *hw_thread_func(void *arg) {
 
             //write data to plot FIFO.
             size_t wr_bytes2 = fwrite(buffer, 1, bytes_read, fp_plot);
-            if (wr_bytes2 != (size_t)bytes_read) {
+            if (wr_bytes2 != (size_t)bytes_read) 
+            {
                 perror("Error writing to file");
                 break;
             }
             fflush(fp_plot); 
-        } else if (bytes_read < 0) {
-            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+        } else if (bytes_read < 0) 
+        {
+            if (errno == EAGAIN || errno == EWOULDBLOCK) 
+            {
                 //data is unavailable, call sleep() to prevent heavy CPU load.
                 usleep(1000); 
                 continue;
