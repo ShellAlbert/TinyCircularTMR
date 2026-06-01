@@ -2,6 +2,11 @@
 //function: dump 3 uarts data to different named FIFO.
 //date: May 25, 2025.
 //author: anonymous.
+
+//quick command for only gnuplot testing
+//./uart_dump.bin -s -p -v
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -162,7 +167,10 @@ void *simulation_thread_func(void *arg)
                 phase_value=(double)rand()/RAND_MAX;
                 break;
         }
-        
+        if(verbose)
+        {
+            printf("New phase value: %f\n", phase_value);
+        }
         if(tcp_dump)
         {
             fwrite(&phase_value,sizeof(float),1,config->fp_tcp);
