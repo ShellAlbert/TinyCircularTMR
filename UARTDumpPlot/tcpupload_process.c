@@ -132,26 +132,32 @@ int main(int argc, char *argv[]) {
 		printf("Connected successfully.\n");
 
 
-		snprintf(send_buffer, sizeof(send_buffer), "Hello from Client!");
-		bytes_sent = send(sock_fd, send_buffer, strlen(send_buffer), 0);
+		// snprintf(send_buffer, sizeof(send_buffer), "Hello from Client!");
+		// bytes_sent = send(sock_fd, send_buffer, strlen(send_buffer), 0);
+		// if (bytes_sent < 0) {
+		// 	error_handling("Send failed");
+		// }
+		// printf("Sent: %s\n", send_buffer);
+
+
+		// bytes_received = recv(sock_fd, recv_buffer, sizeof(recv_buffer) - 1, 0);
+		// if (bytes_received < 0) {
+		// 	error_handling("Receive failed");
+		// } else if (bytes_received == 0) {
+		// 	printf("Server closed connection.\n");
+		// } else {
+		// 	recv_buffer[bytes_received] = '\0'; // 确保字符串以null结尾
+		// 	printf("Received: %s\n", recv_buffer);
+		// }
+
+		bytes_sent = send(sock_fd, pjson, strlen(pjson), 0);
 		if (bytes_sent < 0) {
 			error_handling("Send failed");
 		}
-		printf("Sent: %s\n", send_buffer);
-
-
-		bytes_received = recv(sock_fd, recv_buffer, sizeof(recv_buffer) - 1, 0);
-		if (bytes_received < 0) {
-			error_handling("Receive failed");
-		} else if (bytes_received == 0) {
-			printf("Server closed connection.\n");
-		} else {
-			recv_buffer[bytes_received] = '\0'; // 确保字符串以null结尾
-			printf("Received: %s\n", recv_buffer);
-		}
-
+		printf("Sent: %s\n", pjson);	
 		sleep(5);
 	}
+	
 	free(pjson);
 	cJSON_free(node_root);
 
