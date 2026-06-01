@@ -309,6 +309,9 @@ int main(int argc, char **argv) {
             case 'v':
                 verbose=1; 
                 break;
+            case 'h':
+                print_usage(argv[0]);
+                return 0;
             case '?':
                 if(optopt=='p'){
                     fprintf(stderr, "Option -p requires an argument.");
