@@ -15,6 +15,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <netinet/tcp.h>
 #include <errno.h>
 #include "libcjson/cJSON.h"
 
@@ -80,7 +81,21 @@ void error_handling(const char *message) {
 	perror(message);
 	exit(EXIT_FAILURE);
 }
-
+int is_socket_connected(int sock_fd)
+{
+	if(sock_fd<0)
+	{
+		return 0;
+	}
+	struct tcp_info info={0};
+	socklen_t len=sizeof(info);
+	if(getsockopt(sock_fd, IPPROTO_TCP, TCP_INFO, &info, &len)<0)
+	{
+		perror("getsockopt");
+		return 0;
+	}
+	return (info.tcpi_state == TCP_ESTABLISHED)?(1):(0);	
+}
 int main(int argc, char *argv[]) {
 	int sock_fd;
 	struct sockaddr_in server_addr;
@@ -99,38 +114,41 @@ int main(int argc, char *argv[]) {
 		server_port = atoi(argv[2]);
 	}
 
-	printf("Connecting to %s:%d ...\n", server_ip, server_port);
-
-
-	sock_fd = socket(AF_INET, SOCK_STREAM, 0);
-	if (sock_fd < 0) 
-	{
-		error_handling("Socket creation failed");
-	}
-
-	memset(&server_addr, 0, sizeof(server_addr));
-	server_addr.sin_family = AF_INET;
-	server_addr.sin_port = htons(server_port); // 主机字节序转网络字节序
-
-
-	if (inet_pton(AF_INET, server_ip, &server_addr.sin_addr) <= 0) 
-	{
-		error_handling("Invalid address / Address not supported");
-	}
-
+	//create json object.
 	cJSON *node_root=create_Json();
 	char *pjson=cJSON_Print(node_root);
 
 	while(1)
 	{
-		if (connect(sock_fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) 
+		if(sock_fd<0 || !is_socket_connected(sock_fd))
 		{
+			printf("Socket is not connected. Reconnecting...\n");
 			close(sock_fd);
-			error_handling("Connection failed");
-		}
+			sock_fd=-1; 
 
-		printf("Connected successfully.\n");
+			sock_fd = socket(AF_INET, SOCK_STREAM, 0);
+			if (sock_fd < 0) 
+			{
+				error_handling("Socket creation failed");
+				sleep(5);
+				continue;
+			}
 
+			memset(&server_addr, 0, sizeof(server_addr));
+			server_addr.sin_family = AF_INET;
+			server_addr.sin_port = htons(server_port); 
+
+			if (inet_pton(AF_INET, server_ip, &server_addr.sin_addr) <= 0) 
+			{
+				error_handling("Invalid address / Address not supported");
+			}
+
+			if (connect(sock_fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) 
+			{
+				error_handling("Connection failed");
+			}
+			printf("Connected successfully, to %s:%d\n", server_ip, server_port);	
+		}	
 
 		// snprintf(send_buffer, sizeof(send_buffer), "Hello from Client!");
 		// bytes_sent = send(sock_fd, send_buffer, strlen(send_buffer), 0);
