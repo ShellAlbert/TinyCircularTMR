@@ -1,6 +1,6 @@
 // gcc http.c base64.c -o http.bin -Llibcjson -lcjson
 // export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./libcjson
-#include "tmr_httpd.h"
+#include "TMR_httpd.h"
 #include "libcjson/cJSON.h"
 #include "modules/base64.h"
 #include "modules/run_log.h"
@@ -677,6 +677,7 @@ cJSON *create_RawData_Json(const char *filename, const char *phase_name) {
             snprintf(buffer, sizeof(buffer), "%d,%.2f\n", i, sampled_data[i]);
             fwrite(buffer, strlen(buffer), 1, fp_csv);
           }
+          fflush(fp_csv);
           fclose(fp_csv);
           snprintf(buffer, sizeof(buffer), "dump float to %s.csv done.",
                    filename);
