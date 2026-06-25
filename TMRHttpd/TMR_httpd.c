@@ -42,7 +42,7 @@ void send_rawdata_response(int client_fd, const char *filename,
                            const char *phase_name);
 void send_rawdata_csv_response(int client_fd, const char *filename,
                                const char *phase_name);
-
+void call_gnuplot(const char *phase_name, const char *csv_filename);
 // write my pid to file.
 void write_pid2file(void);
 
@@ -216,8 +216,7 @@ int handle_request(int client_fd) {
     return -1;
   }
 
-  if(gVerbose)
-  {
+  if (gVerbose) {
     printf("Received request: %s %s\n", method, path);
   }
   snprintf(log_buffer, sizeof(log_buffer), "Received request : %s %s", method,
@@ -372,8 +371,7 @@ void send_response(int client_fd, int status_code, ///<
   // transmit body.
   write(client_fd, body, body_len);
 
-  if(gVerbose)
-  {
+  if (gVerbose) {
     printf("%s\n", header);
     printf("%s\n", body);
   }
@@ -506,6 +504,9 @@ void send_rawdata_csv_response(int client_fd, const char *filename,
                   "Not found", "text/html", buffer);
     return;
   }
+
+  // call gnuplot to plot curve.
+  call_gnuplot(phase_name,buffer);
 
   // get file size.
   fseek(fp_csv, 0, SEEK_END);
@@ -710,4 +711,34 @@ cJSON *create_RawData_Json(const char *filename, const char *phase_name) {
   cJSON_AddItemToObject(node_root, "param", node_param);
 
   return node_root;
+}
+
+void call_gnuplot(const char *phase_name, const char *csv_filename) {
+  FILE *fp_gnuplot = popen("gnuplot", "w");
+  if (!fp_gnuplot) {
+    perror("Failed to run gnuplot");
+    return;
+  }
+
+  fprintf(fp_gnuplot,
+          "set terminal png size 1024,768 enhanced font 'Sans,12'\n"
+          "set output '%s.png'\n"
+          "set title 'Phase %s Current Curve Plotting' font 'Sans,12'\n"
+          "set xlabel 'Sample/Time'\n"
+          "set ylabel 'Value/Current'\n"
+          "set datafile separator ','\n"
+          "set key top left\n"
+          "set style line 1 lc rgb '#FF0000' lw 2\n"
+          "plot '%s' using 1:2 with linespoints linewidth 1 pointtype 7 pointsize 0.5 title 'Current'\n"
+          "set output\n",
+          csv_filename, phase_name, csv_filename);
+
+  fflush(fp_gnuplot);
+
+  int status = pclose(fp_gnuplot);
+  if (status != 0) {
+    fprintf(stderr, "Gnuplot exited with error code: %d\n", status);
+  } else {
+    printf("Plot saved as %s.png\n", csv_filename);
+  }
 }

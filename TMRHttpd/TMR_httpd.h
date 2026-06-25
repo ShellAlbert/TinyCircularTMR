@@ -12,10 +12,10 @@
 #define TMR_PID_FILE "/tmp/TMR_httpd.pid"
 
 //image and raw file name.
-#define TMR_PHASE_A_IMG_FILE "/tmp/TMR_Phase_A.png"
-#define TMR_PHASE_B_IMG_FILE "/tmp/TMR_Phase_B.png"
-#define TMR_PHASE_C_IMG_FILE "/tmp/TMR_Phase_C.png"
-#define TMR_PHASE_ABC_IMG_FILE "/tmp/TMR_Phase_ABC.png"
+#define TMR_PHASE_A_IMG_FILE "/tmp/TMR_Phase_A.dat.csv.png"
+#define TMR_PHASE_B_IMG_FILE "/tmp/TMR_Phase_B.dat.csv.png"
+#define TMR_PHASE_C_IMG_FILE "/tmp/TMR_Phase_C.dat.csv.png"
+#define TMR_PHASE_ABC_IMG_FILE "/tmp/TMR_Phase_ABC.dat.csv.png"
 
 #define TMR_PHASE_A_RAW_FILE "/tmp/TMR_Phase_A.dat"
 #define TMR_PHASE_B_RAW_FILE "/tmp/TMR_Phase_B.dat"
