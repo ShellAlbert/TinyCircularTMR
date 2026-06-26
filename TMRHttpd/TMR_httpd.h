@@ -53,7 +53,7 @@ const char *manufacture_name = "CEPRI_Sensing_Institute";
 "}" \
 "</style>" \
 "<table class='device_table'>" \
-"<tr><td>Measured Range</td> <td>AC 0~1000 Amps</td></tr>" \
+"<tr><td rowspan=\"7\">Device Parameters</td><td>Measured Range</td> <td>AC 0~1000 Amps</td></tr>" \
 "<tr><td>Bandwidth Range</td> <td>DC~10kHz</td></tr>" \
 "<tr><td>Supported Channels</td><td>3 Phases, A - B - C</td></tr>" \
 "<tr><td>Acquision Interval</td><td>1000 ms</td></tr>" \
@@ -61,24 +61,24 @@ const char *manufacture_name = "CEPRI_Sensing_Institute";
 "<tr><td>Raw Data Encoder</td><td>Base64</td></tr>" \
 "<tr><td>Built-in History Curve</td><td>Supported PNG format</td></tr>" \
 \
-"<tr><td>/TMR/Dev_Info</td><td>GET Device basic information</td></tr>" \
-"<tr><td>/TMR/Run_Log</td><td>GET running log since started.</td></tr>" \
+"<tr><td rowspan=\"2\">Device Information</td><td><a href=\"/TMR/Dev_Info\">/TMR/Dev_Info</a></td><td>GET Device basic information</td></tr>" \
+"<tr><td><a href=\"/TMR/Run_Log\">/TMR/Run_Log</a></td><td>GET running log since started.</td></tr>" \
 \
-"<tr><td>/TMR/Phase_Curve?Ph=A&Type=Image</td><td>GET Phase A rendering image</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=A&Type=RawData</td><td>GET Phase A Raw Data(base64) in JSON format</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=A&Type=RawData_CSV</td><td>GET Phase A Raw Data in CSV format</td></tr>" \
+"<tr><td rowspan=\"3\">Phase A</td><td><a href=\"/TMR/Phase_Curve?Ph=A&Type=RawData\">/TMR/Phase_Curve?Ph=A&Type=RawData</a></td><td>GET Phase A Raw Data(base64) in JSON format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=A&Type=RawData_CSV\">/TMR/Phase_Curve?Ph=A&Type=RawData_CSV</a></td><td>GET Phase A Raw Data in CSV format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=A&Type=Image\">/TMR/Phase_Curve?Ph=A&Type=Image</a></td><td>GET Phase A rendering image</td></tr>" \
 \
-"<tr><td>/TMR/Phase_Curve?Ph=B&Type=Image</td><td>GET Phase B rendering image</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=B&Type=RawData</td><td>GET Phase B Raw Data(base64) in JSON format</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=B&Type=RawData_CSV</td><td>GET Phase B Raw Data in CSV format</td></tr>" \
+"<tr><td rowspan=\"3\">Phase B</td><td><a href=\"/TMR/Phase_Curve?Ph=B&Type=RawData\">/TMR/Phase_Curve?Ph=B&Type=RawData</a></td><td>GET Phase B Raw Data(base64) in JSON format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=B&Type=RawData_CSV\">/TMR/Phase_Curve?Ph=B&Type=RawData_CSV</a></td><td>GET Phase B Raw Data in CSV format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=B&Type=Image\">/TMR/Phase_Curve?Ph=B&Type=Image</a></td><td>GET Phase B rendering image</td></tr>" \
 \
-"<tr><td>/TMR/Phase_Curve?Ph=C&Type=Image</td><td>GET Phase C rendering image</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=C&Type=RawData</td><td>GET Phase C Raw Data(base64) in JSON format</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=C&Type=RawData_CSV</td><td>GET Phase C Raw Data in CSV format</td></tr>" \
+"<tr><td rowspan=\"3\">Phase C</td><td><a href=\"/TMR/Phase_Curve?Ph=C&Type=RawData\">/TMR/Phase_Curve?Ph=C&Type=RawData</a></td><td>GET Phase C Raw Data(base64) in JSON format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=C&Type=RawData_CSV\">/TMR/Phase_Curve?Ph=C&Type=RawData_CSV</a></td><td>GET Phase C Raw Data in CSV format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=C&Type=Image\">/TMR/Phase_Curve?Ph=C&Type=Image</a></td><td>GET Phase C rendering image</td></tr>" \
 \
-"<tr><td>/TMR/Phase_Curve?Ph=ABC&Type=Image</td><td>GET Phase A&B&C layered rendering image</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=ABC&Type=RawData</td><td>GET Phase A&B&C Mixed Raw Data(base64) in JSON format</td></tr>" \
-"<tr><td>/TMR/Phase_Curve?Ph=ABC&Type=RawData_CSV</td><td>GET Phase A&B&C Raw Data in CSV format</td></tr>" \
+"<tr><td rowspan=\"3\">Phase Combined</td><td><a href=\"/TMR/Phase_Curve?Ph=ABC&Type=RawData\">/TMR/Phase_Curve?Ph=ABC&Type=RawData</a></td><td>GET Phase A&B&C Mixed Raw Data(base64) in JSON format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=ABC&Type=RawData_CSV\">/TMR/Phase_Curve?Ph=ABC&Type=RawData_CSV</a></td><td>GET Phase A&B&C Raw Data in CSV format</td></tr>" \
+"<tr><td><a href=\"/TMR/Phase_Curve?Ph=ABC&Type=Image\">/TMR/Phase_Curve?Ph=ABC&Type=Image</a></td><td>GET Phase A&B&C layered rendering image</td></tr>" \
 "</table>" \
 "<p>Software Version " TMR_VERSION_NO ", build on " __DATE__ " " __TIME__".</p>" \
 "</body></html>"
