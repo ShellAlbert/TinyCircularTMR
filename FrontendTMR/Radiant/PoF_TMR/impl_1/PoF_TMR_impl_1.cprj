@@ -1,8 +1,0 @@
--ver "C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v"
--lib pmi -vhd "C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.vhd"
--ver "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v"
--path "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR"
--top PoF_TMR_Top
--isTop
--a "iCE40UP"
--t "iCE40UP5K"
