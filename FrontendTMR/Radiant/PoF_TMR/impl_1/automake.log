@@ -1,0 +1,1801 @@
+
+"C:/lscc/radiant/2025.2/tcltk/windows/bin/tclsh" "PoF_TMR_impl_1_synthesize.tcl"
+
+cpe -syn lse -f PoF_TMR_impl_1.cprj ZPLL.cprj ZFIFO.cprj -a iCE40UP -o PoF_TMR_impl_1_cpe.ldc
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/generic.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v. VERI-1482
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(1): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(2): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(3): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3BZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(4): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3DZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(5): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3IZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(6): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3JZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(7): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(8): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OB.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(9): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OBZ_B.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(10): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(11): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OFD1P3AZ.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(12): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/PDP4K.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(13): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(14): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(15): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(16): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(17): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC1P8V.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(18): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC1P8V.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(19): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v. VERI-1328
+WARNING <35901214> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(11): assignment to input I. VERI-1214
+WARNING <35931013> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(33): input port TRIM9 is not connected on this instance. VDB-1013
+WARNING <35931013> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(11): input port I is not connected on this instance. VDB-1013
+Reading structural Verilog file 'C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v'. VNLR-1084
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFER'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'FD1P3XZ'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFESR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFESS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFES'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFE'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'VLO'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNER'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'INV'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNESR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNESS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNES'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNE'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNR'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'VHI'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNSR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNSS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFN'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFSR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFSS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFF'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_IO'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'BB_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_LUT4'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'LUT4'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_MAC16'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'MAC16'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NRNW'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'EBR_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(2): compiling module 'RGB'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(33): instantiating unknown module 'RGB_CORE'. VNLR-1026
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(41): instantiating unknown module 'OB_RGB'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3BZ.v(2): compiling module 'FD1P3BZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3DZ.v(2): compiling module 'FD1P3DZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3IZ.v(2): compiling module 'FD1P3IZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3JZ.v(2): compiling module 'FD1P3JZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(2): compiling module 'IB'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OB.v(2): compiling module 'OB'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OBZ_B.v(2): compiling module 'OBZ_B'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v(2): compiling module 'IFD1P3AZ'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v(15): instantiating unknown module 'IOL_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OFD1P3AZ.v(2): compiling module 'OFD1P3AZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/PDP4K.v(2): compiling module 'PDP4K'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v(2): compiling module 'CCU2_B'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v(28): instantiating unknown module 'FA2'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v(2): compiling module 'SP256K'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v(28): instantiating unknown module 'VFB_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v(2): compiling module 'HSOSC'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v(16): instantiating unknown module 'HSOSC_CORE'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v(2): compiling module 'LSOSC'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v(13): instantiating unknown module 'LSOSC_CORE'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC1P8V.v(2): compiling module 'HSOSC1P8V'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC1P8V.v(2): compiling module 'LSOSC1P8V'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v(2): compiling module 'RGB1P8V'. VNLR-1012
+INFO <35911015> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v(2): setting 'RGB1P8V' as the top level module. VNLR-1015
+Analyzing Verilog file C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v. VERI-1482
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(1): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v(40): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(2): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(3): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(4): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v(39): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(5): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v(44): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(6): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v(47): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(7): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(8): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(9): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(10): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v(51): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(11): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(48): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(12): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(13): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(14): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(15): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(16): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(17): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_dsp.v. VERI-1328
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZPLL/rtl/ZPLL.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Top module name (Verilog): ZPLL
+Last elaborated design is ZPLL()
+Source compile complete.
+Analyzing Verilog file C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v. VERI-1482
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(1): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v(40): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(2): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(3): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(4): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v(39): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(5): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v(44): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(6): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v(47): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(7): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(8): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(9): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(10): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v(51): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(11): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(48): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(12): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(13): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(14): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(15): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(16): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(17): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_dsp.v. VERI-1328
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO/rtl/ZFIFO.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Top module name (Verilog): ZFIFO
+Last elaborated design is ZFIFO()
+Not clear how the code below should work. Where should the Array point to
+Not clear how the code below should work. Where should the Array point to
+Source compile complete.
+SDC Initialization for ZFIFO finished.
+SDC Distribution for ZFIFO finished.
+INFO <35831038> - Setting PoF_TMR_Top as top module.
+Analyzing Verilog file C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v. VERI-1482
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(1): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v(40): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(2): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_add.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(3): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(4): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v(39): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(5): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v(44): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(6): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v(47): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(7): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(8): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(9): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v(52): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(10): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v(51): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(11): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(48): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(12): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(13): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(14): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(15): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(50): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(16): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(46): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v(17): analyzing included file C:/lscc/radiant/2025.2/ip/pmi/pmi_dsp.v. VERI-1328
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v. VERI-1482
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v. VERI-1482
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v. VERI-1482
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v. VERI-1482
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v. VERI-1482
+Analyzing Verilog file Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v. VERI-1482
+WARNING <35901411> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v(60): keyword 'unsigned' is not allowed here in this mode of verilog. VERI-1411
+Analyzing Verilog file ZPLL.v. VERI-1482
+Analyzing Verilog file ZFIFO.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Top module name (Verilog): PoF_TMR_Top
+WARNING <35901220> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(184): using initial value of Temp_Result since it is never assigned. VERI-1220
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(42): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(61): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(68): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(69): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(71): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(72): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(72): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(74): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v(76): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(61): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(62): expression size 32 truncated to fit in target size 1. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(81): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(81): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(85): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v(89): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(133): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v(36): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v(62): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v(70): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v(71): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v(45): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v(75): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v(98): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v(117): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(158): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+WARNING <35901220> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(39): using initial value of SlaveAddress since it is never assigned. VERI-1220
+WARNING <35901220> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(40): using initial value of SlaveAddress_Rd since it is never assigned. VERI-1220
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(51): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(73): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(75): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(78): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(82): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(83): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(83): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(85): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(87): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(90): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(92): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(94): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(95): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(95): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(97): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(99): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(102): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(104): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(106): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(109): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(111): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(113): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(114): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(114): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(116): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(118): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(121): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(123): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(127): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(131): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(133): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(136): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(138): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(142): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(143): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(143): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(146): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(148): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(151): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(153): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(156): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(165): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(167): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(170): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(172): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(174): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(175): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(175): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(177): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(179): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(182): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(184): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(186): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(187): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(187): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(189): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(191): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(194): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(196): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(198): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(199): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(199): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(201): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(203): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(206): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(208): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(210): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(211): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(211): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(213): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(215): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(218): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(220): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v(223): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(216): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(219): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(222): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35931002> - Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v(182): net TMP117_RegData[15] does not have a driver. VDB-1002
+Last elaborated design is PoF_TMR_Top()
+Source compile complete.
+Starting IP constraint check for ZFIFO.
+Starting IP constraint check for ZPLL.
+Writing output files.
+CPE Completed. PoF_TMR_impl_1_cpe.ldc and CPEReport.txt produced.
+
+
+
+synthesis -f Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/impl_1/PoF_TMR_impl_1_lattice.synproj -logfile PoF_TMR_impl_1_lattice.srp
+synthesis:  version Radiant Software (64-bit) 2025.2.0.48.0
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
+Thu Jul  2 14:35:39 2026
+
+
+Command Line:  C:\lscc\radiant\2025.2\ispfpga\bin\nt64\synthesis.exe -f Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/impl_1/PoF_TMR_impl_1_lattice.synproj -logfile PoF_TMR_impl_1_lattice.srp -gui -msgset Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml 
+
+Lattice Synthesis Engine launched.
+
+Synthesis options:
+The -a option is iCE40UP.
+The -t option is SG48.
+The -sp option is High-Performance_1.2V.
+The -p option is iCE40UP5K.
+
+###################### Device Information ######################
+----------------------------------------------------------------
+Lattice Family        | iCE40UP
+----------------------------------------------------------------
+Device                | iCE40UP5K
+----------------------------------------------------------------
+Package               | SG48
+----------------------------------------------------------------
+Performance Grade     | High-Performance_1.2V
+----------------------------------------------------------------
+################################################################
+
+####################### Device Resources #######################
+----------------------------------------------------------------
+Logic Cells           | 5280
+----------------------------------------------------------------
+RAM Blocks            | 30
+----------------------------------------------------------------
+DSP Blocks            | 8
+----------------------------------------------------------------
+PLLs                  | 1
+----------------------------------------------------------------
+I/O Pins              | 56
+----------------------------------------------------------------
+################################################################
+
+Resolving user-selected strategy settings...
+
+INFO <35001797> - Use DCC Insertion disabled by default.
+
+###################### Strategy Settings #######################
+----------------------------------------------------------------
+Optimization Goal     | Area
+----------------------------------------------------------------
+Top-level Module Name | PoF_TMR_Top
+----------------------------------------------------------------
+Target Frequency      | 200.000 MHz
+----------------------------------------------------------------
+Maximum Fanout        | 1000
+----------------------------------------------------------------
+Timing Path Count     | 3
+----------------------------------------------------------------
+RAM Read/Write Check  | False
+----------------------------------------------------------------
+BRAM Utilization      | 100.0%
+----------------------------------------------------------------
+DSP Usage             | True
+----------------------------------------------------------------
+DSP Utilization       | 100.0%
+----------------------------------------------------------------
+FSM Encoding Style    | Auto
+----------------------------------------------------------------
+Resolve Mixed Drivers | False
+----------------------------------------------------------------
+Fix Gated Clocks      | True
+----------------------------------------------------------------
+Mux Style             | Auto
+----------------------------------------------------------------
+Use Carry Chain       | True
+----------------------------------------------------------------
+Carry Chain Length    | Infinite
+----------------------------------------------------------------
+Loop Limit            | 1950
+----------------------------------------------------------------
+Use I/O Insertion     | True
+----------------------------------------------------------------
+Use I/O Registers     | True
+----------------------------------------------------------------
+Resource Sharing      | True
+----------------------------------------------------------------
+Propagate Constants   | True
+----------------------------------------------------------------
+Remove Duplicate Reg  | True
+----------------------------------------------------------------
+Force GSR             | False
+----------------------------------------------------------------
+ROM Style             | Auto
+----------------------------------------------------------------
+RAM Style             | Auto
+----------------------------------------------------------------
+Remove LOC Properties | False
+----------------------------------------------------------------
+Partition Flow        | False
+----------------------------------------------------------------
+Use DCC Insertion     | None
+----------------------------------------------------------------
+################################################################
+
+
+The -comp option is FALSE.
+The -syn option is FALSE.
+
+Output HDL filename: PoF_TMR_impl_1.vm
+-sdc option: SDC file input is PoF_TMR_impl_1_cpe.ldc.
+-path C:/lscc/radiant/2025.2/ispfpga/ice40tp/data (searchpath added)
+-path Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR (searchpath added)
+-path Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/impl_1 (searchpath added)
+-path Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO (searchpath added)
+-path Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZPLL (searchpath added)
+-path Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1 (searchpath added)
+Mixed language design
+Verilog design file: C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/PoF_TMR_Top.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZPLL/rtl/ZPLL.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Controller.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Tx.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZTMP117_Controller.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZAD7988_Adapter.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/impl_1/ZUART_Adapter.v
+Verilog design file: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO/rtl/ZFIFO.v
+VHDL library: pmi
+VHDL design file: C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.vhd
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/generic.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Analyzing Verilog file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v. VERI-1482
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(1): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v. VERI-1328
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(2): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(45): duplicate module name RGB. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(3): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3BZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3BZ.v(19): duplicate module name FD1P3BZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(4): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3DZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3DZ.v(19): duplicate module name FD1P3DZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(5): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3IZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3IZ.v(18): duplicate module name FD1P3IZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(6): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3JZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3JZ.v(18): duplicate module name FD1P3JZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(7): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(12): duplicate module name IB. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(8): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OB.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OB.v(12): duplicate module name OB. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(9): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OBZ_B.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OBZ_B.v(14): duplicate module name OBZ_B. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(10): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v(30): duplicate module name IFD1P3AZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(11): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OFD1P3AZ.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OFD1P3AZ.v(31): duplicate module name OFD1P3AZ. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(12): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/PDP4K.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/PDP4K.v(143): duplicate module name PDP4K. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(13): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v(34): duplicate module name CCU2_B. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(14): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v(92): duplicate module name SP256K. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(15): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v(20): duplicate module name HSOSC. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(16): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v(16): duplicate module name LSOSC. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(17): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC1P8V.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC1P8V.v(24): duplicate module name HSOSC1P8V. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(18): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC1P8V.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC1P8V.v(21): duplicate module name LSOSC1P8V. VERI-1206
+INFO <35901328> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v(19): analyzing included file C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v. VERI-1328
+WARNING <35901206> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v(52): duplicate module name RGB1P8V. VERI-1206
+WARNING <35901214> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(11): assignment to input I. VERI-1214
+WARNING <35931013> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(33): input port TRIM9 is not connected on this instance. VDB-1013
+WARNING <35931013> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(11): input port I is not connected on this instance. VDB-1013
+Reading structural Verilog file 'C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/iCE40UP_sp.v'. VNLR-1084
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFER'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'FD1P3XZ'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFESR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFESS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFES'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFE'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'VLO'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNER'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'INV'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNESR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNESS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNES'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNE'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNR'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'VHI'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNSR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNSS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFNS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFN'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFSR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFSS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFFS'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_DFF'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_IO'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'BB_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_LUT4'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'LUT4'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_MAC16'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'MAC16'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NRNW'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): instantiating unknown module 'EBR_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM1024x4'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM2048x2'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM256x16'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NRNW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NR'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8NW'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/legacy.v(1724): compiling module 'SB_RAM512x8'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(2): compiling module 'RGB'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(33): instantiating unknown module 'RGB_CORE'. VNLR-1026
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB.v(41): instantiating unknown module 'OB_RGB'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3BZ.v(2): compiling module 'FD1P3BZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3DZ.v(2): compiling module 'FD1P3DZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3IZ.v(2): compiling module 'FD1P3IZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/FD1P3JZ.v(2): compiling module 'FD1P3JZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IB.v(2): compiling module 'IB'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OB.v(2): compiling module 'OB'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OBZ_B.v(2): compiling module 'OBZ_B'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v(2): compiling module 'IFD1P3AZ'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/IFD1P3AZ.v(15): instantiating unknown module 'IOL_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/OFD1P3AZ.v(2): compiling module 'OFD1P3AZ'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/PDP4K.v(2): compiling module 'PDP4K'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v(2): compiling module 'CCU2_B'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/CCU2_B.v(28): instantiating unknown module 'FA2'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v(2): compiling module 'SP256K'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/SP256K.v(28): instantiating unknown module 'VFB_B'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v(2): compiling module 'HSOSC'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC.v(16): instantiating unknown module 'HSOSC_CORE'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v(2): compiling module 'LSOSC'. VNLR-1012
+WARNING <35911026> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC.v(13): instantiating unknown module 'LSOSC_CORE'. VNLR-1026
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/HSOSC1P8V.v(2): compiling module 'HSOSC1P8V'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/LSOSC1P8V.v(2): compiling module 'LSOSC1P8V'. VNLR-1012
+INFO <35911012> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v(2): compiling module 'RGB1P8V'. VNLR-1012
+INFO <35911015> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/simulation/verilog/iCE40UP/RGB1P8V.v(2): setting 'RGB1P8V' as the top level module. VNLR-1015
+
+Compiling design...
+
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/standard.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/standard.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/standard.vhd(9): analyzing package standard. VHDL-1014
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_1164.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_1164.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_1164.vhd(15): analyzing package std_logic_1164. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_1164.vhd(178): analyzing package body std_logic_1164. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mgc_qsim.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mgc_qsim.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mgc_qsim.vhd(18): analyzing package qsim_logic. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mgc_qsim.vhd(753): analyzing package body qsim_logic. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_bit.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_bit.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_bit.vhd(54): analyzing package numeric_bit. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_bit.vhd(834): analyzing package body numeric_bit. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_std.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_std.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_std.vhd(57): analyzing package numeric_std. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/numeric_std.vhd(874): analyzing package body numeric_std. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/textio.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/textio.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/textio.vhd(13): analyzing package textio. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/textio.vhd(114): analyzing package body textio. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_logic_textio.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_logic_textio.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_logic_textio.vhd(26): analyzing package std_logic_textio. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/std_logic_textio.vhd(72): analyzing package body std_logic_textio. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_misc.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_misc.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_misc.vhd(30): analyzing package std_logic_misc. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_misc.vhd(182): analyzing package body std_logic_misc. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/math_real.vhd. VHDL-1481
+INFO <35921014> - ./.__tmp_vxr_0_(56): analyzing package math_real. VHDL-1014
+INFO <35921013> - ./.__tmp_vxr_0_(685): analyzing package body math_real. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd(9): analyzing package vl_types. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd(88): analyzing package body vl_types. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_arit.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_arit.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_arit.vhd(25): analyzing package std_logic_arith. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_arit.vhd(206): analyzing package body std_logic_arith. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_attr.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_attr.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_attr.vhd(39): analyzing package attributes. VHDL-1014
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_sign.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_sign.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_sign.vhd(35): analyzing package std_logic_signed. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_sign.vhd(96): analyzing package body std_logic_signed. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_unsi.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_unsi.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_unsi.vhd(35): analyzing package std_logic_unsigned. VHDL-1014
+INFO <35921013> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/syn_unsi.vhd(94): analyzing package body std_logic_unsigned. VHDL-1013
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/vhdl/iCE40UP.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/vhdl/iCE40UP.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/vhdl/iCE40UP.vhd(4): analyzing package components. VHDL-1014
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/synattr.vhd. VHDL-1481
+Analyzing VHDL file C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/synattr.vhd
+
+INFO <35921014> - C:/lscc/radiant/2025.2/ispfpga/vhdl_packages/synattr.vhd(50): analyzing package attributes. VHDL-1014
+Analyzing Verilog file c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v. VERI-1482
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(1): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_addsub.v(40): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(2): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(3): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(4): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_counter.v(39): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(5): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_fifo.v(44): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(6): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_fifo_dc.v(47): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(7): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(8): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(9): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(10): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(11): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(48): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp.v(49): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(12): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq.v(46): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(13): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_rom.v(45): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(14): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(15): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dp_be.v(50): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ram_dq_be.v(46): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2025.2/ip/pmi/pmi_dsp.v. VERI-1328
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zpll/rtl/zpll.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v. VERI-1482
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v. VERI-1482
+WARNING <35901411> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(60): keyword 'unsigned' is not allowed here in this mode of verilog. VERI-1411
+Analyzing Verilog file z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v. VERI-1482
+Analyzing VHDL file c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
+Analyzing VHDL file c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.vhd
+
+INFO <35921014> - c:/lscc/radiant/2025.2/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
+INFO <35921504> - The default VHDL library search path is now "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/impl_1". VHDL-1504
+Top module language type = Verilog.
+Top module name (Verilog, mixed language): PoF_TMR_Top
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(15): compiling module PoF_TMR_Top. VERI-1018
+WARNING <35901220> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(184): using initial value of Temp_Result since it is never assigned. VERI-1220
+INFO <35901018> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zpll/rtl/zpll.v(11): compiling module ZPLL. VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zpll/rtl/zpll.v(107): compiling module ZPLL_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;63&quot;,DIVQ=&quot;4&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
+INFO <35901018> - C:/lscc/radiant/2025.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): compiling module PLL_B(PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,DIVF=&quot;63&quot;,DIVQ=&quot;4&quot;,FILTER_RANGE=&quot;1&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v(11): compiling module ZFIFO. VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v(116): compiling module ZFIFO_ipgen_lscc_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG=&quot;FALSE&quot;,ENABLE_ALMOST_EMPTY_FLAG=&quot;FALSE&quot;,ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY=&quot;iCE40UP&quot;). VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v(283): compiling module ZFIFO_ipgen_lscc_fifo_fwft_fabric(REGMODE=&quot;reg&quot;,DWID=16). VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v(443): compiling module ZFIFO_ipgen_lscc_fifo_main(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG=&quot;FALSE&quot;,ENABLE_ALMOST_EMPTY_FLAG=&quot;FALSE&quot;,ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY=&quot;iCE40UP&quot;). VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zfifo/rtl/zfifo.v(3471): compiling module ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG=&quot;FALSE&quot;,ENABLE_ALMOST_EMPTY_FLAG=&quot;FALSE&quot;,ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY=&quot;iCE40UP&quot;). VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(1): compiling module ZAD7988_Adapter. VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(10): compiling module ZAD7988_Controller. VERI-1018
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(42): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(61): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(68): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(69): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(71): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(72): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(72): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(74): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_controller.v(76): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(61): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(62): expression size 32 truncated to fit in target size 1. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(81): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(81): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(85): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zad7988_adapter.v(89): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(133): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(1): compiling module ZUART_Adapter. VERI-1018
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v(3): compiling module ZUART_Tx(Freq_divider=12). VERI-1018
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v(36): expression size 32 truncated to fit in target size 16. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v(62): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v(70): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_tx.v(71): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(45): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(75): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(98): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/zuart_adapter.v(117): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901330> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(158): actual bit length 32 differs from formal bit length 1 for port iEn. VERI-1330
+INFO <35901018> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(10): compiling module ZTMP117_Controller. VERI-1018
+WARNING <35901220> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(39): using initial value of SlaveAddress since it is never assigned. VERI-1220
+WARNING <35901220> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(40): using initial value of SlaveAddress_Rd since it is never assigned. VERI-1220
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(51): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(73): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(75): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(78): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(80): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(82): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(83): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(83): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(85): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(87): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(90): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(92): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(94): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(95): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(95): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(97): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(99): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(102): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(104): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(106): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(109): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(111): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(113): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(114): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(114): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(116): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(118): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(121): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(123): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(127): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(128): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(131): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(133): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(136): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(138): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(142): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(143): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(143): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(146): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(148): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(151): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(153): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(156): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(165): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(167): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(170): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(172): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(174): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(175): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(175): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(177): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(179): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(182): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(184): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(186): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(187): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(187): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(189): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(191): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(194): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(196): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(198): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(199): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(199): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(201): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(203): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(206): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(208): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(210): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(211): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(211): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(213): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(215): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(218): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(220): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/ztmp117_controller.v(223): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(216): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(219): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(222): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35931002> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(182): net TMP117_RegData[15] does not have a driver. VDB-1002
+Not clear how the code below should work. Where should the Array point to
+Not clear how the code below should work. Where should the Array point to
+Syn unnamed:53
+[Parameter Setting Section Start]
+
+	[Parameter Settings for Instance(s): my_HSOSC]
+	(Module: HSOSC)
+		CLKHF_DIV                 "0b00"
+
+	[Parameter Settings for Instance(s): lscc_pll_inst]
+	(Module: ZPLL_ipgen_lscc_pll)
+		DIVR                      "0"
+		DIVF                      "63"
+		DIVQ                      "4"
+		DELAY_PORT_WIDTH          4
+		FEEDBACK_PATH             "SIMPLE"
+		FILTER_RANGE              "1"
+		DELAY_ADJUSTMENT_MODE_FEEDBACK "FIXED"
+		FDA_FEEDBACK              "0"
+		DELAY_ADJUSTMENT_MODE_RELATIVE "FIXED"
+		FDA_RELATIVE              "0"
+		SHIFTREG_DIV_MODE         "0"
+		PLLOUT_SELECT_PORTA       "GENCLK"
+		PLLOUT_SELECT_PORTB       "GENCLK"
+		EXTERNAL_DIVIDE_FACTOR    "NONE"
+		ENABLE_ICEGATE_PORTA      "0"
+		ENABLE_ICEGATE_PORTB      "0"
+		FREQUENCY_PIN_REFERENCECLK "12.000000"
+
+	[Parameter Settings for Instance(s): lscc_fifo_inst]
+	(Module: ZFIFO_ipgen_lscc_fifo)
+		IMPLEMENTATION            "EBR"
+		ADDRESS_DEPTH             2
+		ADDRESS_WIDTH             1
+		DATA_WIDTH                16
+		REGMODE                   "reg"
+		RESET_MODE                "async"
+		ENABLE_ALMOST_FULL_FLAG   "FALSE"
+		ENABLE_ALMOST_EMPTY_FLAG  "FALSE"
+		ALMOST_FULL_ASSERTION     "static-dual"
+		ALMOST_FULL_ASSERT_LVL    1
+		ALMOST_FULL_DEASSERT_LVL  1
+		ALMOST_EMPTY_ASSERTION    "static-dual"
+		ALMOST_EMPTY_ASSERT_LVL   1
+		ALMOST_EMPTY_DEASSERT_LVL 1
+		ENABLE_DATA_COUNT         "FALSE"
+		FAMILY                    "iCE40UP"
+		FIFO_CONTROLLER           "FABRIC"
+		FORCE_FAST_CONTROLLER     0
+		FWFT                      0
+		T_FAMILY                  "iCE40UP"
+		T_REGMODE                 "reg"
+
+	[Parameter Settings for Instance(s): uart_u1]
+	(Module: ZUART_Tx)
+		Freq_divider              12
+
+	[Parameter Settings for Instance(s): u_PLL_B]
+	(Module: PLL_B)
+		FEEDBACK_PATH             "SIMPLE"
+		DELAY_ADJUSTMENT_MODE_FEEDBACK "FIXED"
+		FDA_FEEDBACK              "0"
+		DELAY_ADJUSTMENT_MODE_RELATIVE "FIXED"
+		FDA_RELATIVE              "0"
+		SHIFTREG_DIV_MODE         "0"
+		PLLOUT_SELECT_PORTA       "GENCLK"
+		PLLOUT_SELECT_PORTB       "GENCLK"
+		DIVR                      "0"
+		DIVF                      "63"
+		DIVQ                      "4"
+		FILTER_RANGE              "1"
+		EXTERNAL_DIVIDE_FACTOR    "NONE"
+		ENABLE_ICEGATE_PORTA      "0"
+		ENABLE_ICEGATE_PORTB      "0"
+		TEST_MODE                 "0"
+		FREQUENCY_PIN_REFERENCECLK "12.000000"
+
+	[Parameter Settings for Instance(s): u_fwft]
+	(Module: ZFIFO_ipgen_lscc_fifo_fwft_fabric)
+		REGMODE                   "reg"
+		FWFT                      0
+		DWID                      16
+
+	[Parameter Settings for Instance(s): fifo0]
+	(Module: ZFIFO_ipgen_lscc_fifo_main)
+		IMPLEMENTATION            "EBR"
+		ADDRESS_DEPTH             2
+		ADDRESS_WIDTH             1
+		DATA_WIDTH                16
+		REGMODE                   "reg"
+		RESET_MODE                "async"
+		ENABLE_ALMOST_FULL_FLAG   "FALSE"
+		ENABLE_ALMOST_EMPTY_FLAG  "FALSE"
+		ALMOST_FULL_ASSERTION     "static-dual"
+		ALMOST_FULL_ASSERT_LVL    1
+		ALMOST_FULL_DEASSERT_LVL  1
+		ALMOST_EMPTY_ASSERTION    "static-dual"
+		ALMOST_EMPTY_ASSERT_LVL   1
+		ALMOST_EMPTY_DEASSERT_LVL 1
+		ENABLE_DATA_COUNT         "FALSE"
+		FAMILY                    "iCE40UP"
+		FIFO_CONTROLLER           "FABRIC"
+		FORCE_FAST_CONTROLLER     0
+
+	[Parameter Settings for Instance(s): _FABRIC.u_fifo]
+	(Module: ZFIFO_ipgen_lscc_soft_fifo)
+		IMPLEMENTATION            "EBR"
+		ADDRESS_DEPTH             2
+		ADDRESS_WIDTH             1
+		DATA_WIDTH                16
+		REGMODE                   "reg"
+		RESET_MODE                "async"
+		ENABLE_ALMOST_FULL_FLAG   "FALSE"
+		ENABLE_ALMOST_EMPTY_FLAG  "FALSE"
+		ALMOST_FULL_ASSERTION     "static-dual"
+		ALMOST_FULL_ASSERT_LVL    1
+		ALMOST_FULL_DEASSERT_LVL  1
+		ALMOST_EMPTY_ASSERTION    "static-dual"
+		ALMOST_EMPTY_ASSERT_LVL   1
+		ALMOST_EMPTY_DEASSERT_LVL 1
+		ENABLE_DATA_COUNT         "FALSE"
+		FAMILY                    "iCE40UP"
+
+[Parameter Setting Section End]
+WARNING <35001771> - Initial value found on net gnd will be ignored due to unrecognized driver type
+WARNING <35935047> - Unused instance my_HSOSC is removed. VDB-5047
+WARNING <35001771> - Initial value found on net pwr will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net gnd will be ignored due to unrecognized driver type
+WARNING <35931002> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/impl_1/pof_tmr_top.v(182): net TMP117_RegData[15] does not have a driver. VDB-1002
+WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
+WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
+CRITICAL <35002028> - I/O port's net has no driver and is unused: iCmd_RxD
+CRITICAL <35002028> - I/O port's net has no driver and is unused: iTMP117_ALERT
+WARNING <35931002> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zpll/rtl/zpll.v(141): net \ic_pll/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
+WARNING <35931002> - z:/mymanjaro/hdisk/mygithub/tinycirculartmr/frontendtmr/radiant/pof_tmr/source/ipcore/zpll/rtl/zpll.v(142): net \ic_pll/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net TMP117_RegData[15]. Patching with GND.
+######## Missing driver on net TMP117_RegData[14]. Patching with GND.
+######## Missing driver on net TMP117_RegData[13]. Patching with GND.
+######## Missing driver on net TMP117_RegData[12]. Patching with GND.
+######## Missing driver on net TMP117_RegData[11]. Patching with GND.
+######## Missing driver on net TMP117_RegData[10]. Patching with GND.
+######## Missing driver on net TMP117_RegData[9]. Patching with GND.
+######## Missing driver on net TMP117_RegData[8]. Patching with GND.
+######## Missing driver on net TMP117_RegData[7]. Patching with GND.
+######## Missing driver on net TMP117_RegData[6]. Patching with GND.
+######## Missing driver on net TMP117_RegData[5]. Patching with GND.
+######## Missing driver on net TMP117_RegData[4]. Patching with GND.
+######## Missing driver on net TMP117_RegData[3]. Patching with GND.
+######## Missing driver on net TMP117_RegData[2]. Patching with GND.
+######## Missing driver on net TMP117_RegData[1]. Patching with GND.
+######## Missing driver on net TMP117_RegData[0]. Patching with GND.
+######## Missing driver on net \ic_pll/lscc_pll_inst/sclk_i. Patching with GND.
+######## Missing driver on net \ic_pll/lscc_pll_inst/sdi_i. Patching with GND.
+
+
+
+CRITICAL <35001747> - Bit(s) of register driving TMP117_Cmd[1:0] stuck at '0': 1, 0
+CRITICAL <35001747> - Bit(s) of register driving TMP117_RegAddr[7:0] stuck at '0': 7, 6, 5, 4, 3, 2, 1, 0
+######## Found 1 RTL RAMs in the design.
+######## Mapping RTL RAM \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/mem_EBR.mem to 1 EBR blocks in PSEUDO_DUAL_PORT Mode
+
+CRITICAL <35002028> - I/O port's net has no driver and is unused: iCmd_RxD
+CRITICAL <35002028> - I/O port's net has no driver and is unused: iSPI_SDO
+CRITICAL <35002028> - I/O port's net has no driver and is unused: iTMP117_ALERT
+WARNING <35002062> - Port rejected for I/O register mapping: iClk_12MHz
+WARNING <35002062> - Port rejected for I/O register mapping: oData_TxD
+WARNING <35002062> - Port rejected for I/O register mapping: iCmd_RxD
+WARNING <35002062> - Port rejected for I/O register mapping: oSPI_SDI
+WARNING <35002062> - Port rejected for I/O register mapping: oSPI_CNV
+WARNING <35002062> - Port rejected for I/O register mapping: oSPI_SCK
+WARNING <35002062> - Port rejected for I/O register mapping: iSPI_SDO
+WARNING <35002062> - Port rejected for I/O register mapping: oFIFOWrFps
+WARNING <35002062> - Port rejected for I/O register mapping: oFIFO_isFull
+WARNING <35002062> - Port rejected for I/O register mapping: oTxFps
+WARNING <35002062> - Port rejected for I/O register mapping: oTMP117_SCL
+WARNING <35002062> - Port rejected for I/O register mapping: ioTMP117_SDA
+WARNING <35002062> - Port rejected for I/O register mapping: iTMP117_ALERT
+WARNING <35002062> - Port rejected for I/O register mapping: oLED0
+WARNING <35002062> - Port rejected for I/O register mapping: oLED1
+WARNING <35002062> - Port rejected for I/O register mapping: oLED2
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_mem_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/full_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_mem_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_r is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/empty_ext_r.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_p1_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_addr_p1_r_i1.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/wr_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/waddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i0 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i0.
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_cmpaddr_r[0] is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/raddr_r[0].
+Duplicate register/latch removal. \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1cmp_r_i1 is a one-to-one match with \myFIFO/lscc_fifo_inst/fifo0/_FABRIC.u_fifo/rd_addr_p1_r_i1.
+
+################### Begin Area Report (PoF_TMR_Top)######################
+Number of register bits => 392 of 5280 (7 % )
+BB_B => 1
+EBR_B => 1
+CCU2 => 150
+FD1P3XZ => 392
+IB => 1
+LUT4 => 648
+OB => 11
+PLL_B => 1
+################### End Area Report ##################
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 18
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : ic_pll/lscc_pll_inst/clk_48MHz_Global, loads : 0
+  Net : iClk_12MHz_c, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 0
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : myUART/uart_u1/rst_n_N_398, loads : 308
+  Net : myTMP117/step_i[2], loads : 57
+  Net : myTMP117/step_i[3], loads : 54
+  Net : myTMP117/step_i[1], loads : 53
+  Net : myTMP117/step_i[0], loads : 44
+  Net : n63, loads : 43
+  Net : myTMP117/tick_250KHz, loads : 43
+  Net : myUART/n23, loads : 41
+  Net : n5337, loads : 37
+  Net : myAD7988/n5327, loads : 37
+################### End Clock Report ##################
+
+################### Begin Constraint Report ######################
+Constraint Summary:
+  Total number of constraints: 0
+  Total number of constraints dropped: 0
+###################  End Constraint Report  ######################
+
+Peak Memory Usage: 123 MB
+
+--------------------------------------------------------------
+Total CPU Time: 4 secs 
+Total REAL Time: 4 secs 
+--------------------------------------------------------------
+Checksum -- synthesis -- netlist: c5e1910c2fe1c62e6a7618355c074a5e857b96cf
+
+
+
+postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o PoF_TMR_impl_1_syn.udb PoF_TMR_impl_1.vm -ldc PoF_TMR_impl_1.ldc
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2025.2.0.48.0
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o PoF_TMR_impl_1_syn.udb -ldc PoF_TMR_impl_1.ldc -gui -msgset Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml PoF_TMR_impl_1.vm 
+   Architecture:     iCE40UP
+   Device:           iCE40UP5K
+   Package:          SG48
+   Performance:      High-Performance_1.2V
+Reading input file 'PoF_TMR_impl_1.vm' ...
+CPU Time to convert: 0.140625
+REAL Time to convert: 0
+convert PEAK Memory Usage: 42 MB
+convert CURRENT Memory Usage: 42 MB
+Reading constraint file 'PoF_TMR_impl_1.ldc' ...
+Removing unused logic ...
+Starting design annotation....
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+ 
+Constraint Summary:
+   Total number of constraints: 2
+   Total number of constraints dropped: 0
+ 
+Writing output file 'PoF_TMR_impl_1_syn.udb'.
+POSTSYN finished successfully.
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 46 MB
+Checksum -- postsyn: ee05a6e94dd43ca724070ac920baeabfa00cd40e
+
+
+
+pnmainc -log pnmain "PoF_TMR_impl_1_map.tcl"
+map:  version Radiant Software (64-bit) 2025.2.0.48.0
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:   map -pdc Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/PoF_TMR_A1_Pin_Constraint.pdc -i PoF_TMR_impl_1_syn.udb -o PoF_TMR_impl_1_map.udb -mp PoF_TMR_impl_1.mrp -hierrpt -gui -msgset Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml 
+
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.2/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+
+
+
+Design:  PoF_TMR_Top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:  High-Performance_1.2V
+
+INFO <52291016> - Port 'oLED0' is located on BB_OD pad '39' and defined in rgb_2_gpio attribute. Its IO buffer is mapped to BB_OD accordingly. Please notice PULLMODE is not applicable to BB_OD.
+INFO <52291016> - Port 'oLED1' is located on BB_OD pad '40' and defined in rgb_2_gpio attribute. Its IO buffer is mapped to BB_OD accordingly. Please notice PULLMODE is not applicable to BB_OD.
+Running general design DRC...
+
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+
+
+
+Design Summary:
+   Number of slice registers: 392 out of  5280 (7%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           1034 out of  5280 (20%)
+      Number of logic LUT4s:             649
+      Number of inserted feedthru LUT4s:  68
+      Number of replicated LUT4s:         17
+      Number of ripple logic:            150 (300 LUT4s)
+   Number of IO sites used:   13 out of 39 (33%)
+      Number of IO sites used for general PIO: 11
+      Number of IO sites used for I3C: 0 out of 2 (0%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for PIO+I3C: 11 out of 36 (31%)
+      Number of IO sites used for OD+RGB IO buffers: 2 out of 3 (67%)
+      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
+       see TN1288 iCE40 LED Driver Usage Guide)
+      Number of IO sites used for PIO+I3C+OD+RGB: 13 out of 39 (33%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             1 out of 30 (3%)
+   Number of PLLs:             1 out of 1 (100%)
+   Number of Clocks:  2
+      Net clk_48MHz_Global: 369 loads, 369 rising, 0 falling (Driver: Pin ic_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net iClk_12MHz_c: 1 loads, 1 rising, 0 falling (Driver: Port iClk_12MHz)
+   Number of Clock Enables:  32
+      Net VCC_net: 2 loads, 0 SLICEs
+      Net n723: 16 loads, 16 SLICEs
+      Net myUART.n8: 13 loads, 13 SLICEs
+      Net myUART.n12033: 1 loads, 1 SLICEs
+      Net myUART.n3924: 16 loads, 16 SLICEs
+      Net myUART.n7: 8 loads, 8 SLICEs
+      Net myUART.n11983: 1 loads, 1 SLICEs
+      Net myUART.n5488: 1 loads, 1 SLICEs
+      Net myUART.n375: 33 loads, 33 SLICEs
+      Net myUART.n14813: 1 loads, 1 SLICEs
+      Net myUART.uart_u1.n21: 8 loads, 8 SLICEs
+      Net myUART.uart_u1.n7558: 1 loads, 1 SLICEs
+      Net myUART.uart_u1.n5521: 8 loads, 8 SLICEs
+      Net myUART.uart_u1.n5498: 1 loads, 1 SLICEs
+      Net n3922: 15 loads, 15 SLICEs
+      Net n1376: 8 loads, 8 SLICEs
+      Net n5337: 32 loads, 32 SLICEs
+      Net myTMP117.n4451: 8 loads, 8 SLICEs
+      Net n4909: 1 loads, 1 SLICEs
+      Net myAD7988.n3926: 16 loads, 16 SLICEs
+      Net myAD7988.n5327: 26 loads, 26 SLICEs
+      Net myAD7988.n5338: 8 loads, 8 SLICEs
+      Net myAD7988.n5500: 1 loads, 1 SLICEs
+      Net myAD7988.n5486: 8 loads, 8 SLICEs
+      Net myAD7988.n8: 1 loads, 1 SLICEs
+      Net myAD7988.n11843: 1 loads, 1 SLICEs
+      Net myAD7988.n4925: 1 loads, 1 SLICEs
+      Net myAD7988.u1_ad7988.n5328: 8 loads, 8 SLICEs
+      Net myFIFO.lscc_fifo_inst.fifo0._FABRIC.u_fifo.rd_addr_nxt_w_0__N_381: 2 loads, 2 SLICEs
+      Net myFIFO.lscc_fifo_inst.fifo0._FABRIC.u_fifo.rd_fifo_en_w: 1 loads, 0 SLICEs
+      Net myFIFO.lscc_fifo_inst.fifo0._FABRIC.u_fifo.wr_fifo_en_w: 1 loads, 0 SLICEs
+      Net myFIFO.lscc_fifo_inst.fifo0._FABRIC.u_fifo.wr_addr_nxt_w_0__N_378: 2 loads, 2 SLICEs
+   Number of LSRs:  3
+      Net rst_n_N_398: 303 loads, 303 SLICEs
+      Net myUART.n5501: 4 loads, 4 SLICEs
+      Net rst_n_N_392: 18 loads, 18 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net rst_n_N_398: 303 loads
+      Net myTMP117.step_i[2]: 58 loads
+      Net myTMP117.step_i[3]: 55 loads
+      Net myTMP117.step_i[1]: 54 loads
+      Net tick_250KHz: 45 loads
+      Net myTMP117.step_i[0]: 44 loads
+      Net myUART.cntFSM[0]: 35 loads
+      Net myUART.n375: 34 loads
+      Net n63: 34 loads
+      Net myUART.n12704: 33 loads
+Running physical design DRC...
+
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+ 
+
+
+   Number of warnings:  6
+   Number of criticals: 0
+   Number of errors:    0
+
+Constraint Summary:
+   Total number of constraints: 42
+   Total number of constraints dropped: 0
+
+
+Total CPU Time: 0 secs  
+Total REAL Time: 0 secs  
+Peak Memory Usage: 80 MB
+
+Checksum -- map: 40957b481b461270bd3780ad16d9ecaeba2ab14b
+**** CMD map_run - CPU/Elapsed: 0 secs / 0 secs , MEM/Increased: 57.967 Mb/ 0.111 Mb, DATE: 14:35:48 07/02/26
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /0 secs 
+
+pnmainc -log pnmain "PoF_TMR_impl_1_par.tcl"
+
+PAR: Place And Route Radiant Software (64-bit) 2025.2.0.48.0.
+PARed on: Thu Jul  2 14:35:50 2026
+
+Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
+	PoF_TMR_impl_1_map.udb PoF_TMR_impl_1_par.dir/5_1.udb 
+
+Loading PoF_TMR_impl_1_map.udb ...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.2/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+
+
+
+Design:  PoF_TMR_Top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+WARNING <77001032> - Unable to find the instance/port 'iCmd_RxD' in the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iTMP117_ALERT' in the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iSPI_SDO' in the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]', the locate object is not specified
+
+Constraint Summary
+   Total number of constraints: 18
+   Total number of constraints dropped: 3
+   Dropped constraints are:
+     ldc_set_location -site {34} [get_ports iCmd_RxD]
+     ldc_set_location -site {4} [get_ports iTMP117_ALERT]
+     ldc_set_location -site {27} [get_ports iSPI_SDO]
+
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+WARNING <77001032> - Unable to find the instance/port 'iCmd_RxD' in the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iTMP117_ALERT' in the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iSPI_SDO' in the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]', the locate object is not specified
+
+WARNING: Database constraint "create_generated_clock -name {clk_48MHz_Global} -source [get_pins ic_pll.lscc_pll_inst.u_PLL_B/REFERENCECLK] -multiply_by 4 [get_pins ic_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
+WARNING <71003020> - Top module port 'iSPI_SDO' does not connect to anything.
+WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
+Number of Signals: 1691
+Number of Connections: 4436
+Device utilization summary:
+
+   SLICE (est.)     546/2640         21% used
+     LUT           1034/5280         20% used
+     REG            392/5280          7% used
+   PIO               11/56           20% used
+                     11/36           30% bonded
+   IOLOGIC            0/56            0% used
+   DSP                0/8             0% used
+   I2C                0/2             0% used
+   HFOSC              0/1             0% used
+   LFOSC              0/1             0% used
+   LEDDA_IP           0/1             0% used
+   RGBA_DRV           0/1             0% used
+   FILTER             0/2             0% used
+   SRAM               0/4             0% used
+   WARMBOOT           0/1             0% used
+   SPI                0/2             0% used
+   EBR                1/30            3% used
+   PLL                1/1           100% used
+   RGBOUTBUF          0/3             0% used
+   I3C                0/2             0% used
+   OPENDRAIN          2/3            67% used
+
+Pin Constraint Summary:
+   11 out of 11 pins locked (100% locked).
+
+Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
+
+
+................
+Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 0 secs 
+
+Starting Placer Phase 1. CPU time: 1 secs , REAL time: 0 secs 
+..  ..
+....................
+
+Placer score = 153503.
+
+Device SLICE utilization summary after final SLICE packing:
+   SLICE            543/2640         20% used
+
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+WARNING <77001032> - Unable to find the instance/port 'iCmd_RxD' in the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iTMP117_ALERT' in the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iSPI_SDO' in the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]', the locate object is not specified
+Finished Placer Phase 1. CPU time: 6 secs , REAL time: 7 secs 
+
+Starting Placer Phase 2.
+.
+
+Placer score =  169612
+Finished Placer Phase 2.  CPU time: 6 secs , REAL time: 7 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clocks :
+  PRIMARY "clk_48MHz_Global" from OUTGLOBAL on comp "ic_pll.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 217, ce load = 0, sr load = 0
+  PRIMARY "rst_n_N_398" from F1 on comp "SLICE_547" on site "R13C30B", clk load = 0, ce load = 0, sr load = 170
+
+  PRIMARY  : 2 out of 8 (25%)
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   11 out of 56 (19.6%) I/O sites used.
+   11 out of 36 (30.6%) bonded I/O sites used.
+   Number of I/O components: 11; differential: 0
+   Number of Vref pins used: 0
+
+I/O Bank Usage Summary:
++----------+---------------+------------+------------+------------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+---------------+------------+------------+------------+
+| 0        | 4 / 14 ( 28%) | 1.8V       |            |            |
+| 1        | 6 / 14 ( 42%) | 1.8V       |            |            |
+| 2        | 1 / 8 ( 12%)  | 1.8V       |            |            |
++----------+---------------+------------+------------+------------+
+
+Total Placer CPU time: 6 secs , REAL time: 7 secs 
+
+
+Checksum -- place: 7111dbf31182392a3b8c67b3ecb9f4862394c8ec
+Writing design to file PoF_TMR_impl_1_par.dir/5_1.udb ...
+
+WARNING <77001032> - Unable to find the instance/port 'iCmd_RxD' in the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iTMP117_ALERT' in the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]', the locate object is not specified
+WARNING <77001032> - Unable to find the instance/port 'iSPI_SDO' in the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]', the locate object is not specified
+
+Start NBR router at 14:35:57 07/02/26
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in timing report. You should always run the timing    
+      tool to verify your design.                                
+*****************************************************************
+
+Starting routing resource preassignment
+Preassignment Summary:
+--------------------------------------------------------------------------------
+1 connections routed with dedicated routing resources
+2 global clock signals routed
+1061 connections routed (of 4044 total) (26.24%)
+---------------------------------------------------------
+Clock routing summary:
+Primary clocks (2 used out of 8 available):
+#4  Signal "rst_n_N_398"
+       Control loads: 170   out of   170 routed (100.00%)
+#7  Signal "clk_48MHz_Global"
+       Clock   loads: 217   out of   217 routed (100.00%)
+Other clocks:
+    Signal "iClk_12MHz_c"
+       Clock   loads: 0     out of     1 routed (  0.00%)
+    Signal "ic_pll.lscc_pll_inst.feedback_w"
+       Clock   loads: 1     out of     1 routed (100.00%)
+---------------------------------------------------------
+--------------------------------------------------------------------------------
+Completed routing resource preassignment
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+    TimerIf::skewscore 0
+
+Start NBR section for initial routing at 14:35:58 07/02/26
+Level 4, iteration 1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Routing in Serial Mode ......
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+72(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+
+Info: Initial congestion level at 75.00% usage is 0
+Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 14:35:59 07/02/26
+Level 4, iteration 1
+9(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+Level 4, iteration 2
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 3 secs 
+Level 4, iteration 3
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 3 secs 
+
+Start NBR section for post-routing at 14:36:00 07/02/26
+
+End NBR router with 0 unrouted connection(s)
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+Changing speed to m;   changing temperature to -40
+Changing speed to 6;   changing temperature to 100
+
+Checksum -- route: 2cdaf97c690acbac64ea4bafd05ed4885cdc982
+
+Total Router CPU time 2 secs , REAL time: 3 secs 
+Completely routed.
+End of route.  4044 routed (100.00%); 0 unrouted.
+
+Writing design to file PoF_TMR_impl_1_par.dir/5_1.udb ...
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
+PAR_SUMMARY::Estimated worst slack<hold/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<hold/<ns>> = <n/a>
+PAR_SUMMARY::Number of errors = 0
+
+Note: user must run 'timing' for timing closure signoff.
+
+Total CPU  Time: 9 secs 
+Total REAL Time: 10 secs 
+Peak Memory Usage: 143.80 MB
+
+
+par done!
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
+**** CMD par_run - CPU/Elapsed: 0 secs / 10 secs , MEM/Increased: 58.118 Mb/ 0.143 Mb, DATE: 14:36:00 07/02/26
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /10 secs 
+
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "PoF_TMR_impl_1.twr" "PoF_TMR_impl_1.udb" 
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt PoF_TMR_impl_1.twr PoF_TMR_impl_1.udb -gui -msgset Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml
+Starting design reading...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.2/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Loading udb::Database ...
+Design:  PoF_TMR_Top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+
+
+
+Successfully loading udb, 0.05 seconds
+
+Initializing timer
+Starting design annotation....
+WARNING <70001944> - No source clock for
+	generated clock	create_generated_clock -name {clk_48MHz_Global} -source [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {ic_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+High-Performance_1.2V
+
+Starting full timing analysis...
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Connections ignored  217  counted  3703  covered  0
+Changing speed to m;   changing temperature to -40
+
+STA Runtime and Peak Memory Usage :
+Total CPU Time: 1 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 109 MB
+
+ 1.244095s wall, 1.031250s user + 0.109375s system = 1.140625s CPU (91.7%)
+
+
+tmcheck -par "PoF_TMR_impl_1.par"  
+
+pnmainc -log pnmain "PoF_TMR_impl_1_bit.tcl"
+Loading PoF_TMR_impl_1.udb ...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2025.2/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+
+
+
+Design:  PoF_TMR_Top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+WARNING <77001032> - bitgen: Unable to find the instance/port 'iCmd_RxD' in the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]'
+
+WARNING <77001031> - bitgen: In the constraint 'ldc_set_location -site {34} [get_ports iCmd_RxD]', the locate object is not specified
+
+WARNING <77001032> - bitgen: Unable to find the instance/port 'iTMP117_ALERT' in the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]'
+
+WARNING <77001031> - bitgen: In the constraint 'ldc_set_location -site {4} [get_ports iTMP117_ALERT]', the locate object is not specified
+
+WARNING <77001032> - bitgen: Unable to find the instance/port 'iSPI_SDO' in the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]'
+
+WARNING <77001031> - bitgen: In the constraint 'ldc_set_location -site {27} [get_ports iSPI_SDO]', the locate object is not specified
+
+
+Constraint Summary
+   Total number of constraints: 18
+   Total number of constraints dropped: 3
+   Dropped constraints are:
+     ldc_set_location -site {34} [get_ports iCmd_RxD]
+     ldc_set_location -site {4} [get_ports iTMP117_ALERT]
+     ldc_set_location -site {27} [get_ports iSPI_SDO]
+
+Successfully loading design udb and device data from disks and to up-layer in CPU time: 0 secs , REAL time: 0 secs 
+
+
+
+BITGEN: Bitstream Generator Radiant Software (64-bit) 2025.2.0.48.0
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+Saving bit stream in "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/impl_1/PoF_TMR_impl_1.bin".
+INFO <1081100> - Bitstream authenticated.
+Bitstream generation complete!
+
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 128 MB
+
+**** CMD bit_generate - CPU/Elapsed: 0 secs / 0 secs , MEM/Increased: 57.762 Mb/ 0.127 Mb, DATE: 14:36:05 07/02/26
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /0 secs 

@@ -1,0 +1,279 @@
+<HTML>
+<HEAD>
+<TITLE>PAD Specification File</TITLE>
+<link href="file:///C:/lscc/radiant/2025.2/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/2025.2/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" onclick="hideTocList()"><PRE>
+<A name="Pad"></A>PAD Specification File
+***************************
+
+PART TYPE:        iCE40UP5K
+Performance Grade:      High-Performance_1.2V
+PACKAGE:          SG48
+Package Status:                     Preliminary    Version 1.5
+
+Thu Jul  2 14:35:57 2026
+
+Pinout by Port Name:
++--------------+----------+---------------+-------+-----------------------------------------+
+| Port Name    | Pin/Bank | Buffer Type   | Site  | Properties                              |
++--------------+----------+---------------+-------+-----------------------------------------+
+| iClk_12MHz   | 20/1     | LVCMOS18_IN   | PL20B | DRIVE:NA IO_TYPE:LVCMOS18 PULLMODE:NA   |
+| ioTMP117_SDA | 6/1      | LVCMOS18_BIDI | PL14B | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oData_TxD    | 13/1     | LVCMOS18_OUT  | PL20A | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oFIFOWrFps   | 23/0     | LVCMOS18_OUT  | PR20A | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oFIFO_isFull | 12/1     | LVCMOS18_OUT  | PL19A | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oLED0        | 39/0     | OPENDRAIN_OUT | PR5A  | DRIVE:4mA                               |
+| oLED1        | 40/0     | OPENDRAIN_OUT | PR6A  | DRIVE:4mA                               |
+| oLED2        | 19/1     | LVCMOS18_OUT  | PL22B | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oSPI_CNV     | 28/0     | LVCMOS18_OUT  | PR18A | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oSPI_SCK     | 26/0     | LVCMOS18_OUT  | PR19A | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oSPI_SDI     | 25/0     | LVCMOS18_OUT  | PR20B | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oTMP117_SCL  | 3/2      | LVCMOS18_OUT  | PL10B | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
+| oTxFps       | 18/1     | LVCMOS18_OUT  | PL23B | DRIVE:4mA IO_TYPE:LVCMOS18 PULLMODE:NA  |
++--------------+----------+---------------+-------+-----------------------------------------+
+
+Vccio by Bank:
++------+-------+
+| Bank | Vccio |
++------+-------+
+| 0    | 1.8V  |
+| 1    | 1.8V  |
+| 2    | 1.8V  |
++------+-------+
+
+<A name="pad_pin"></A><B><U><big>Pinout by Pin Number:</big></U></B>
++----------+---------------------+------------+---------------+-------+------------------+
+| Pin/Bank | Pin Info            | Constraint | Buffer Type   | Site  | Dual Function    |
++----------+---------------------+------------+---------------+-------+------------------+
+| 2/2      |     unused, PULL:UP |            |               | PL9A  |                  |
+| 3/2      | oTMP117_SCL         | LOCATED    | LVCMOS18_OUT  | PL10B |                  |
+| 4/2      |     unused, PULL:UP |            |               | PL10A |                  |
+| 6/1      | ioTMP117_SDA        | LOCATED    | LVCMOS18_BIDI | PL14B |                  |
+| 9/1      |     unused, PULL:UP |            |               | PL16A |                  |
+| 10/1     |     unused, PULL:UP |            |               | PL17A |                  |
+| 11/1     |     unused, PULL:UP |            |               | PL18A |                  |
+| 12/1     | oFIFO_isFull        | LOCATED    | LVCMOS18_OUT  | PL19A |                  |
+| 13/1     | oData_TxD           | LOCATED    | LVCMOS18_OUT  | PL20A |                  |
+| 14/1     |     unused, PULL:UP |            |               | PL24A | SPI_SO           |
+| 15/1     |     unused, PULL:UP |            |               | PL25A | SPISCK           |
+| 16/1     |     unused, PULL:UP |            |               | PL25B | SPI_SS           |
+| 17/1     |     unused, PULL:UP |            |               | PL24B | SPI_SI           |
+| 18/1     | oTxFps              | LOCATED    | LVCMOS18_OUT  | PL23B |                  |
+| 19/1     | oLED2               | LOCATED    | LVCMOS18_OUT  | PL22B |                  |
+| 20/1     | iClk_12MHz          | LOCATED    | LVCMOS18_IN   | PL20B | PCLKT1_0         |
+| 21/1     |     unused, PULL:UP |            |               | PL19B |                  |
+| 23/0     | oFIFOWrFps          | LOCATED    | LVCMOS18_OUT  | PR20A |                  |
+| 25/0     | oSPI_SDI            | LOCATED    | LVCMOS18_OUT  | PR20B |                  |
+| 26/0     | oSPI_SCK            | LOCATED    | LVCMOS18_OUT  | PR19A |                  |
+| 27/0     |     unused, PULL:UP |            |               | PR19B |                  |
+| 28/0     | oSPI_CNV            | LOCATED    | LVCMOS18_OUT  | PR18A |                  |
+| 31/0     |     unused, PULL:UP |            |               | PR17B |                  |
+| 32/0     |     unused, PULL:UP |            |               | PR17A |                  |
+| 34/0     |     unused, PULL:UP |            |               | PR14B |                  |
+| 35/0     |     unused, PULL:UP |            |               | PR13B | GPLL_IN/PCLKT0_1 |
+| 36/0     |     unused, PULL:UP |            |               | PR10B |                  |
+| 37/0     |     unused, PULL:UP |            |               | PR14A | PCLKT0_0         |
+| 38/0     |     unused, PULL:UP |            |               | PR9B  |                  |
+| 39/0     | oLED0               | LOCATED    | OPENDRAIN_OUT | PR5A  | RGB0             |
+| 40/0     | oLED1               | LOCATED    | OPENDRAIN_OUT | PR6A  | RGB1             |
+| 41/0     |                     |            |               | PR7A  | RGB2             |
+| 42/0     |     unused, PULL:UP |            |               | PR9A  |                  |
+| 43/0     |     unused, PULL:UP |            |               | PR10A |                  |
+| 44/2     |     unused, PULL:UP |            |               | PL7B  | PCLKT2_0         |
+| 45/2     |     unused, PULL:UP |            |               | PL8B  |                  |
+| 46/2     |     unused, PULL:UP |            |               | PL6A  |                  |
+| 47/2     |     unused, PULL:UP |            |               | PL7A  |                  |
+| 48/2     |     unused, PULL:UP |            |               | PL8A  |                  |
+| PL6B/2   |     unused, PULL:UP |            |               | PL6B  |                  |
+| PL9B/2   |     unused, PULL:UP |            |               | PL9B  |                  |
+| PL13A/1  |     unused, PULL:UP |            |               | PL13A |                  |
+| PL13B/1  |     unused, PULL:UP |            |               | PL13B | PCLKT1_2         |
+| PL14A/1  |     unused, PULL:UP |            |               | PL14A | PCLKT1_1         |
+| PL15A/1  |     unused, PULL:UP |            |               | PL15A |                  |
+| PL15B/1  |     unused, PULL:UP |            |               | PL15B |                  |
+| PL16B/1  |     unused, PULL:UP |            |               | PL16B |                  |
+| PL17B/1  |     unused, PULL:UP |            |               | PL17B |                  |
+| PL18B/1  |     unused, PULL:UP |            |               | PL18B |                  |
+| PL21A/1  |     unused, PULL:UP |            |               | PL21A |                  |
+| PL21B/1  |     unused, PULL:UP |            |               | PL21B |                  |
+| PL22A/1  |     unused, PULL:UP |            |               | PL22A |                  |
+| PL23A/1  |     unused, PULL:UP |            |               | PL23A |                  |
+| PR13A/0  |     unused, PULL:UP |            |               | PR13A |                  |
+| PR18B/0  |     unused, PULL:UP |            |               | PR18B |                  |
+| PR22A/0  |     unused, PULL:UP |            |               | PR22A |                  |
++----------+---------------------+------------+---------------+-------+------------------+
+
+
+Locate Constraints for each Pin: 
+
+ldc_set_location -site {20} [ get_ports {iClk_12MHz} ]
+ldc_set_location -site {6} [ get_ports {ioTMP117_SDA} ]
+ldc_set_location -site {13} [ get_ports {oData_TxD} ]
+ldc_set_location -site {23} [ get_ports {oFIFOWrFps} ]
+ldc_set_location -site {12} [ get_ports {oFIFO_isFull} ]
+ldc_set_location -site {19} [ get_ports {oLED2} ]
+ldc_set_location -site {28} [ get_ports {oSPI_CNV} ]
+ldc_set_location -site {26} [ get_ports {oSPI_SCK} ]
+ldc_set_location -site {25} [ get_ports {oSPI_SDI} ]
+ldc_set_location -site {3} [ get_ports {oTMP117_SCL} ]
+ldc_set_location -site {18} [ get_ports {oTxFps} ]
+
+
+
+
+
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Thu Jul  2 14:35:57 2026
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#pad_pin>Pinout by Pin Number</A></LI>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+  var funScroll = function() {
+    var top = document.body.scrollTop;
+    if (top == 0) {
+      scrollStep = 0;
+      return;
+    }
+    if (scrollStep == 0)
+      scrollStep = top/20 + 1;
+    top -= scrollStep;
+    if (top < 0)
+      top = 0;
+    document.body.scrollTop = top;
+    requestAnimationFrame(funScroll);
+  };
+  funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+  var backToTop = document.getElementById('back_to_top')
+  if (document.body.scrollTop > 0) {
+    backToTop.style.display = 'block';
+  } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+  bottom:20px; right:20px;
+  width:30px; height:30px;
+  font-size: 20px;
+  padding: 2px 5px 2px 5px;
+  position:fixed;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+  display:none;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+  outline-width:0px;
+}
+</style>
+
+</BODY>
+

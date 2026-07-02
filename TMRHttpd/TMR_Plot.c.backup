@@ -28,7 +28,6 @@
 #define SAMPLES (256)
 typedef struct {
   char *file_name;
-  int fd;
   FILE *fp;
   double buf[SAMPLES];
   int pos;
@@ -83,12 +82,11 @@ int main(void) {
   setvbuf(gp, NULL, _IONBF, 0);
 
   fprintf(gp,
-          "set term qt noraise title 'Real-time curve plotting of TMR Phase "
-          "A,B,C'\n" // The plot is updated in the background.
+          "set term qt noraise title 'Real-time curve plotting of TMR Phase A,B,C'\n" // The plot is updated in the background.
           "set title '3-Phases Current Monitoring Curve' font 'Arial,20' \n"
           "set xlabel 'Sample/Time'\n"
           "set ylabel 'Value/Current'\n"
-          "set yrange [-100:66666]\n"
+          "set yrange [-10:10]\n"
           "unset autoscale\n"
           "set key top left\n"
           "set style line 1 lc rgb '#FF0000' lw 2\n"
@@ -100,8 +98,8 @@ int main(void) {
 
   printf("start to open fifo...\n");
   // open FIFO for reading.
-  for (i = 0; i < 1 /*3*/; i++) {
-    printf("%s\n", channels[i].file_name);
+  for (i = 0; i < 1/*3*/; i++) {
+    printf("%s\n",channels[i].file_name);
     channels[i].fp = fopen(channels[i].file_name, "r");
     if (!channels[i].fp) {
       fprintf(stderr, "Error opening file %s %s.\n", channels[i].file_name,
@@ -110,6 +108,7 @@ int main(void) {
     }
   }
 
+  printf("open fifo success, start to plot...\n");
   while (!g_Exit) {
 
     // adjust xrange.
@@ -120,32 +119,30 @@ int main(void) {
                 "     '-' title 'Phase C' with lines ls 3\n");
 
     // read data from FIFO.
-    for (i = 0; i < 3; i++) {
-      float phase_value = -10.0f;
-      if (channels[i].fp) {
-        size_t byte_read =
-            fread(&phase_value, sizeof(float), 1, channels[i].fp);
-        if (byte_read != 1) {
-          if (feof(channels[i].fp)) {
-            fprintf(stderr, "Channel %d, End of file reached %s\n", i,
-                    channels[i].file_name);
-            // try to open again.
-            for (i = 0; i < 3; i++) {
-              channels[i].fd =
-                  open(channels[i].file_name, O_RDONLY | O_NONBLOCK);
-              if (channels[i].fd > 0) {
-                channels[i].fp = fdopen(channels[i].fd, "r");
-              }
+    for (i = 0; i < 1/*3*/; i++) {
+      float phase_value;
+      size_t byte_read = fread(&phase_value, sizeof(float), 1, channels[i].fp);
+      if (byte_read != 1) {
+        if (feof(channels[i].fp)) {
+          fprintf(stderr, "Channel %d, End of file reached %s\n", i,
+                  channels[i].file_name);
+          // try to open again.
+          for (i = 0; i < 1/*3*/; i++) {
+            channels[i].fp = fopen(channels[i].file_name, "r");
+            if (!channels[i].fp) {
+              fprintf(stderr, "Error opening file %s %s.\n",
+                      channels[i].file_name, strerror(errno));
+              return -1;
             }
-          } else {
-            perror("fread()");
           }
+        } else {
+          perror("fread()");
         }
+      } else {
+        push(&channels[i], phase_value);
+        send_series(gp, &channels[i], n);
+        printf("Channel %d, get new value: %.2f\n", i, phase_value);
       }
-
-      push(&channels[i], phase_value);
-      send_series(gp, &channels[i], n);
-      printf("Channel %d, get new value: %.2f\n", i, phase_value);
     }
     n++;
 

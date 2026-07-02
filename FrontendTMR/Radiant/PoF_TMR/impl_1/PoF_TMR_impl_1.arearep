@@ -1,0 +1,138 @@
+----------------------------------------------------------------------
+Report for cell PoF_TMR_Top.TECH
+Register bits:  392 of 5280 (7.424%)
+I/O cells:      12
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               BB_B         1          100.0
+                              EBR_B         1          100.0
+                               CCU2       150          100.0
+                            FD1P3XZ       392          100.0
+                                 IB         1          100.0
+                               LUT4       648          100.0
+                                 OB        11          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                    ZAD7988_Adapter         1
+                 ZAD7988_Controller         1
+                              ZFIFO         1
+ZFIFO_ipgen_lscc_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+ZFIFO_ipgen_lscc_fifo_main(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+                               ZPLL         1
+ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                 ZTMP117_Controller         1
+                      ZUART_Adapter         1
+          ZUART_Tx(Freq_divider=12)         1
+                              TOTAL      1216
+----------------------------------------------------------------------
+Report for cell ZUART_Adapter.v1
+Instance Path : myUART
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        50           33.3
+                            FD1P3XZ       122           31.1
+                               LUT4       189           29.2
+SUB MODULES
+          ZUART_Tx(Freq_divider=12)         1
+                              TOTAL       362
+----------------------------------------------------------------------
+Report for cell ZUART_Tx(Freq_divider=12).v1
+Instance Path : myUART.uart_u1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        19           12.7
+                            FD1P3XZ        34            8.7
+                               LUT4        66           10.2
+                              TOTAL       119
+----------------------------------------------------------------------
+Report for cell ZTMP117_Controller.v1
+Instance Path : myTMP117
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               BB_B         1          100.0
+                                FA2        19           12.7
+                            FD1P3XZ        44           11.2
+                               LUT4       222           34.3
+                              TOTAL       286
+----------------------------------------------------------------------
+Report for cell ZPLL.v1
+Instance Path : ic_pll
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+SUB MODULES
+ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000").v1
+Instance Path : ic_pll.lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell ZAD7988_Adapter.v1
+Instance Path : myAD7988
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        42           28.0
+                            FD1P3XZ        96           24.5
+                               LUT4       121           18.7
+SUB MODULES
+                 ZAD7988_Controller         1
+                              TOTAL       260
+----------------------------------------------------------------------
+Report for cell ZAD7988_Controller.v1
+Instance Path : myAD7988.u1_ad7988
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        10            6.7
+                            FD1P3XZ        19            4.8
+                               LUT4        39            6.0
+                              TOTAL        68
+----------------------------------------------------------------------
+Report for cell ZFIFO.v1
+Instance Path : myFIFO
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                            FD1P3XZ        39            9.9
+                               LUT4        35            5.4
+SUB MODULES
+ZFIFO_ipgen_lscc_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+ZFIFO_ipgen_lscc_fifo_main(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+                              TOTAL        78
+----------------------------------------------------------------------
+Report for cell ZFIFO_ipgen_lscc_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP").v1
+Instance Path : myFIFO.lscc_fifo_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                            FD1P3XZ        39            9.9
+                               LUT4        35            5.4
+SUB MODULES
+ZFIFO_ipgen_lscc_fifo_main(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+                              TOTAL        77
+----------------------------------------------------------------------
+Report for cell ZFIFO_ipgen_lscc_fifo_main(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP").v1
+Instance Path : myFIFO.lscc_fifo_inst.fifo0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                            FD1P3XZ        39            9.9
+                               LUT4        35            5.4
+SUB MODULES
+ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP")         1
+                              TOTAL        76
+----------------------------------------------------------------------
+Report for cell ZFIFO_ipgen_lscc_soft_fifo(ADDRESS_DEPTH=2,ADDRESS_WIDTH=1,DATA_WIDTH=16,ENABLE_ALMOST_FULL_FLAG="FALSE",ENABLE_ALMOST_EMPTY_FLAG="FALSE",ALMOST_FULL_ASSERT_LVL=1,ALMOST_FULL_DEASSERT_LVL=1,ALMOST_EMPTY_DEASSERT_LVL=1,FAMILY="iCE40UP").v1
+Instance Path : myFIFO.lscc_fifo_inst.fifo0._FABRIC.u_fifo
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                            FD1P3XZ        39            9.9
+                               LUT4        35            5.4
+                              TOTAL        75

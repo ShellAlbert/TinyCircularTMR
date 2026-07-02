@@ -32,6 +32,70 @@ int simulation_mode = 0;
 int tcp_dump = 0;
 int plot_dump = 0;
 
+#define UART_BUF_SIZE 4096
+#define SYNC_HEADER 0x55
+
+// Circular Buffer Structure
+typedef struct {
+  unsigned char buffer[UART_BUF_SIZE];
+  int head;  // Write index
+  int tail;  // Read index
+  int count; // Number of bytes in buffer
+} RingBuffer_t;
+// Thread-safe or Interrupt-safe add (simplified for single-thread example)
+void rb_put(RingBuffer_t *rb, unsigned char data) {
+  if (rb->count >= UART_BUF_SIZE) {
+    // Buffer overflow: Decide strategy.
+    // For high speed, usually overwrite oldest or drop new.
+    // Here we drop new to keep consistency, or you could advance tail.
+    return;
+  }
+  rb->buffer[rb->head] = data;
+  rb->head = (rb->head + 1) % UART_BUF_SIZE;
+  rb->count++;
+}
+void rb_mput(RingBuffer_t *rb, unsigned char *data, unsigned int size) {
+  if (rb == NULL || data == NULL || size == 0) {
+    return;
+  }
+
+  for (unsigned int i = 0; i < size; i++) {
+    // Check if buffer is full
+    if (rb->count >= UART_BUF_SIZE) {
+      // Buffer overflow: Drop the remaining new data to keep consistency.
+      // Alternatively, you could break here to stop writing further.
+      return;
+    }
+
+    // Write single byte
+    rb->buffer[rb->head] = data[i];
+
+    // Advance head index with wrap-around
+    rb->head = (rb->head + 1) % UART_BUF_SIZE;
+
+    // Increment count
+    rb->count++;
+  }
+}
+// Get a byte from circular buffer without removing it (peek)
+// Returns -1 if empty
+int rb_peek(RingBuffer_t *rb, int offset) {
+  if (offset >= rb->count) {
+    return -1;
+  }
+  int index = (rb->tail + offset) % UART_BUF_SIZE;
+  return rb->buffer[index];
+}
+
+// Remove n bytes from the buffer
+void rb_consume(RingBuffer_t *rb, int n) {
+  if (n > rb->count) {
+    n = rb->count;
+  }
+  rb->tail = (rb->tail + n) % UART_BUF_SIZE;
+  rb->count -= n;
+}
+
 // using rename strategy to avoid TMR_httpd.bin read empty file.
 // rename and mv is atomic operation in linux.
 typedef struct {
@@ -41,8 +105,7 @@ typedef struct {
   const char *plot_fifo;     // for local gnuplot.
 
   FILE *fp_http;
-  FILE *fp_plot;
-  int fd_plot; //NON_BLOCK only valid in open()/write()/close() API layer.
+  int fd_plot; // NON_BLOCK only valid in open()/write()/close() API layer.
 } uart_config_t;
 
 // signal handler.
@@ -139,15 +202,13 @@ void *simulation_thread_func(void *arg) {
 
     // write to fifo for real-time plotting.
     if (plot_dump) {
-      if(config->fd_plot<0)
-      {
-        config->fd_plot=open(config->plot_fifo, O_WRONLY|O_NONBLOCK);
-      }else{
-        size_t ret=write(config->fd_plot,&phase_value,sizeof(phase_value));
-        if(ret<0)
-        {
+      if (config->fd_plot < 0) {
+        config->fd_plot = open(config->plot_fifo, O_WRONLY | O_NONBLOCK);
+      } else {
+        size_t ret = write(config->fd_plot, &phase_value, sizeof(phase_value));
+        if (ret < 0) {
           printf("write fifo failed, force to reopen.\n");
-          config->fd_plot=-1; 
+          config->fd_plot = -1;
         }
       }
     }
@@ -184,67 +245,21 @@ void *simulation_thread_func(void *arg) {
     usleep(1000 * 50);
   }
   fclose(config->fp_http);
-  fclose(config->fp_plot);
+  close(config->fd_plot);
   printf("[Thread] Finished for device: %s\n", config->device_path);
   pthread_exit(0);
 }
 //////////////////////////////////////////////////////////////////////////////
-#define UART_BUF_SIZE 4096
-#define SYNC_HEADER 0x55
-
-// Circular Buffer Structure
-typedef struct {
-    unsigned char buffer[UART_BUF_SIZE];
-    int head; // Write index
-    int tail; // Read index
-    int count; // Number of bytes in buffer
-} RingBuffer_t;
-// Thread-safe or Interrupt-safe add (simplified for single-thread example)
-void rb_put(RingBuffer_t *rb, unsigned char data) {
-  if (rb->count >= UART_BUF_SIZE) {
-      // Buffer overflow: Decide strategy. 
-      // For high speed, usually overwrite oldest or drop new. 
-      // Here we drop new to keep consistency, or you could advance tail.
-      return; 
-  }
-  rb->buffer[rb->head] = data;
-  rb->head = (rb->head + 1) % UART_BUF_SIZE;
-  rb->count++;
-}
-
-// Get a byte from circular buffer without removing it (peek)
-// Returns -1 if empty
-int rb_peek(RingBuffer_t *rb, int offset) {
-  if (offset >= rb->count) 
-  {
-    return -1;
-  }
-  int index = (rb->tail + offset) % UART_BUF_SIZE;
-  return rb->buffer[index];
-}
-
-// Remove n bytes from the buffer
-void rb_consume(RingBuffer_t *rb, int n) {
-  if (n > rb->count) 
-  {
-    n = rb->count;
-  }
-  rb->tail = (rb->tail + n) % UART_BUF_SIZE;
-  rb->count -= n;
-}
-
 // hardware thread function.
 void *hw_thread_func(void *arg) {
-  int fd;
+  int fd_uart;
   FILE *fp_tcp, *fp_plot;
-  RingBuffer_t rb={.head=0,.tail=0,.count=0};
-
   uart_config_t *config = (uart_config_t *)arg;
-  printf("[Thread] Starting for device: %s, dumping to: %s and %s.\n",
+  printf("[Thread] Starting for device: %s, dump to %s and %s.\n",
          config->device_path, config->http_file, config->plot_fifo);
 
   // open UART device file.
-  if ((fd = open(config->device_path, O_RDWR | O_NOCTTY | O_NONBLOCK)) < 0) {
+  if ((fd_uart = open(config->device_path, O_RDONLY | O_NOCTTY)) < 0) {
     // perror("Error opening UART");
     fprintf(stderr, "Error opening file %s, %s.\n", config->device_path,
             strerror(errno));
@@ -252,45 +267,120 @@ void *hw_thread_func(void *arg) {
   }
 
   // configure parameters.
-  if (setup_uart(fd, B4000000) != 0) {
+  if (setup_uart(fd_uart, B4000000) != 0) {
     fprintf(stderr, "Error setting 4000000 baudrate %s, %s.\n",
             config->device_path, strerror(errno));
-    close(fd);
+    close(fd_uart);
     pthread_exit(NULL);
   }
 
-  // open TCP file.
-  fp_tcp = fopen(config->http_file, "wb");
+  // open TCP temporary FIFO file.
+  fp_tcp = fopen(config->http_file_tmp, "wb");
   if (!fp_tcp) {
     // perror("Error opening output file");
-    fprintf(stderr, "Error opening file %s, %s.\n", config->http_file,
+    fprintf(stderr, "Error opening file %s, %s.\n", config->http_file_tmp,
             strerror(errno));
-    close(fd);
+    close(fd_uart);
     pthread_exit(NULL);
   }
 
-  // loop to read data.
-  char buffer[128];
-  ssize_t bytes_read;
-  while (1) {
-    // read data from UART.
-    bytes_read = read(fd, buffer, sizeof(buffer));
-    if (bytes_read > 0) {
-      // write data to tcp FIFO.
-      size_t wr_bytes1 = fwrite(buffer, 1, bytes_read, fp_tcp);
-      if (wr_bytes1 != (size_t)bytes_read) {
-        perror("Error writing to file");
-        break;
+  // create the FIFO if it doesn't exist
+  // mkfifo returns -1 if it already exists (EEXIST), which is fine.
+  if (plot_dump) {
+    if (mkfifo(config->plot_fifo, 0666) < 0) {
+      if (errno != EEXIST) {
+        perror("mkfifo plot_fifo failed");
+        // If it already exists, we can still proceed, so don't exit
+        // immediately. Check if it's actually a FIFO or just a regular file
+        // error.
+        pthread_exit(NULL);
       }
-      fflush(fp_tcp);
+    }
+  }
 
-      // write data to plot FIFO.
-      size_t wr_bytes2 = fwrite(buffer, 1, bytes_read, fp_plot);
-      if (wr_bytes2 != (size_t)bytes_read) {
-        perror("Error writing to file");
-        break;
+  char buffer[4096];
+  int buffer_len = 0;
+  // loop to read data.
+  while (!g_Exit) {
+    // read maximum bytes as possible as we can.
+    int bytes_available = sizeof(buffer) - buffer_len;
+    int bytes_read = read(fd_uart, buffer + buffer_len, bytes_available);
+    // printf("bytes_read:%d\n",bytes_read);
+    if (bytes_read > 0) {
+      buffer_len += bytes_read;
+
+      // start to parse buffer.
+      if (buffer_len < (4096 - 10)) {
+        continue; // more data is needed.
       }
-      fflush(fp_plot);
+
+      // seek valid sync header position.
+      int valid_index = -1;
+      for (int i = 0; i < 4; i++) {
+        if (buffer[i] == 0x55 && buffer[i + 4] == 0x55) {
+          valid_index = i;
+          break;
+        }
+      }
+      if (valid_index < 0) // seek sync header failed, reset.
+      {
+        buffer_len = 0;
+        continue;
+      }
+      // seek sync header success, continue to process.
+      // 55 XX XX XX : 4 bytes of each frame.
+      int loop_times = (buffer_len - valid_index) / 4;
+      int remain_bytes = (buffer_len - valid_index) % 4;
+      printf("loop times:%d, remain bytes:%d\n", loop_times, remain_bytes);
+      unsigned char *pData = (unsigned char *)(buffer + valid_index);
+      for (int i = 0; i < loop_times; i++, pData += 4) {
+        unsigned short high_bytes = ((unsigned short)pData[1] & 0xFF) << 8;
+        unsigned short low_bytes = (unsigned short)pData[2] & 0x00FF;
+        unsigned short TMR_Current_16bits = high_bytes | low_bytes;
+
+        printf("%04x %02x %02x %02x %02x\n", TMR_Current_16bits, pData[0],
+               pData[1], pData[2], pData[3]);
+
+        // write to fifo for real-time plotting.
+        if (plot_dump) {
+          if (config->fd_plot < 0) {
+            config->fd_plot =
+                open(config->plot_fifo, O_WRONLY | O_NONBLOCK | O_NOCTTY);
+          } else {
+            float tmr_current=TMR_Current_16bits;
+            size_t ret = write(config->fd_plot, &tmr_current,
+                               sizeof(tmr_current));
+            if (ret < 0) {
+              printf("write fifo failed, force to reopen.\n");
+              config->fd_plot = -1;
+            }
+          }
+        }
+      }
+      // after processing. move remain bytes to top.
+      if (remain_bytes > 0) {
+        memmove(buffer, buffer + valid_index + loop_times * 4, remain_bytes);
+        buffer_len = remain_bytes;
+      } else {
+        buffer_len = 0;
+      }
+
+      // write data to tcp FIFO.
+      // int wr_bytes1 = fwrite(buffer, 1, bytes_read, fp_tcp);
+      // printf("wr_bytes1=%d\n", wr_bytes1);
+      // if (wr_bytes1 != bytes_read) {
+      //   perror("Error writing to TCP FIFO file");
+      //   break;
+      // }
+      // fflush(fp_tcp);
+
+      // // write data to plot FIFO.
+      // size_t wr_bytes2 = fwrite(buffer, 1, bytes_read, fp_plot);
+      // if (wr_bytes2 != (size_t)bytes_read) {
+      //   perror("Error writing to Plot FIFO file");
+      //   break;
+      // }
+      // fflush(fp_plot);
     } else if (bytes_read < 0) {
       if (errno == EAGAIN || errno == EWOULDBLOCK) {
         // data is unavailable, call sleep() to prevent heavy CPU load.
@@ -300,24 +390,22 @@ void *hw_thread_func(void *arg) {
         perror("Error reading from UART");
         break;
       }
-    } else {
-      // bytes_read == 0, not happen normally.
+    } else { // bytes_read == 0, not happen normally.
       usleep(1000);
     }
   }
 
   fclose(fp_tcp);
-  fclose(fp_plot);
-  close(fd);
+  close(config->fd_plot);
+  close(fd_uart);
   printf("[Thread] Finished for device: %s\n", config->device_path);
   pthread_exit(NULL);
 }
 
 void print_usage(char *app_name) {
-  printf("Data Transfer UART -> Named FIFO %s\n", APP_VERSION);
+  printf("TMR Capture Program %s\n", APP_VERSION);
   printf("%s <options>\n", app_name);
   printf("<options> list:\n");
-  printf("-i <filename>  Write PID to the specified file.\n");
   printf("-s Simulation mode enabled, bypass the hardware.\n");
   printf("-t TCP dump enabled.\n");
   printf("-p Plot dump enabled.\n");
@@ -344,19 +432,16 @@ int main(int argc, char **argv) {
   pthread_t threads[3];
   uart_config_t configs[3] = {
       {"/dev/ttyUSB0", "/tmp/TMR_Phase_A.dat.tmp", "/tmp/TMR_Phase_A.dat",
-       "/tmp/TMR_Phase_A.fifo", 0, 0,-1},
+       "/tmp/TMR_Phase_A.fifo", 0, -1},
       {"/dev/ttyUSB1", "/tmp/TMR_Phase_B.dat.tmp", "/tmp/TMR_Phase_B.dat",
-       "/tmp/TMR_Phase_B.fifo", 0, 0,-1},
+       "/tmp/TMR_Phase_B.fifo", 0, -1},
       {"/dev/ttyUSB2", "/tmp/TMR_Phase_C.dat.tmp", "/tmp/TMR_Phase_C.dat",
-       "/tmp/TMR_Phase_C.fifo", 0, 0,-1}};
+       "/tmp/TMR_Phase_C.fifo", 0, -1}};
 
   // p: means parameter is necessary.
   // v: means no parameter.
-  while ((opt = getopt(argc, argv, "i:stpvh")) > 0) {
+  while ((opt = getopt(argc, argv, "stpvh")) > 0) {
     switch (opt) {
-    case 'i':
-      file_pid = optarg;
-      break;
     case 's':
       simulation_mode = 1;
       printf("Simulation mode enabled.\n");
@@ -387,9 +472,9 @@ int main(int argc, char **argv) {
 
   // install signal handler.
   signal(SIGINT, signal_handler);
-  //for a named FIFO, when reader exits, it emits SIG_PIPE will cause writer to exit.
-  //here we ignore SIGPIPE.
-  signal(SIGPIPE,SIG_IGN);
+  // for a named FIFO, when reader exits, it emits SIG_PIPE will cause writer to
+  // exit. here we ignore SIGPIPE.
+  signal(SIGPIPE, SIG_IGN);
 
   // write my pid to file.
   write_pid2file();
@@ -428,15 +513,13 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-
-
 #if 0
-#include <stdio.h>
-#include <stdint.h>
-#include <string.h>
 #include <errno.h>
-#include <unistd.h>
 #include <fcntl.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 #define UART_BUF_SIZE 4096
 #define FRAME_LEN 4

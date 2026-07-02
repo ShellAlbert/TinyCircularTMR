@@ -1,0 +1,5 @@
+#Start recording tcl command: 7/2/2026 14:34:48
+#Project Location: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR; Project name: PoF_TMR
+prj_open "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/PoF_TMR.rdf"
+prj_run Export -impl impl_1
+#Stop recording: 7/2/2026 14:36:09
