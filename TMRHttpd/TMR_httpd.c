@@ -721,7 +721,7 @@ void call_gnuplot(const char *phase_name, const char *csv_filename) {
   }
 
   fprintf(fp_gnuplot,
-          "set terminal png size 1024,768 enhanced font 'Sans,12'\n"
+          "set terminal png size 20480,768 enhanced font 'Sans,12'\n"
           "set output '%s.png'\n"
           "set title 'Phase %s Current Curve Plotting' font 'Sans,12'\n"
           "set xlabel 'Sample/Time'\n"

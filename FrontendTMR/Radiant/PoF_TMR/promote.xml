@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml" version="Diamond (64-bit) 2025.2.0.48.0" date="Tue Jun 16 11:08:35 2026" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/promote.xml" version="Diamond (64-bit) 2025.2.0.48.0" date="Thu Jul 02 10:40:16 2026" vendor="Lattice Semiconductor Corporation" >
   <msg mid="35901010" type="Error" internal="true" />
+  <msg mid="35931002" type="Warning" internal="true" />
+  <msg mid="2043707" type="Warning" internal="true" />
   <msg mid="2044320" type="Info" internal="true" />
   <msg mid="35911026" type="Warning" internal="true" />
   <msg mid="35901328" type="Info" internal="true" />
-  <msg mid="35931002" type="Warning" internal="true" />
-  <msg mid="2043063" type="Warning" internal="true" />
   <msg mid="35901325" type="Warning" internal="true" />
+  <msg mid="2043063" type="Warning" internal="true" />
   <msg mid="35911012" type="Info" internal="true" />
   <msg mid="35911015" type="Info" internal="true" />
   <msg mid="2043310" type="Info" internal="true" />
@@ -23,7 +24,6 @@
   <msg mid="35901128" type="Warning" internal="true" />
   <msg mid="2043010" type="Error" internal="true" />
   <msg mid="2043325" type="Error" internal="true" />
-  <msg mid="2043707" type="Warning" internal="true" />
   <msg mid="2044435" type="Warning" internal="true" />
   <msg mid="2043137" type="Error" internal="true" />
   <msg mid="2043328" type="Info" internal="true" />
@@ -43,8 +43,8 @@
   <msg mid="2043320" type="Warning" internal="true" />
   <msg mid="2043100" type="Error" internal="true" />
   <msg mid="35901100" type="Warning" internal="true" />
-  <msg mid="2044523" type="Error" internal="true" />
   <msg mid="2043988" type="Warning" internal="true" />
+  <msg mid="2044523" type="Error" internal="true" />
   <msg mid="2043362" type="Warning" internal="true" />
   <msg mid="2043411" type="Warning" internal="true" />
   <msg mid="2043753" type="Warning" internal="true" />

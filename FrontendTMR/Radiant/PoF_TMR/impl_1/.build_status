@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BuildStatus>
     <Strategy name="Strategy1">
-        <Milestone name="Export" build_result="2" build_time="1781579314">
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1781579314"/>
+        <Milestone name="Export" build_result="2" build_time="1782960008">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1782960008"/>
             <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1781579296">
-            <Task name="Map" build_result="2" update_result="0" update_time="1781579296"/>
+        <Milestone name="Map" build_result="2" build_time="1782959991">
+            <Task name="Map" build_result="2" update_result="0" update_time="1782959991"/>
             <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1781579310">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1781579310"/>
+        <Milestone name="PAR" build_result="2" build_time="1782960004">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1782960004"/>
             <Task name="PostParVM" build_result="0" update_result="3" update_time="0"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1781579311"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1782960005"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1781579293">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1781579293"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1781579314"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1782959988">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1782959988"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1782960008"/>
             <Task name="LSE_Lint" build_result="0" update_result="3" update_time="0"/>
             <Task name="SynTrace" build_result="0" update_result="3" update_time="0"/>
             <Task name="SynVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
@@ -30,13 +30,14 @@
             <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
             <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Report name="PoF_TMR_impl_1.bgn" last_build_time="1781579314" last_build_size="1332"/>
-        <Report name="PoF_TMR_impl_1.bin" last_build_time="1781579314" last_build_size="104156"/>
+        <Report name="PoF_TMR_impl_1.bgn" last_build_time="1782960008" last_build_size="1332"/>
+        <Report name="PoF_TMR_impl_1.bin" last_build_time="1782960008" last_build_size="104157"/>
         <Report name="PoF_TMR_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
-        <Report name="PoF_TMR_impl_1.twr.html" last_build_time="1781579311" last_build_size="16023"/>
-        <Report name="PoF_TMR_impl_1.udb" last_build_time="1781579310" last_build_size="154272"/>
-        <Report name="PoF_TMR_impl_1_map.udb" last_build_time="1781579296" last_build_size="91757"/>
-        <Report name="PoF_TMR_impl_1_rtl.udb" last_build_time="1781579291" last_build_size="63556"/>
-        <Report name="PoF_TMR_impl_1_syn.udb" last_build_time="1781579293" last_build_size="59349"/>
+        <Report name="PoF_TMR_impl_1.twr.html" last_build_time="1782960005" last_build_size="15669"/>
+        <Report name="PoF_TMR_impl_1.udb" last_build_time="1782960004" last_build_size="141004"/>
+        <Report name="PoF_TMR_impl_1_map.udb" last_build_time="1782959991" last_build_size="85502"/>
+        <Report name="PoF_TMR_impl_1_rtl.udb" last_build_time="1782959985" last_build_size="61818"/>
+        <Report name="PoF_TMR_impl_1_syn.udb" last_build_time="1782959987" last_build_size="55711"/>
     </Strategy>
 </BuildStatus>
+                             

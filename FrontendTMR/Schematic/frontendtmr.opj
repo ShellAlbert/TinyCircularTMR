@@ -220,12 +220,12 @@
       (Path "Design Resources" ".\frontendtmr.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
       (Path "Logs")
-      (Select "Design Resources" ".\frontendtmr.dsn" "SCHEMATIC1" "ADC"))
+      (Select "Design Resources" ".\frontendtmr.dsn" "SCHEMATIC1" "FPGA"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 650"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 557"))
       (Tab 0)))
   (MPSSessionName "SNIPER")
   (LastUsedLibraryBrowseDirectory "C:\Cadence\SPB_22.1\tools\capture\library")

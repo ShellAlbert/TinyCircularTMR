@@ -188,11 +188,57 @@ void *simulation_thread_func(void *arg) {
   printf("[Thread] Finished for device: %s\n", config->device_path);
   pthread_exit(0);
 }
+//////////////////////////////////////////////////////////////////////////////
+#define UART_BUF_SIZE 4096
+#define SYNC_HEADER 0x55
+
+// Circular Buffer Structure
+typedef struct {
+    unsigned char buffer[UART_BUF_SIZE];
+    int head; // Write index
+    int tail; // Read index
+    int count; // Number of bytes in buffer
+} RingBuffer_t;
+// Thread-safe or Interrupt-safe add (simplified for single-thread example)
+void rb_put(RingBuffer_t *rb, unsigned char data) {
+  if (rb->count >= UART_BUF_SIZE) {
+      // Buffer overflow: Decide strategy. 
+      // For high speed, usually overwrite oldest or drop new. 
+      // Here we drop new to keep consistency, or you could advance tail.
+      return; 
+  }
+  rb->buffer[rb->head] = data;
+  rb->head = (rb->head + 1) % UART_BUF_SIZE;
+  rb->count++;
+}
+
+// Get a byte from circular buffer without removing it (peek)
+// Returns -1 if empty
+int rb_peek(RingBuffer_t *rb, int offset) {
+  if (offset >= rb->count) 
+  {
+    return -1;
+  }
+  int index = (rb->tail + offset) % UART_BUF_SIZE;
+  return rb->buffer[index];
+}
+
+// Remove n bytes from the buffer
+void rb_consume(RingBuffer_t *rb, int n) {
+  if (n > rb->count) 
+  {
+    n = rb->count;
+  }
+  rb->tail = (rb->tail + n) % UART_BUF_SIZE;
+  rb->count -= n;
+}
+
 // hardware thread function.
 void *hw_thread_func(void *arg) {
   int fd;
-  FILE *fp_tcp;
-  FILE *fp_plot;
+  FILE *fp_tcp, *fp_plot;
+  RingBuffer_t rb={.head=0,.tail=0,.count=0};
+
   uart_config_t *config = (uart_config_t *)arg;
   printf("[Thread] Starting for device: %s, dumping to: %s and %s.\n",
          config->device_path, config->http_file, config->plot_fifo);
