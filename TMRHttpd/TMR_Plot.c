@@ -1,12 +1,12 @@
 /*
  * Real-time 3-curve gnuplot pipe — sliding x-window (scroll left).
  *
- *   gcc gnuplot_abc.c -o gnuplot_abc -lm
- *   ./gnuplot_abc
+ *   gcc TMR_Plot.c -o TMR_Plot.bin -lm
+ *   ./TMR_Plot.bin
  *
  * If the plot only updates when you click/resize the window (common on
  * GNOME + Wayland + wxt), use one of:
- *   GDK_BACKEND=x11 ./gnuplot_abc
+ *   GDK_BACKEND=x11 ./TMR_Plot.bin
  *   or switch terminal to qt below (set term qt).
  *
  * Each frame: set xrange, plot 3x '-', pause 0, fflush.
@@ -98,18 +98,6 @@ int main(void) {
   // install signal handler.
   signal(SIGINT, signal_handler);
 
-  printf("start to open fifo...\n");
-  // open FIFO for reading.
-  for (i = 0; i < 1 /*3*/; i++) {
-    printf("%s\n", channels[i].file_name);
-    channels[i].fp = fopen(channels[i].file_name, "r");
-    if (!channels[i].fp) {
-      fprintf(stderr, "Error opening file %s %s.\n", channels[i].file_name,
-              strerror(errno));
-      return -1;
-    }
-  }
-
   while (!g_Exit) {
 
     // adjust xrange.
@@ -121,6 +109,7 @@ int main(void) {
 
     // read data from FIFO.
     for (i = 0; i < 3; i++) {
+      // if read fails, use this default value.
       float phase_value = -10.0f;
       if (channels[i].fp) {
         size_t byte_read =

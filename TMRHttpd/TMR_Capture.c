@@ -6,9 +6,11 @@
 // quick command for only gnuplot testing
 //./uart_dump.bin -s -p -v
 
+#define _GNU_SOURCE 1 // necessary for F_SETPIPE_SZ
 #include <asm-generic/errno-base.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <math.h>
 #include <pthread.h>
 #include <signal.h>
 #include <stdio.h>
@@ -107,6 +109,18 @@ typedef struct {
   FILE *fp_http;
   int fd_plot; // NON_BLOCK only valid in open()/write()/close() API layer.
 } uart_config_t;
+
+// batch data calculation.
+typedef struct {
+  float sumValue; // the sum value.
+  float maxValue; // Maximum Value.
+  float minValue; // Minimum Value.
+  float avgValue; // Average Value.
+
+  float sum_square;
+  float mean_square;
+  float root_square; // Root Mean Square.
+} BatchData_t;
 
 // signal handler.
 void signal_handler(int signo) {
@@ -252,6 +266,10 @@ void *simulation_thread_func(void *arg) {
 //////////////////////////////////////////////////////////////////////////////
 // hardware thread function.
 void *hw_thread_func(void *arg) {
+  time_t time_start, time_end;
+  volatile int capture_in_process = 0;
+  volatile int captured_samples = 0;
+
   int fd_uart;
   FILE *fp_tcp, *fp_plot;
   uart_config_t *config = (uart_config_t *)arg;
@@ -300,7 +318,18 @@ void *hw_thread_func(void *arg) {
 
   char buffer[4096];
   int buffer_len = 0;
+  // calculate Root Mean Square.
+  float sum_squares = 0.0f;
+  BatchData_t batch = {.sumValue = 0,
+                       .maxValue = 0,
+                       .minValue = 65536.0f,
+                       .avgValue = 0,
+                       .sum_square = 0,
+                       .mean_square = 0,
+                       .root_square = 0};
+
   // loop to read data.
+  time(&time_start);
   while (!g_Exit) {
     // read maximum bytes as possible as we can.
     int bytes_available = sizeof(buffer) - buffer_len;
@@ -336,27 +365,128 @@ void *hw_thread_func(void *arg) {
       for (int i = 0; i < loop_times; i++, pData += 4) {
         unsigned short high_bytes = ((unsigned short)pData[1] & 0xFF) << 8;
         unsigned short low_bytes = (unsigned short)pData[2] & 0x00FF;
-        unsigned short TMR_Current_16bits = high_bytes | low_bytes;
+        unsigned short ADC_Value_16bits = high_bytes | low_bytes;
 
-        printf("%04x %02x %02x %02x %02x\n", TMR_Current_16bits, pData[0],
-               pData[1], pData[2], pData[3]);
+        printf("%s, %04x %02x %02x %02x %02x\n", config->plot_fifo,
+               ADC_Value_16bits, pData[0], pData[1], pData[2], pData[3]);
+
+        // linear mapping ADC value to realistic current.
+        // y=kx+b.
+        float k_coefficient = 1.0f;
+        float b_offset = 0.0f;
+        float TMR_Current = ADC_Value_16bits * k_coefficient + b_offset;
 
         // write to fifo for real-time plotting.
         if (plot_dump) {
           if (config->fd_plot < 0) {
             config->fd_plot =
                 open(config->plot_fifo, O_WRONLY | O_NONBLOCK | O_NOCTTY);
+            // cat /proc/sys/fs/pipe-max-size  1048576
+            // echo 65536 | sudo tee  /proc/sys/fs/pipe-max-size
+            // must run with root to set fifo size.
+            if (config->fd_plot > 0) {
+              printf("fd_plot:%d\n", config->fd_plot);
+              if (fcntl(config->fd_plot, F_SETPIPE_SZ, 4096) == -1) {
+                perror("fcntl F_SETPIPE_SZ");
+                printf("errno=%d\n", errno);
+              }
+            }
           } else {
-            float tmr_current=TMR_Current_16bits;
-            size_t ret = write(config->fd_plot, &tmr_current,
-                               sizeof(tmr_current));
+            float tmr_current = ADC_Value_16bits;
+            size_t ret =
+                write(config->fd_plot, &tmr_current, sizeof(tmr_current));
             if (ret < 0) {
               printf("write fifo failed, force to reopen.\n");
               config->fd_plot = -1;
             }
           }
         }
-      }
+
+        // write to tmp file for http showing.
+        // fetch data every 10 seconds.
+        if (!capture_in_process) {
+          time(&time_end);
+          double second_escaped = difftime(time_end, time_start);
+          if (second_escaped > 2.0) {
+            capture_in_process = 1;
+            config->fp_http = fopen(config->http_file_tmp, "wb");
+            printf("10s escaped, start to write %s\n", config->http_file_tmp);
+          }
+        } else {
+          if (captured_samples >= 1024) { // only sample 1024 times.
+            fflush(config->fp_http);
+            fclose(config->fp_http);
+            printf("write %d samples to file %s\n", captured_samples,
+                   config->http_file_tmp);
+            // using rename strategy to prevend http server reads empty file.
+            // rename operation is atomic.
+            if (rename(config->http_file_tmp, config->http_file) != 0) {
+              remove(config->http_file_tmp);
+              printf("rename() failed.\n");
+            }
+            captured_samples = 0;
+            capture_in_process = 0;
+            time(&time_start);
+
+            // calculate the average value.
+            batch.avgValue = batch.sumValue / 1024.0f;
+
+            // 2.calculate mean.
+            batch.mean_square = batch.sum_square / 1024.0;
+            // 3.calculate root.
+            batch.root_square = sqrt(batch.mean_square);
+            printf("sum=%.2f,min=%.2f,max=%.2f,avg=%.2f,rms=%.2f\n",
+                   batch.sumValue, batch.minValue, batch.maxValue,
+                   batch.avgValue, batch.root_square);
+
+            // write results into file.
+            char file_statistic[128];
+            char file_statistic_tmp[128];
+            snprintf(file_statistic, sizeof(file_statistic), "%s.statistic",
+                     config->http_file);
+            snprintf(file_statistic_tmp, sizeof(file_statistic_tmp),
+                     "%s.statistic.tmp", config->http_file);
+            FILE *fp_rms = fopen(file_statistic_tmp, "w");
+            if (fp_rms) {
+              char buffer[128];
+              snprintf(buffer, sizeof(buffer),
+                       "sum=%.2f,min=%.2f,max=%.2f,avg=%.2f,rms=%.2f\n",
+                       batch.sumValue, batch.minValue, batch.maxValue,
+                       batch.avgValue, batch.root_square);
+              fwrite(buffer, strlen(buffer), 1, fp_rms);
+              fflush(fp_rms);
+              fclose(fp_rms);
+              // using rename strategy to prevend http server reads empty file.
+              // rename operation is atomic.
+              if (rename(file_statistic_tmp, file_statistic) != 0) {
+                remove(file_statistic_tmp);
+                printf("rename() failed.\n");
+              }
+            }
+            //reset counters.
+            batch.sumValue=0;
+            batch.maxValue=0;
+            batch.minValue=65535.0f;
+            batch.avgValue=0;
+            batch.sum_square=0;
+            batch.mean_square=0;
+            batch.root_square=0;
+          } else {
+            fwrite(&TMR_Current, sizeof(float), 1, config->fp_http);
+            captured_samples++;
+
+            // sorting algorithm.
+            batch.maxValue = (TMR_Current > batch.maxValue) ? (TMR_Current)
+                                                            : (batch.maxValue);
+            batch.minValue = (TMR_Current < batch.minValue) ? (TMR_Current)
+                                                            : (batch.minValue);
+
+            batch.sumValue += TMR_Current;
+            // 1.calculate squares.
+            batch.sum_square += pow(TMR_Current, 2);
+          }
+        }
+      } // for (int i = 0; i < loop_times; i++, pData += 4) {
       // after processing. move remain bytes to top.
       if (remain_bytes > 0) {
         memmove(buffer, buffer + valid_index + loop_times * 4, remain_bytes);
@@ -400,6 +530,8 @@ void *hw_thread_func(void *arg) {
   close(fd_uart);
   printf("[Thread] Finished for device: %s\n", config->device_path);
   pthread_exit(NULL);
+  // set exit flag to cause other threads also to exit.
+  g_Exit = 1;
 }
 
 void print_usage(char *app_name) {

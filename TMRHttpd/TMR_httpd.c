@@ -506,7 +506,7 @@ void send_rawdata_csv_response(int client_fd, const char *filename,
   }
 
   // call gnuplot to plot curve.
-  call_gnuplot(phase_name,buffer);
+  call_gnuplot(phase_name, buffer);
 
   // get file size.
   fseek(fp_csv, 0, SEEK_END);
@@ -640,8 +640,73 @@ cJSON *create_RawData_Json(const char *filename, const char *phase_name) {
                           (int)(file_size / 4));
   cJSON_AddItemToObject(node_number_of_samples, "unit",
                         cJSON_CreateString("float")); // ℃
-
   cJSON_AddItemToArray(node_body, node_number_of_samples);
+
+  // Sum Value.
+  // Maximum value.
+  // Minimum value.
+  // Average value.
+  // RootMeanSquare value.
+  double sumValue = 0.0f;
+  double maxValue = 0.0f;
+  double minValue = 0.0f;
+  double avgValue = 0.0f;
+  double rmsValue = 0.0f;
+  // read data from /tmp/*.statistic file.
+  char buffer[128];
+  snprintf(buffer, sizeof(buffer), "%s.statistic", filename);
+  printf("read file :%s\n",buffer);
+  FILE *fp_rms = fopen(buffer, "r");
+  if (fp_rms) {
+    fscanf(fp_rms, "sum=%lf,min=%lf,max=%lf,avg=%lf,rms=%lf\n", &sumValue,
+           &minValue, &maxValue, &avgValue, &rmsValue);
+    fclose(fp_rms);
+  }
+  // sumValue.
+  cJSON *node_sumValue = cJSON_CreateObject();
+  cJSON_AddItemToObject(node_sumValue, "fieldName",
+                        cJSON_CreateString("Sum Value"));
+  cJSON_AddNumberToObject(node_sumValue, "fieldValue", sumValue);
+  cJSON_AddItemToObject(node_sumValue, "unit",
+                        cJSON_CreateString("float")); // ℃
+  cJSON_AddItemToArray(node_body, node_sumValue);
+
+  // maxValue.
+  cJSON *node_maxValue = cJSON_CreateObject();
+  cJSON_AddItemToObject(node_maxValue, "fieldName",
+                        cJSON_CreateString("Maximum Value"));
+  cJSON_AddNumberToObject(node_maxValue, "fieldValue", maxValue);
+  cJSON_AddItemToObject(node_maxValue, "unit",
+                        cJSON_CreateString("float")); // ℃
+  cJSON_AddItemToArray(node_body, node_maxValue);
+
+  // minValue.
+  cJSON *node_minValue = cJSON_CreateObject();
+  cJSON_AddItemToObject(node_minValue, "fieldName",
+                        cJSON_CreateString("Minimum Value"));
+  cJSON_AddNumberToObject(node_minValue, "fieldValue", minValue);
+  cJSON_AddItemToObject(node_minValue, "unit",
+                        cJSON_CreateString("float")); // ℃
+  cJSON_AddItemToArray(node_body, node_minValue);
+
+  // avgValue.
+  cJSON *node_avgValue = cJSON_CreateObject();
+  cJSON_AddItemToObject(node_avgValue, "fieldName",
+                        cJSON_CreateString("Average Value"));
+  cJSON_AddNumberToObject(node_avgValue, "fieldValue", avgValue);
+  cJSON_AddItemToObject(node_avgValue, "unit",
+                        cJSON_CreateString("float")); // ℃
+  cJSON_AddItemToArray(node_body, node_avgValue);
+
+  //RMS Value.
+  cJSON *node_rmsValue = cJSON_CreateObject();
+  cJSON_AddItemToObject(node_rmsValue, "fieldName",
+                        cJSON_CreateString("Root Mean Square"));
+  cJSON_AddNumberToObject(node_rmsValue, "fieldValue", rmsValue);
+  cJSON_AddItemToObject(node_rmsValue, "unit",
+                        cJSON_CreateString("float")); // ℃
+  cJSON_AddItemToArray(node_body, node_rmsValue);
+
 
   // prepare raw data.
   char *base64_enc_buf = NULL;
@@ -729,7 +794,8 @@ void call_gnuplot(const char *phase_name, const char *csv_filename) {
           "set datafile separator ','\n"
           "set key top left\n"
           "set style line 1 lc rgb '#FF0000' lw 2\n"
-          "plot '%s' using 1:2 with linespoints linewidth 1 pointtype 7 pointsize 0.5 title 'Current'\n"
+          "plot '%s' using 1:2 with linespoints linewidth 1 pointtype 7 "
+          "pointsize 0.5 title 'Current'\n"
           "set output\n",
           csv_filename, phase_name, csv_filename);
 

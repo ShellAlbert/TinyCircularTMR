@@ -9,7 +9,7 @@ LDLINK = -Llibcjson -lcjson
 
 all:
 	$(CC) $(MODULES) $(INCDIR) $(LDLINK) -o TMR_httpd.bin
-	$(CC) TMR_Capture.c -o TMR_Capture.bin -g
+	$(CC) TMR_Capture.c -o TMR_Capture.bin -g -lm
 	$(CC) TMR_Plot.c -o TMR_Plot.bin
 
 
