@@ -151,7 +151,8 @@ ZAD7988_Adapter myAD7988(
 );
 
 //////////////////////////////////////////////////////////////////////////
-reg [15:0] Temperature_Latest;
+reg [7:0] Temperature_Latest;
+reg [15:0] temp2;
 ZUART_Adapter myUART(
 	.iClk(clk_48MHz_Global), //input clock.
 	.iRstN(rst_n),
@@ -169,6 +170,7 @@ ZUART_Adapter myUART(
 
     //Temperature Updated.
     .iTempData(Temperature_Latest),
+    .iTempData2(temp2),
     .oTxFps(oTxFps)
 );
 
@@ -182,8 +184,11 @@ reg [7:0] TMP117_RegAddr;
 reg [15:0] TMP117_RegData;
 wire [15:0] TMP117_RdData;
 reg [7:0] Temp_Result={8'h00};
-reg [7:0] Config_Reg={8'h01};
-reg [7:0] Device_ID={8'h0F};
+reg [7:0] Config_Reg={8'h01}; //default value = 0x0220.
+reg [7:0] THigh_Limit={8'h02};
+reg [7:0] TLow_Limit={8'h03};
+reg [7:0] Temp_Offset={8'h07};
+reg [7:0] Device_ID={8'h0F};  //default value = 0x0117.
 ZTMP117_Controller  myTMP117(
 	.iClk(clk_48MHz_Global), //input clock.
 	.iRstN(rst_n),
@@ -207,21 +212,61 @@ ZTMP117_Controller  myTMP117(
 reg [7:0] step_i; 
 reg [31:0] cnt_delay;
 reg Temp_LED;
+//UART Protocol Format:
+//55 High-Byte Low-Byte Temperature-Byte.
+//0.0078125=2^(-7)
+//if MSB is 1, negative.
+//expand 1 bit for symbol.
+reg unsigned [15:0] SensorData; 
+reg symbol_bit;
+reg [3:0] reg_iterator;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
-if(!rst_n) begin step_i<=0; cnt_delay<=0; TMP117_En<=0; Temperature_Latest<=0; Temp_LED<=0; end
+if(!rst_n) begin step_i<=0; cnt_delay<=0; TMP117_En<=0; Temperature_Latest<=0; Temp_LED<=0; reg_iterator<=0; end
 else begin
     case(step_i)
     0: //Temperature changes slow, read data every 1 second.
         //48MHz/1Hz=48_000_000
-        if(cnt_delay==32'd48_000_000-1) begin cnt_delay<=0; step_i<=step_i+1; end
+        if(cnt_delay==1000/*32'd48_000_000-1*/) begin cnt_delay<=0; step_i<=step_i+1; end
         else begin cnt_delay<=cnt_delay+1; end
     1: //Read Temperature.
-        if(TMP117_DataValid) begin TMP117_En<=0; Temperature_Latest<=TMP117_RdData; step_i<=step_i+1; end
-        else begin TMP117_En<=1; TMP117_Cmd<=2'b00; TMP117_RegAddr<=Temp_Result; end
-    2: //LED Indicator.
-        begin Temp_LED<=~Temp_LED; step_i<=step_i+1; end
-    3:
-        begin step_i<=0; end
+        if(TMP117_DataValid) begin 
+            TMP117_En<=0; 
+            //only update when reads Temp_Result register.
+            //SensorData<=(reg_iterator==5)?(TMP117_RdData):(SensorData);
+            SensorData<=TMP117_RdData;
+            temp2<=TMP117_RdData; 
+            reg_iterator<=(reg_iterator==5)?(0):(reg_iterator+1);
+            step_i<=step_i+1; 
+        end
+        else begin 
+            TMP117_En<=1; TMP117_Cmd<=2'b00; 
+            // case(reg_iterator)
+            // 0: begin TMP117_RegAddr<=Device_ID; end
+            // 1: begin TMP117_RegAddr<=Config_Reg; end
+            // 2: begin TMP117_RegAddr<=THigh_Limit; end
+            // 3: begin TMP117_RegAddr<=TLow_Limit; end
+            // 4: begin TMP117_RegAddr<=Temp_Offset; end
+            // 5: begin TMP117_RegAddr<=Temp_Result; end
+            // default: begin TMP117_RegAddr<=Temp_Result; end
+            // endcase
+            TMP117_RegAddr<=Temp_Result; 
+        end
+    2: //1.convert BuMa to Yuan.
+        begin
+            SensorData<=(SensorData[15])?(~SensorData+1):(SensorData);
+            symbol_bit<=(SensorData[15])?(1):(0);
+            Temp_LED<=~Temp_LED; 
+            step_i<=step_i+1; 
+        end
+    3:  //2.do multiplication to get the real temperature.
+        //multiply 0.0078125 , 2^(-7)=1/128=0.0078125, right shift 7 bits.
+        begin SensorData<=SensorData>>7; step_i<=step_i+1; end
+    4: //3.convert YuanMa to BuMa.
+        begin 
+            SensorData<=(symbol_bit)?(~SensorData+1):(SensorData); step_i<=step_i+1; 
+        end
+    5:
+        begin Temperature_Latest<={symbol_bit,SensorData[6:0]}; step_i<=0; end
     default:
         begin step_i<=0; end
     endcase

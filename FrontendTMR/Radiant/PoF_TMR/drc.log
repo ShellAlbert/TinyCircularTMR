@@ -1,5 +1,0 @@
-DRC: Design Rule Check Radiant Software (64-bit) 2025.2.0.48.0
-Tue Jun 16 10:11:47 2026
-
-WARNING <71003020> - Top module port 'iCmd_RxD' does not connect to anything.
-WARNING <71003020> - Top module port 'iTMP117_ALERT' does not connect to anything.
