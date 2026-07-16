@@ -86,8 +86,8 @@ else begin
             oLED<=(cnt_led==50_000-1)?(~oLED):(oLED);
         end
         1: //Read ADC Data.
-            if(adc_valid) begin adc_en<=0; oFIFODataIn<=cnt_test/*adc_data*/; step_i<=step_i+1; end
-            //if(adc_valid) begin adc_en<=0; oFIFODataIn<=adc_data; step_i<=step_i+1; end
+            //if(adc_valid) begin adc_en<=0; oFIFODataIn<=cnt_test/*adc_data*/; step_i<=step_i+1; end
+            if(adc_valid) begin adc_en<=0; oFIFODataIn<=adc_data; step_i<=step_i+1; end
             else begin adc_en<=1; end
             //begin oFIFODataIn<=cnt_test; step_i<=step_i+1; end
         2: //Write Data into FIFO if FIFO is not full.

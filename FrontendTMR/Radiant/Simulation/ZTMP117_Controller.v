@@ -70,7 +70,7 @@ else begin
         begin
             case(step_i)
             0: //Start Signal. //SDA Outputs.
-                if(tick_250KHz) begin oSCL<=1; ioSDA_Dir<=1; oSDA<=1; step_i<=step_i+1; end
+                if(tick_250KHz) begin oSCL<=1; ioSDA_Dir<=1; oSDA<=1; cnt_bits<=0; oRdData<=0; step_i<=step_i+1; end
             1: //SDA from High to Low while SCL is High.
                 if(tick_250KHz) begin oSDA<=0; step_i<=step_i+1; end
 //////////////////////////////////////////////////////////////////////////////
@@ -91,8 +91,10 @@ else begin
             8: //TMP117 latches data in at rising edge.
                 if(tick_250KHz) begin oSCL<=1; step_i<=step_i+1; end
             9:
-                if(cnt_bits==8-1) begin cnt_bits<=0; step_i<=step_i+1; end
-                else begin cnt_bits<=cnt_bits+1; step_i<=step_i-2; end
+                if(tick_250KHz) begin
+                    if(cnt_bits==8-1) begin cnt_bits<=0; step_i<=step_i+1; end
+                    else begin cnt_bits<=cnt_bits+1; step_i<=step_i-2; end
+                end
             10: //ACK from slave. SDA Inputs.
                 if(tick_250KHz) begin oSCL<=0; ioSDA_Dir<=0; step_i<=step_i+1; end
             11:
@@ -110,8 +112,10 @@ else begin
             16: //TMP117 latches data in at rising edge.
                 if(tick_250KHz) begin oSCL<=1; step_i<=step_i+1; end
             17:
-                if(cnt_bits==8-1) begin cnt_bits<=0; step_i<=step_i+1; end
-                else begin cnt_bits<=cnt_bits+1; step_i<=step_i-2; end
+                if(tick_250KHz) begin
+                    if(cnt_bits==8-1) begin cnt_bits<=0; step_i<=step_i+1; end
+                    else begin cnt_bits<=cnt_bits+1; step_i<=step_i-2; end
+                end
             18: //ACK from slave. SDA Inputs.
                 if(tick_250KHz) begin oSCL<=0; ioSDA_Dir<=0; step_i<=step_i+1; end
             19:

@@ -878,6 +878,6 @@
 	<CableOptions>
 		<CableName>USB2</CableName>
 		<PortAdd>FTUSB-0</PortAdd>
-		<USBID>Lattice HW-USBN-2B Ch A Location 3811 Serial VER00001A</USBID>
+		<USBID>Lattice HW-USBN-2B Ch A Location 0361 Serial VER00001A</USBID>
 	</CableOptions>
 </ispXCF>

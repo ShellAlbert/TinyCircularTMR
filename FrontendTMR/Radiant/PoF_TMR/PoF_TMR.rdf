@@ -18,16 +18,10 @@
         <Source name="source/impl_1/ZTMP117_Controller.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="source/impl_1/ZAD7988_Adapter.v" type="Verilog" type_short="Verilog">
+        <Source name="LargeCircleTMR_Pin_Constraint.pdc" type="Physical Constraints File" type_short="PDC" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="source/impl_1/ZUART_Adapter.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="source/IPCore/ZFIFO/ZFIFO.ipx" type="IPX_Module" type_short="IPX">
-            <Options/>
-        </Source>
-        <Source name="PoF_TMR_A1_Pin_Constraint.pdc" type="Physical Constraints File" type_short="PDC">
+        <Source name="LittleCircleTMR_Pin_Constraint.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
