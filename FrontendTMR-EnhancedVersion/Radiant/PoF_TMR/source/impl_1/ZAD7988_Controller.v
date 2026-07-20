@@ -44,7 +44,7 @@ else begin
 	else begin cntClkPrescale<=0; end
 end
 wire tick_Clk;
-assign tick_Clk=(cntClkPrescale==2-1)?(1):(0);
+assign tick_Clk=(cntClkPrescale==2-1)?1:0;
 
 //Driven by step i.
 reg [7:0] step_i;

@@ -12,7 +12,7 @@
 //We are using the 100% UART capacity.
 //Must use 2x16 FIFO to reduce latency!!!!
 
-module PoF_TMR_Top(
+module PoF_TMR_Top_Verdi(
 
     //PCB Onboard oscillator 12MHz.
 	input wire iClk_12MHz,
@@ -28,9 +28,14 @@ module PoF_TMR_Top(
 	output wire oSPI_SCK,
 	input wire iSPI_SDO, 
 
-    //capture FPS(Frame Per Second).
-    output reg oCap_FPS,
-    output reg oTx_FPS,
+    //The realistic FIFO Write FPS(Frame per Second). Used to measured by an oscilloscope.
+    output wire oFIFOWrFps, //IO-23.
+
+    //FIFO Is Full.
+    output wire oFIFO_isFull, //IO-21.
+
+    //UART Tx FPS(Frame per Second) Signal.
+    output wire oTxFps, //IO-19.
 
     //TMP117 I2C Interface.
     output wire oTMP117_SCL,
@@ -49,7 +54,7 @@ module PoF_TMR_Top(
 //Generates 48-MHz nominal clock, +/- 10 percent, with user-programmable divider. 
 //Can drive global clock network or fabric routing.
 //Input Ports
-//CLKHFPU :Power up the oscillator.
+//CLKHFPU :Power up the oscillator. After power up, output will be stable after 100 ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢
 //CLKHFEN :Enable the clock output. 
 //CLKHF :Oscillator output
 //Parameters
@@ -62,12 +67,12 @@ module PoF_TMR_Top(
 wire clk_48MHz;
 //By default, the outputs are routed to global clock network. 
 //To route to local fabric, see the examples in the Appendix: Design Entry section.
-HSOSC #(.CLKHF_DIV("0b00")) //48 MHz
-my_HSOSC(
-    .CLKHFPU(1'b1), 
-    .CLKHFEN(1'b1), 
-    .CLKHF(clk_48MHz)
-)/* synthesis ROUTE_THROUGH_FABRIC= 0 */; //the value can be either 0 or 1
+// HSOSC #(.CLKHF_DIV("0b00")) //48 MHz
+// my_HSOSC(
+//     .CLKHFPU(1'b1), 
+//     .CLKHFEN(1'b1), 
+//     .CLKHF(clk_48MHz)
+// )/* synthesis ROUTE_THROUGH_FABRIC= 0 */; //the value can be either 0 or 1
 
 ///////////////////////////////////////////////////////////////////
 //We are not allowed to use PLL output, because it's exclusive with Pin-35. ADQ[7].
@@ -85,25 +90,26 @@ my_HSOSC(
 wire rst_short_n;
 wire clk_48MHz_Global;
 wire clk_48MHz_Fabric;
-ZPLL ic_pll(
-	//.ref_clk_i(clk_48MHz),  //On-board 48MHz.
-	.ref_clk_i(iClk_12MHz), //External on board oscillator.
-	.rst_n_i(1'b1), 
-	.lock_o(rst_short_n), 
-	.outcore_o(clk_48MHz_Fabric), 
-	.outglobal_o(clk_48MHz_Global)
-);
+// ZPLL ic_pll(
+// 	//.ref_clk_i(clk_48MHz), 
+// 	.ref_clk_i(iClk_12MHz), //External on board oscillator.
+// 	.rst_n_i(1'b1), 
+// 	.lock_o(rst_short_n), 
+// 	.outcore_o(clk_48MHz_Fabric), 
+// 	.outglobal_o(clk_48MHz_Global)
+// );
+assign clk_48MHz_Global=iClk_12MHz;
 
-//extend rst_n to longer cycles.
+//long reset.
 reg rst_n;
-reg [31:0] cntRst;
-always @(posedge clk_48MHz_Global or negedge rst_short_n) 
-if(!rst_short_n) begin rst_n<=0; cntRst<=0; end
-else begin 
-    cntRst<=(cntRst==32'hFFFFF0)?(cntRst):(cntRst+1);
-    rst_n<=(cntRst==32'hFFFFF0)?(1):(0);
-end
-
+// reg [31:0] cntRst;
+// always @(posedge clk_48MHz_Global or negedge rst_short_n) 
+// if(!rst_short_n) begin rst_n<=0; cntRst<=0; end
+// else begin 
+//     cntRst<=(cntRst==32'hFFFFF0)?(cntRst):(cntRst+1);
+//     rst_n<=(cntRst==32'hFFFFF0)?(1):(0);
+// end
+assign rst_n=iRst_N;
 
 //sample data at 100KHz from AD7988.
 /////////////////////////////////////////////////
@@ -114,12 +120,11 @@ localparam TICK_MAX=480; //48MHz/100KHz=480. //single pulse.
 reg [15:0] cnt_100KHz;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
 if(!rst_n) begin cnt_100KHz<=0; end
-else begin 
-    cnt_100KHz<=(cnt_100KHz==TICK_MAX-1)?(0):(cnt_100KHz+1); 
+else begin
+    cnt_100KHz<=(cnt_100KHz==TICK_MAX-1)?(0):(cnt_100KHz+1);
 end
-//single pulse to trigger capture.
-wire capPulse;
-assign capPulse=(cnt_100KHz==TICK_MAX-1)?(1):(0);
+wire tickCapture;
+assign tickCapture=(cnt_100KHz==TICK_MAX-1)?(1):(0);
 /////////////////////////////////////////////////////////////////////////
 reg adc_en;
 wire adc_valid;
@@ -136,35 +141,30 @@ ZAD7988_Controller u1_ad7988(
 	.oSCK(oSPI_SCK),
 	.iSDO(iSPI_SDO), 
 
-	//acquire data output interface.
+	//acquisition data output interface.
 	.oData(adc_data),
 	.oDataValid(adc_valid)
 );
-/////////////////////////////////////////////////
 reg [2:0] fsmADC;
 reg [15:0] captured_data;
-reg [31:0] LED_ADC_Working;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
-if(!rst_n) begin fsmADC<=0; oCap_FPS<=0; LED_ADC_Working<=0; end
+if(!rst_n) begin fsmADC<=0; end
 else begin
     case(fsmADC)
     0: 
-        begin fsmADC<=(capPulse)?(fsmADC+1):(fsmADC); end
+        begin fsmADC<=(tickCapture)?(fsmADC+1):(fsmADC); end
     1: 
         if(adc_valid) begin adc_en<=0; captured_data<=adc_data; fsmADC<=fsmADC+1; end
         else begin adc_en<=1; end
     2:
-        begin 
-            LED_ADC_Working<=(LED_ADC_Working==32'd6000)?(0):(LED_ADC_Working+1);
-            oCap_FPS<=~oCap_FPS;
-            fsmADC<=0; 
-        end
+        begin fsmADC<=0; end
     endcase
 end
-assign oLED0=(LED_ADC_Working>32'd2000)?(1):(0);
 
 //////////////////////////////////////////////////////////////////////////
-reg [7:0] temp_Latest; //the latest temperature.
+reg [7:0] Temperature_Latest;
+reg [15:0] temp2;
+
 //////////////////////////////////////////////////////////////////////
 //Since the temperature changes slowly, acquires it every 1 second.
 //TMP117 Temperature Sensor.
@@ -199,10 +199,10 @@ ZTMP117_Controller  myTMP117(
 	.oRdData(TMP117_RdData),
 	.oDataValid(TMP117_DataValid)
 );
-//driven by finite state machine.
-reg [7:0] fsmTemp; 
+//driven by step_i.
+reg [7:0] step_i; 
 reg [31:0] cnt_delay;
-reg LED_Temp_Working;
+reg Temp_LED;
 //UART Protocol Format:
 //55 High-Byte Low-Byte Temperature-Byte.
 //0.0078125=2^(-7)
@@ -213,22 +213,24 @@ reg symbol_bit;
 reg [3:0] reg_iterator;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
 if(!rst_n) begin 
-    fsmTemp<=0; cnt_delay<=0; TMP117_En<=0; temp_Latest<=0; LED_Temp_Working<=0; reg_iterator<=0; 
+    step_i<=0; cnt_delay<=0; TMP117_En<=0; 
+    Temperature_Latest<=0; Temp_LED<=0; reg_iterator<=0; 
 end
 else begin
-    case(fsmTemp)
+    case(step_i)
     0: //Temperature changes slow, read data every 1 second.
         //48MHz/1Hz=48_000_000
-        if(cnt_delay==32'd48_000_000-1) begin cnt_delay<=0; fsmTemp<=fsmTemp+1; end
+        if(cnt_delay==/*1000*/32'd48_000_000-1) begin cnt_delay<=0; step_i<=step_i+1; end
         else begin cnt_delay<=cnt_delay+1; end
     1: //Read Temperature.
         if(TMP117_DataValid) begin 
             TMP117_En<=0; 
             //only update when reads Temp_Result register.
             //SensorData<=(reg_iterator==5)?(TMP117_RdData):(SensorData);
-            SensorData<=TMP117_RdData/*16'h8000*/;
+            SensorData<=TMP117_RdData;
+            temp2<=TMP117_RdData; 
             reg_iterator<=(reg_iterator==5)?(0):(reg_iterator+1);
-            fsmTemp<=fsmTemp+1; 
+            step_i<=step_i+1; 
         end
         else begin 
             TMP117_En<=1; TMP117_Cmd<=2'b00; 
@@ -243,41 +245,36 @@ else begin
             // endcase
             TMP117_RegAddr<=Temp_Result; 
         end
-    // 2: //1.convert BuMa to Yuan.
-    //     begin
-    //         SensorData<=(SensorData[15])?(~SensorData+1):(SensorData);
-    //         symbol_bit<=(SensorData[15])?(1):(0);
-    //         LED_Temp_Working<=~LED_Temp_Working; 
-    //         fsmTemp<=fsmTemp+1; 
-    //     end
-    // 3:  //2.do multiplication to get the real temperature.
-    //     //multiply 0.0078125 , 2^(-7)=1/128=0.0078125, right shift 7 bits.
-    //     begin SensorData<=SensorData>>7; fsmTemp<=fsmTemp+1; end
-    // 4: //3.convert YuanMa to BuMa.
-    //     begin SensorData<=(symbol_bit)?(~SensorData+1):(SensorData); fsmTemp<=fsmTemp+1; end
-    // 5: //update the latest temperature. //handling -0 problem individually.
-    //     begin temp_Latest<=(symbol_bit & SensorData[6:0]=7'd0)?(0):{symbol_bit,SensorData[6:0]}; fsmTemp<=0; end
-        2: //no need to convert between BuMa and YuanMa.
-            //shifting right 7-bits means eliminate [0~6].
-            //special handling -0: [14,13,12,11,10,9,8,7],[15] is symbol bit.
-            //[15]+[13,12,11,10,9,8,7], eliminate [14]. range shrinks from +/-256 to +/-128.
-            begin 
-                temp_Latest<=(SensorData[15] & SensorData[14:7]==8'd0)?(0):{SensorData[15],SensorData[13:7]}; 
-                LED_Temp_Working<=~LED_Temp_Working; 
-                fsmTemp<=0;
-            end
+    2: //1.convert BuMa to Yuan.
+        begin
+            SensorData<=(SensorData[15])?(~SensorData+1):(SensorData);
+            symbol_bit<=(SensorData[15])?(1):(0);
+            Temp_LED<=~Temp_LED; 
+            step_i<=step_i+1; 
+        end
+    3:  //2.do multiplication to get the real temperature.
+        //multiply 0.0078125 , 2^(-7)=1/128=0.0078125, right shift 7 bits.
+        begin SensorData<=SensorData>>7; step_i<=step_i+1; end
+    4: //3.convert YuanMa to BuMa.
+        begin 
+            SensorData<=(symbol_bit)?(~SensorData+1):(SensorData); step_i<=step_i+1; 
+        end
+    5:
+        begin Temperature_Latest<={symbol_bit,SensorData[6:0]}; step_i<=0; end
     default:
-        begin fsmTemp<=0; end
+        begin step_i<=0; end
     endcase
 end
-assign oLED2=LED_Temp_Working; 
+assign oLED2=Temp_LED; 
 
 //Tx Random UART Data at 1Mbps.
 //generate 1MHz Clock, //48MHz/1MHz=48.
 //generate 4MHz Clock, //48MHz/4MHz=12.
 //generate 8MHz Clock, //48MHz/8MHz=6.
+reg [15:0] tx_data_16bits;
 reg [7:0] tx_data;
 wire tx_done;
+
 ZUART_Tx #(.Freq_divider(12)) uart_u1
 (
 	.iClk(clk_48MHz_Global),
@@ -291,26 +288,21 @@ ZUART_Tx #(.Freq_divider(12)) uart_u1
 );
 
 reg [7:0] fsmUART;
-reg [31:0] LED_UART_Working;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
-if(!rst_n) begin fsmUART<=0; tx_data<=8'h55; LED_UART_Working<=0; oTx_FPS<=0; end
+if(!rst_n) begin fsmUART<=0; tx_data<=8'h55; end
 else begin
     case(fsmUART)
     0: //update tx buffer immediately after tx_done.
-        if(tx_done) begin tx_data<=captured_data[15:8]/*8'h19*/; fsmUART<=fsmUART+1; end
+        if(tx_done) begin tx_data<=8'h19; fsmUART<=fsmUART+1; end //fifo_data_out[15:8]
+
     1: //transmit high 8 bits. //update tx buffer immediately after tx_done.
-        if(tx_done) begin tx_data<=captured_data[7:0]/*8'h87*/; fsmUART<=fsmUART+1; end
+        if(tx_done) begin tx_data<=8'h87; fsmUART<=fsmUART+1; end //fifo_data_out[7:0]
     2: //Tx Temperature byte. -127 degree celsius ~ +128 degree celsius.
-        if(tx_done) begin tx_data<=temp_Latest/*8'h09*/; fsmUART<=fsmUART+1; end
+        if(tx_done) begin tx_data<=8'h09; fsmUART<=fsmUART+1; end //temperature.
     3: //sync head bytes.
-        if(tx_done) begin 
-            tx_data<=8'h55; LED_UART_Working<=(LED_UART_Working==32'd5000)?(0):(LED_UART_Working+1); 
-            oTx_FPS<=~oTx_FPS;
-            fsmUART<=0; 
-        end
+        if(tx_done) begin tx_data<=8'h55; fsmUART<=0; end //temperature.
     default:
             begin fsmUART<=0; tx_data<=8'h55; end
     endcase
 end
-assign oLED1=(LED_ADC_Working>32'd700)?(1):(0);
 endmodule

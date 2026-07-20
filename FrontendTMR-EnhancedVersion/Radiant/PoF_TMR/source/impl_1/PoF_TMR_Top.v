@@ -226,7 +226,7 @@ else begin
             TMP117_En<=0; 
             //only update when reads Temp_Result register.
             //SensorData<=(reg_iterator==5)?(TMP117_RdData):(SensorData);
-            SensorData<=TMP117_RdData/*16'h8000*/;
+            SensorData<=TMP117_RdData;
             reg_iterator<=(reg_iterator==5)?(0):(reg_iterator+1);
             fsmTemp<=fsmTemp+1; 
         end
@@ -243,29 +243,20 @@ else begin
             // endcase
             TMP117_RegAddr<=Temp_Result; 
         end
-    // 2: //1.convert BuMa to Yuan.
-    //     begin
-    //         SensorData<=(SensorData[15])?(~SensorData+1):(SensorData);
-    //         symbol_bit<=(SensorData[15])?(1):(0);
-    //         LED_Temp_Working<=~LED_Temp_Working; 
-    //         fsmTemp<=fsmTemp+1; 
-    //     end
-    // 3:  //2.do multiplication to get the real temperature.
-    //     //multiply 0.0078125 , 2^(-7)=1/128=0.0078125, right shift 7 bits.
-    //     begin SensorData<=SensorData>>7; fsmTemp<=fsmTemp+1; end
-    // 4: //3.convert YuanMa to BuMa.
-    //     begin SensorData<=(symbol_bit)?(~SensorData+1):(SensorData); fsmTemp<=fsmTemp+1; end
-    // 5: //update the latest temperature. //handling -0 problem individually.
-    //     begin temp_Latest<=(symbol_bit & SensorData[6:0]=7'd0)?(0):{symbol_bit,SensorData[6:0]}; fsmTemp<=0; end
-        2: //no need to convert between BuMa and YuanMa.
-            //shifting right 7-bits means eliminate [0~6].
-            //special handling -0: [14,13,12,11,10,9,8,7],[15] is symbol bit.
-            //[15]+[13,12,11,10,9,8,7], eliminate [14]. range shrinks from +/-256 to +/-128.
-            begin 
-                temp_Latest<=(SensorData[15] & SensorData[14:7]==8'd0)?(0):{SensorData[15],SensorData[13:7]}; 
-                LED_Temp_Working<=~LED_Temp_Working; 
-                fsmTemp<=0;
-            end
+    2: //1.convert BuMa to Yuan.
+        begin
+            SensorData<=(SensorData[15])?(~SensorData+1):(SensorData);
+            symbol_bit<=(SensorData[15])?(1):(0);
+            LED_Temp_Working<=~LED_Temp_Working; 
+            fsmTemp<=fsmTemp+1; 
+        end
+    3:  //2.do multiplication to get the real temperature.
+        //multiply 0.0078125 , 2^(-7)=1/128=0.0078125, right shift 7 bits.
+        begin SensorData<=SensorData>>7; fsmTemp<=fsmTemp+1; end
+    4: //3.convert YuanMa to BuMa.
+        begin SensorData<=(symbol_bit)?(~SensorData+1):(SensorData); fsmTemp<=fsmTemp+1; end
+    5: //update the latest temperature.
+        begin temp_Latest<={symbol_bit,SensorData[6:0]}; fsmTemp<=0; end
     default:
         begin fsmTemp<=0; end
     endcase
