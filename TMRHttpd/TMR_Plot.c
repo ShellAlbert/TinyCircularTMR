@@ -115,20 +115,20 @@ int main(void) {
         size_t byte_read =
             fread(&phase_value, sizeof(float), 1, channels[i].fp);
         if (byte_read != 1) {
-          if (feof(channels[i].fp)) {
-            fprintf(stderr, "Channel %d, End of file reached %s\n", i,
-                    channels[i].file_name);
-            // try to open again.
-            for (i = 0; i < 3; i++) {
-              channels[i].fd =
-                  open(channels[i].file_name, O_RDONLY | O_NONBLOCK);
-              if (channels[i].fd > 0) {
-                channels[i].fp = fdopen(channels[i].fd, "r");
-              }
-            }
-          } else {
-            perror("fread()");
-          }
+          fprintf(stderr, "Channel %d, Read failed %s\n", i,
+                  channels[i].file_name);
+        } else {
+          printf("Channel %d, get new value: %.2f\n", i, phase_value);
+        }
+      }else{
+        // try to open again.
+        channels[i].fd =
+            open(channels[i].file_name, O_RDONLY | O_NONBLOCK);
+        if (channels[i].fd > 0) {
+          channels[i].fp = fdopen(channels[i].fd, "r");
+        }else{
+          fprintf(stderr, "Channel %d, Open failed %s\n", i,
+                  channels[i].file_name);
         }
       }
 

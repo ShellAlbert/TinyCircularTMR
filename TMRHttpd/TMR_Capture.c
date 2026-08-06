@@ -7,6 +7,7 @@
 //./uart_dump.bin -s -p -v
 
 #define _GNU_SOURCE 1 // necessary for F_SETPIPE_SZ
+#include "ZLog.h"
 #include <asm-generic/errno-base.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -22,20 +23,30 @@
 #include <time.h>
 #include <unistd.h>
 
+#define APP_NAME "TMR_Capture"
 #define APP_VERSION "1.0.0" // May 25, 2026.
 #define MY_PID_FILE "/tmp/TMR_Capture.pid"
 #define MY_LOG_FILE "/tmp/TMR_Capture.log"
+#define MAX_LOG_FILE_SIZE 1 * 1024 * 1024 // 10Mb
 
 // global exit flag.
 volatile int g_Exit = 0;
 
 int verbose = 0;
+int massive_verbose = 0;
 int simulation_mode = 0;
 int tcp_dump = 0;
 int plot_dump = 0;
+int log_enabled = 0;
 
 #define UART_BUF_SIZE 4096
 #define SYNC_HEADER 0x55
+
+// log file.
+static pthread_mutex_t log_mutex = PTHREAD_MUTEX_INITIALIZER;
+FILE *fp_log = NULL;
+void log_file_rotate(void);
+void log_file_append(const char *message);
 
 // Circular Buffer Structure
 typedef struct {
@@ -105,9 +116,11 @@ typedef struct {
   const char *http_file_tmp; // temporary file for http service.
   const char *http_file;     // for http service.
   const char *plot_fifo;     // for local gnuplot.
+  const char *log_file;      // each ddevice has its own log file.
 
   FILE *fp_http;
   int fd_plot; // NON_BLOCK only valid in open()/write()/close() API layer.
+  int fd_uart;
 } uart_config_t;
 
 // batch data calculation.
@@ -270,42 +283,57 @@ void *hw_thread_func(void *arg) {
   volatile int capture_in_process = 0;
   volatile int captured_samples = 0;
 
-  int fd_uart;
   FILE *fp_tcp, *fp_plot;
-  uart_config_t *config = (uart_config_t *)arg;
-  printf("[Thread] Starting for device: %s, dump to %s and %s.\n",
-         config->device_path, config->http_file, config->plot_fifo);
+  uart_config_t *myDev = (uart_config_t *)arg;
+
+  char msgFormat[128];
+  // firstly, create log file for this thread.
+  ZLog_t myLog;
+  myLog.file_name = myDev->log_file;
+  if (zlog_init(&myLog) < 0) {
+    pthread_exit((void *)0);
+    return ((void *)0);
+  }
+
+  snprintf(msgFormat, sizeof(msgFormat), ///<
+           "[Thread] Starting for device: %s, dump to %s and %s.\n",
+           myDev->device_path, myDev->http_file, myDev->plot_fifo);
+  zlog_append_flush(&myLog, msgFormat, strlen(msgFormat));
 
   // open UART device file.
-  if ((fd_uart = open(config->device_path, O_RDONLY | O_NOCTTY)) < 0) {
-    // perror("Error opening UART");
-    fprintf(stderr, "Error opening file %s, %s.\n", config->device_path,
-            strerror(errno));
-    pthread_exit(NULL);
+  if ((myDev->fd_uart = open(myDev->device_path, O_RDONLY | O_NOCTTY)) < 0) {
+    snprintf(msgFormat, sizeof(msgFormat), ///<
+             "open() failed %s:%s\n", myDev->device_path, strerror(errno));
+    zlog_append_flush(&myLog, msgFormat, strlen(msgFormat));
+    pthread_exit((void *)0);
   }
 
   // configure parameters.
-  if (setup_uart(fd_uart, B4000000) != 0) {
-    fprintf(stderr, "Error setting 4000000 baudrate %s, %s.\n",
-            config->device_path, strerror(errno));
-    close(fd_uart);
-    pthread_exit(NULL);
+  if (setup_uart(myDev->fd_uart, B4000000) != 0) {
+    snprintf(msgFormat, sizeof(msgFormat), ///<
+             "failed to set 4000000 baudrate %s, %s.\n", myDev->device_path,
+             strerror(errno));
+    zlog_append_flush(&myLog, msgFormat, strlen(msgFormat));
+    close(myDev->fd_uart);
+    pthread_exit((void *)0);
   }
 
   // open TCP temporary FIFO file.
-  fp_tcp = fopen(config->http_file_tmp, "wb");
+  fp_tcp = fopen(myDev->http_file_tmp, "wb");
   if (!fp_tcp) {
     // perror("Error opening output file");
-    fprintf(stderr, "Error opening file %s, %s.\n", config->http_file_tmp,
-            strerror(errno));
-    close(fd_uart);
+    snprintf(msgFormat, sizeof(msgFormat), ///<
+             "Error opening file %s, %s.\n", myDev->http_file_tmp,
+             strerror(errno));
+    zlog_append_flush(&myLog, msgFormat, strlen(msgFormat));
+    close(myDev->fd_uart);
     pthread_exit(NULL);
   }
 
   // create the FIFO if it doesn't exist
   // mkfifo returns -1 if it already exists (EEXIST), which is fine.
   if (plot_dump) {
-    if (mkfifo(config->plot_fifo, 0666) < 0) {
+    if (mkfifo(myDev->plot_fifo, 0666) < 0) {
       if (errno != EEXIST) {
         perror("mkfifo plot_fifo failed");
         // If it already exists, we can still proceed, so don't exit
@@ -333,7 +361,8 @@ void *hw_thread_func(void *arg) {
   while (!g_Exit) {
     // read maximum bytes as possible as we can.
     int bytes_available = sizeof(buffer) - buffer_len;
-    int bytes_read = read(fd_uart, buffer + buffer_len, bytes_available);
+    // try to read device.
+    int bytes_read = read(myDev->fd_uart, buffer + buffer_len, bytes_available);
     // printf("bytes_read:%d\n",bytes_read);
     if (bytes_read > 0) {
       buffer_len += bytes_read;
@@ -360,15 +389,23 @@ void *hw_thread_func(void *arg) {
       // 55 XX XX XX : 4 bytes of each frame.
       int loop_times = (buffer_len - valid_index) / 4;
       int remain_bytes = (buffer_len - valid_index) % 4;
-      printf("loop times:%d, remain bytes:%d\n", loop_times, remain_bytes);
+      if (massive_verbose && log_enabled) {
+        snprintf(msgFormat, sizeof(msgFormat),
+                 "loop times:%d, remain bytes:%d\n", loop_times, remain_bytes);
+        zlog_append(&myLog, msgFormat, strlen(msgFormat));
+      }
       unsigned char *pData = (unsigned char *)(buffer + valid_index);
       for (int i = 0; i < loop_times; i++, pData += 4) {
         unsigned short high_bytes = ((unsigned short)pData[1] & 0xFF) << 8;
         unsigned short low_bytes = (unsigned short)pData[2] & 0x00FF;
         unsigned short ADC_Value_16bits = high_bytes | low_bytes;
 
-        printf("%s, %04x %02x %02x %02x %02x\n", config->plot_fifo,
-               ADC_Value_16bits, pData[0], pData[1], pData[2], pData[3]);
+        if (massive_verbose && log_enabled) {
+          snprintf(msgFormat, sizeof(msgFormat), "%s, %04x %02x %02x %02x %02x\n",
+                   myDev->plot_fifo, ADC_Value_16bits, pData[0], pData[1],
+                   pData[2], pData[3]);
+          zlog_append(&myLog, msgFormat, strlen(msgFormat));
+        }
 
         // linear mapping ADC value to realistic current.
         // y=kx+b.
@@ -378,15 +415,14 @@ void *hw_thread_func(void *arg) {
 
         // write to fifo for real-time plotting.
         if (plot_dump) {
-          if (config->fd_plot < 0) {
-            config->fd_plot =
-                open(config->plot_fifo, O_WRONLY | O_NONBLOCK | O_NOCTTY);
+          if (myDev->fd_plot < 0) {
+            myDev->fd_plot = open(myDev->plot_fifo, O_WRONLY | O_NONBLOCK | O_NOCTTY);
             // cat /proc/sys/fs/pipe-max-size  1048576
             // echo 65536 | sudo tee  /proc/sys/fs/pipe-max-size
             // must run with root to set fifo size.
-            if (config->fd_plot > 0) {
-              printf("fd_plot:%d\n", config->fd_plot);
-              if (fcntl(config->fd_plot, F_SETPIPE_SZ, 4096) == -1) {
+            if (myDev->fd_plot > 0) {
+              printf("fd_plot:%d\n", myDev->fd_plot);
+              if (fcntl(myDev->fd_plot, F_SETPIPE_SZ, 4096) == -1) {
                 perror("fcntl F_SETPIPE_SZ");
                 printf("errno=%d\n", errno);
               }
@@ -394,10 +430,10 @@ void *hw_thread_func(void *arg) {
           } else {
             float tmr_current = ADC_Value_16bits;
             size_t ret =
-                write(config->fd_plot, &tmr_current, sizeof(tmr_current));
+                write(myDev->fd_plot, &tmr_current, sizeof(tmr_current));
             if (ret < 0) {
               printf("write fifo failed, force to reopen.\n");
-              config->fd_plot = -1;
+              myDev->fd_plot = -1;
             }
           }
         }
@@ -409,19 +445,28 @@ void *hw_thread_func(void *arg) {
           double second_escaped = difftime(time_end, time_start);
           if (second_escaped > 2.0) {
             capture_in_process = 1;
-            config->fp_http = fopen(config->http_file_tmp, "wb");
-            printf("10s escaped, start to write %s\n", config->http_file_tmp);
+            myDev->fp_http = fopen(myDev->http_file_tmp, "wb");
+            if (massive_verbose && log_enabled) {
+              snprintf(msgFormat, sizeof(msgFormat),
+                       "2s escaped, start to write %s\n",
+                       myDev->http_file_tmp);
+              zlog_append(&myLog, msgFormat, strlen(msgFormat));
+            }
           }
         } else {
           if (captured_samples >= 1024) { // only sample 1024 times.
-            fflush(config->fp_http);
-            fclose(config->fp_http);
-            printf("write %d samples to file %s\n", captured_samples,
-                   config->http_file_tmp);
+            fflush(myDev->fp_http);
+            fclose(myDev->fp_http);
+            if (massive_verbose && log_enabled) {
+              snprintf(msgFormat, sizeof(msgFormat),
+                       "write %d samples to file %s\n", captured_samples,
+                       myDev->http_file_tmp);
+              zlog_append(&myLog, msgFormat, strlen(msgFormat));
+            }
             // using rename strategy to prevend http server reads empty file.
             // rename operation is atomic.
-            if (rename(config->http_file_tmp, config->http_file) != 0) {
-              remove(config->http_file_tmp);
+            if (rename(myDev->http_file_tmp, myDev->http_file) != 0) {
+              remove(myDev->http_file_tmp);
               printf("rename() failed.\n");
             }
             captured_samples = 0;
@@ -435,17 +480,21 @@ void *hw_thread_func(void *arg) {
             batch.mean_square = batch.sum_square / 1024.0;
             // 3.calculate root.
             batch.root_square = sqrt(batch.mean_square);
-            printf("sum=%.2f,min=%.2f,max=%.2f,avg=%.2f,rms=%.2f\n",
-                   batch.sumValue, batch.minValue, batch.maxValue,
-                   batch.avgValue, batch.root_square);
+            if (massive_verbose && log_enabled) {
+              snprintf(msgFormat, sizeof(msgFormat),
+                       "sum=%.2f,min=%.2f,max=%.2f,avg=%.2f,rms=%.2f\n",
+                       batch.sumValue, batch.minValue, batch.maxValue,
+                       batch.avgValue, batch.root_square);
+              zlog_append(&myLog, msgFormat, strlen(msgFormat));
+            }
 
             // write results into file.
             char file_statistic[128];
             char file_statistic_tmp[128];
             snprintf(file_statistic, sizeof(file_statistic), "%s.statistic",
-                     config->http_file);
+                     myDev->http_file);
             snprintf(file_statistic_tmp, sizeof(file_statistic_tmp),
-                     "%s.statistic.tmp", config->http_file);
+                     "%s.statistic.tmp", myDev->http_file);
             FILE *fp_rms = fopen(file_statistic_tmp, "w");
             if (fp_rms) {
               char buffer[128];
@@ -463,16 +512,16 @@ void *hw_thread_func(void *arg) {
                 printf("rename() failed.\n");
               }
             }
-            //reset counters.
-            batch.sumValue=0;
-            batch.maxValue=0;
-            batch.minValue=65535.0f;
-            batch.avgValue=0;
-            batch.sum_square=0;
-            batch.mean_square=0;
-            batch.root_square=0;
+            // reset counters.
+            batch.sumValue = 0;
+            batch.maxValue = 0;
+            batch.minValue = 65535.0f;
+            batch.avgValue = 0;
+            batch.sum_square = 0;
+            batch.mean_square = 0;
+            batch.root_square = 0;
           } else {
-            fwrite(&TMR_Current, sizeof(float), 1, config->fp_http);
+            fwrite(&TMR_Current, sizeof(float), 1, myDev->fp_http);
             captured_samples++;
 
             // sorting algorithm.
@@ -526,9 +575,9 @@ void *hw_thread_func(void *arg) {
   }
 
   fclose(fp_tcp);
-  close(config->fd_plot);
-  close(fd_uart);
-  printf("[Thread] Finished for device: %s\n", config->device_path);
+  close(myDev->fd_plot);
+  close(myDev->fd_uart);
+  printf("[Thread] Finished for device: %s\n", myDev->device_path);
   pthread_exit(NULL);
   // set exit flag to cause other threads also to exit.
   g_Exit = 1;
@@ -542,7 +591,11 @@ void print_usage(char *app_name) {
   printf("-t TCP dump enabled.\n");
   printf("-p Plot dump enabled.\n");
   printf("-v Verbose enabled, printf more messages.\n");
+  printf("-m Massive Verbose enabled, printf massive messages.\n");
+  printf("-l Log file enabled, log messages to file.\n");
   printf("-h Output help message\n");
+  printf("common used combination parameters for debug -tpml\n");
+  printf("long time running parameters -tp\n");
   printf("Compiled on %s %s", __DATE__, __TIME__);
 }
 // write my pid to file.
@@ -550,9 +603,12 @@ void write_pid2file(void) {
   FILE *fp_pid = fopen(MY_PID_FILE, "w");
   if (fp_pid) {
     pid_t mypid = getpid();
+    printf("my pid is %d\n",mypid);
     fprintf(fp_pid, "%d\n", mypid);
     fclose(fp_pid);
     fp_pid = NULL;
+  }else{
+    perror("fopen() failed\n");
   }
 }
 
@@ -564,28 +620,40 @@ int main(int argc, char **argv) {
   pthread_t threads[3];
   uart_config_t configs[3] = {
       {"/dev/ttyUSB0", "/tmp/TMR_Phase_A.dat.tmp", "/tmp/TMR_Phase_A.dat",
-       "/tmp/TMR_Phase_A.fifo", 0, -1},
+       "/tmp/TMR_Phase_A.fifo", "/tmp/TMR_Phase_A.log", 0, -1,-1},
       {"/dev/ttyUSB1", "/tmp/TMR_Phase_B.dat.tmp", "/tmp/TMR_Phase_B.dat",
-       "/tmp/TMR_Phase_B.fifo", 0, -1},
+       "/tmp/TMR_Phase_B.fifo", "/tmp/TMR_Phase_B.log", 0, -1,-1},
       {"/dev/ttyUSB2", "/tmp/TMR_Phase_C.dat.tmp", "/tmp/TMR_Phase_C.dat",
-       "/tmp/TMR_Phase_C.fifo", 0, -1}};
+       "/tmp/TMR_Phase_C.fifo", "/tmp/TMR_Phase_C.log", 0, -1,-1}};
+
+  printf("Welcome to use %s Version %s\n",APP_NAME,APP_VERSION);
 
   // p: means parameter is necessary.
   // v: means no parameter.
-  while ((opt = getopt(argc, argv, "stpvh")) > 0) {
+  while ((opt = getopt(argc, argv, "stpvmlh")) > 0) {
     switch (opt) {
     case 's':
       simulation_mode = 1;
-      printf("Simulation mode enabled.\n");
+      log_file_append("Simulation mode enabled.\n");
       break;
     case 't': // TCP dump mode.
       tcp_dump = 1;
+      log_file_append("TCP dump mode enabled.\n");
       break;
     case 'p': // Plot dump mode.
       plot_dump = 1;
+      log_file_append("Plot dump mode enabled.\n");
       break;
     case 'v':
       verbose = 1;
+      log_file_append("Verbose mode enabled.\n");
+      break;
+    case 'm':
+      massive_verbose = 1;
+      log_file_append("Massive verbose mode enabled.\n");
+      break;
+    case 'l':
+      log_enabled = 1;
       break;
     case 'h':
       print_usage(argv[0]);
@@ -636,13 +704,82 @@ int main(int argc, char **argv) {
       }
     }
 
+    printf("running in background, press Ctrl+C to quit...\n");
+    printf("  ^_^   ...   ^_^  ...   \n");
     for (int i = 0; i < 3; i++) {
       pthread_join(threads[i], NULL);
     }
   }
-
-  printf("All threads exited normally.\n");
+  printf("All threads exited normally.  ^_^ \n");
   return 0;
+}
+
+// running log support section.
+void log_file_rotate(void) {
+  // check if the log file exceeds 10Mb.
+  struct stat st;
+  pthread_mutex_lock(&log_mutex);
+  if (stat(MY_LOG_FILE, &st) < 0) {
+    perror("stat() failed");
+    fp_log = fopen(MY_LOG_FILE, "w");
+    if (fp_log == NULL) {
+      perror("Failed to open log file");
+    } else {
+      fprintf(fp_log, "Log file started.\n");
+      fflush(fp_log);
+    }
+    pthread_mutex_unlock(&log_mutex);
+    return;
+  }
+
+  // file size eexceeds pre-defined.
+  if (st.st_size > MAX_LOG_FILE_SIZE) {
+    // try to rename this file.
+    int i = 0;
+    do {
+      char log_file_rename[128];
+      snprintf(log_file_rename, sizeof(log_file_rename), "%s.%d", MY_LOG_FILE,
+               i);
+      // check whether this file exists or not.
+      if (access(log_file_rename, F_OK) == 0) {
+        i++;
+        continue;
+      }
+      if (fp_log) {
+        fprintf(fp_log, "Log file rotated successfully.\n");
+        fflush(fp_log);
+        fclose(fp_log);
+        fp_log = NULL;
+      }
+      rename(MY_LOG_FILE, log_file_rename);
+    } while (i < 1024);
+  }
+  if (fp_log == NULL) {
+    fp_log = fopen(MY_LOG_FILE, "w");
+    if (fp_log == NULL) {
+      perror("Failed to open log file");
+    } else {
+      fprintf(fp_log, "Log file started.\n");
+      fflush(fp_log);
+    }
+  }
+  pthread_mutex_unlock(&log_mutex);
+  return;
+}
+
+void log_file_append(const char *message) {
+  if (!log_enabled) {
+    return;
+  }
+  // check log file first.
+  log_file_rotate();
+  if (fp_log == NULL) {
+    return;
+  } else {
+    pthread_mutex_lock(&log_mutex);
+    fprintf(fp_log, "%s", message);
+    pthread_mutex_unlock(&log_mutex);
+  }
 }
 
 #if 0
