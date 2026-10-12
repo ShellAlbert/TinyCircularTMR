@@ -1,0 +1,448 @@
+\t (00:00:34) allegro 25.1 S050 (4462275) [7/27/2026] Windows SPB 64-bit Edition
+\t (00:00:34)     Journal start - Sat Oct 10 09:22:48 2026
+\t (00:00:34)         Host=DESKTOP-JTH5DQV User=SNIPER Pid=8924 CPUs=8
+\t (00:00:34) CmdLine= d:\myapp\tools\bin\allegro.exe Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\FrontendTMR-EnhancedVersion\PCB\TMR_Tiny_Jun-3.brd
+\t (00:00:34) 
+\t (00:00:35) Loading axlcore.cxt 
+\t (00:00:36) Opening existing design...
+\i (00:00:36) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "TMR_Tiny_Jun-3"
+\d (00:00:37) Design opened: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR-EnhancedVersion/PCB/TMR_Tiny_Jun-3.brd
+\i (00:00:37) trapsize 9063
+\i (00:00:37) trapsize 9451
+\i (00:00:37) trapsize 7163
+\i (00:00:37) trapsize 7163
+\i (00:00:37) trapsize 4969
+\i (00:00:38) updateport SearchPane
+\i (00:00:38) placementedit 
+\i (00:01:05) zoom out 1 
+\i (00:01:05) setwindow pcb
+\i (00:01:05) zoom out 5.3803 -43.6151
+\i (00:01:05) trapsize 9938
+\i (00:01:05) zoom out 1 
+\i (00:01:05) setwindow pcb
+\i (00:01:05) zoom out 4.7840 -45.0065
+\i (00:01:05) trapsize 19875
+\i (00:01:05) zoom in 1 
+\i (00:01:05) setwindow pcb
+\i (00:01:05) zoom in 1.6040 -26.3235
+\i (00:01:05) trapsize 9938
+\i (00:01:06) zoom in 1 
+\i (00:01:06) setwindow pcb
+\i (00:01:06) zoom in -4.1599 -53.1554
+\i (00:01:06) trapsize 4969
+\i (00:01:06) zoom in 1 
+\i (00:01:06) setwindow pcb
+\i (00:01:06) zoom in -5.2530 -53.6523
+\i (00:01:06) trapsize 2484
+\i (00:01:09) color192 
+\i (00:01:10) placementedit 
+\i (00:01:11) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:01:11) QtSignal CVDLayerTable VertHeader clickedCheckBox Top 1
+\i (00:01:11) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 0 0
+\i (00:01:15) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:01:16) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Bottom" PkgGeo +
+\i (00:01:16) QtSignal 1
+\i (00:01:16) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 15 0
+\i (00:01:16) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:16) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Bottom" PkgGeo +
+\i (00:01:16) QtSignal 0
+\i (00:01:16) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 15 0
+\i (00:01:16) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:16) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" PkgGeo 1
+\i (00:01:17) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 16 0
+\i (00:01:17) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:19) QtSignal CVDColorTable CVDColorButton1:0 clicked
+\i (00:01:20) QtSignal CVDLayerTable CVDLayerTableDelegate clickedColor "Silkscreen_Top" PkgGeo
+\i (00:01:20) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 16 0
+\i (00:01:20) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:21) QtSignal CVDColorTable CVDColorButton5:1 clicked
+\i (00:01:22) QtSignal CVDLayerTable CVDLayerTableDelegate clickedColor "Silkscreen_Top" PkgGeo
+\i (00:01:22) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 16 0
+\i (00:01:22) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:24) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:01:25) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" BrdGeo 1
+\i (00:01:25) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 14 0
+\i (00:01:25) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:26) zoom out 1 
+\i (00:01:26) setwindow pcb
+\i (00:01:26) zoom out -9.9734 -42.3730
+\i (00:01:26) trapsize 4969
+\i (00:01:26) zoom out 1 
+\i (00:01:26) setwindow pcb
+\i (00:01:26) zoom out -9.9734 -42.3729
+\i (00:01:26) trapsize 9938
+\i (00:01:27) zoom in 1 
+\i (00:01:27) setwindow pcb
+\i (00:01:27) zoom in -9.1784 -41.7767
+\i (00:01:28) trapsize 4969
+\i (00:01:30) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox Dimension BrdGeo 1
+\i (00:01:30) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 7 0
+\i (00:01:31) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:31) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Design_Outline" BrdGeo 1
+\i (00:01:31) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 6 0
+\i (00:01:31) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:01:33) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:01:34) zoom in 1 
+\i (00:01:34) setwindow pcb
+\i (00:01:34) zoom in -21.1037 -33.8265
+\i (00:01:34) trapsize 2484
+\i (00:01:34) zoom in 1 
+\i (00:01:34) setwindow pcb
+\i (00:01:34) zoom in -21.1037 -33.7768
+\i (00:01:34) trapsize 1242
+\i (00:01:35) zoom out 1 
+\i (00:01:35) setwindow pcb
+\i (00:01:35) zoom out -17.8988 -34.0500
+\i (00:01:35) trapsize 2484
+\i (00:01:37) zoom in 1 
+\i (00:01:37) setwindow pcb
+\i (00:01:37) zoom in 26.2248 -50.7455
+\i (00:01:37) trapsize 1242
+\i (00:01:37) zoom in 1 
+\i (00:01:37) setwindow pcb
+\i (00:01:37) zoom in 26.2248 -50.7454
+\i (00:01:37) trapsize 621
+\i (00:01:37) zoom in 1 
+\i (00:01:37) setwindow pcb
+\i (00:01:37) zoom in 26.2249 -50.7454
+\i (00:01:37) trapsize 311
+\i (00:01:38) zoom out 1 
+\i (00:01:38) setwindow pcb
+\i (00:01:38) zoom out 24.2373 -48.8385
+\i (00:01:38) trapsize 621
+\i (00:01:38) zoom out 1 
+\i (00:01:38) setwindow pcb
+\i (00:01:38) zoom out 24.6224 -48.9255
+\i (00:01:38) trapsize 1242
+\i (00:01:38) zoom out 1 
+\i (00:01:38) setwindow pcb
+\i (00:01:38) zoom out 24.7963 -49.0994
+\i (00:01:38) trapsize 2484
+\i (00:01:39) zoom in 1 
+\i (00:01:39) setwindow pcb
+\i (00:01:39) zoom in -28.6690 -47.7081
+\i (00:01:39) trapsize 1242
+\i (00:01:39) zoom in 1 
+\i (00:01:39) setwindow pcb
+\i (00:01:39) zoom in -28.4206 -48.1304
+\i (00:01:39) trapsize 621
+\i (00:01:39) zoom in 1 
+\i (00:01:39) setwindow pcb
+\i (00:01:39) zoom in -28.1845 -48.2546
+\i (00:01:39) trapsize 311
+\i (00:01:40) zoom out 1 
+\i (00:01:40) setwindow pcb
+\i (00:01:40) zoom out -25.3398 -48.3788
+\i (00:01:40) trapsize 621
+\i (00:01:40) zoom out 1 
+\i (00:01:40) setwindow pcb
+\i (00:01:40) zoom out -25.3398 -48.3788
+\i (00:01:40) trapsize 1242
+\i (00:01:41) zoom in 1 
+\i (00:01:41) setwindow pcb
+\i (00:01:41) zoom in -22.9300 -52.2545
+\i (00:01:41) trapsize 621
+\i (00:01:41) zoom out 1 
+\i (00:01:41) setwindow pcb
+\i (00:01:41) zoom out -23.5884 -52.7762
+\i (00:01:41) trapsize 1242
+\i (00:01:41) zoom out 1 
+\i (00:01:41) setwindow pcb
+\i (00:01:41) zoom out -23.6132 -52.9004
+\i (00:01:41) trapsize 2484
+\i (00:01:42) zoom in 1 
+\i (00:01:42) setwindow pcb
+\i (00:01:42) zoom in -22.0232 -47.4346
+\i (00:01:42) trapsize 1242
+\i (00:01:42) zoom in 1 
+\i (00:01:42) setwindow pcb
+\i (00:01:42) zoom in -21.8741 -46.5402
+\i (00:01:42) trapsize 621
+\i (00:01:43) zoom in 1 
+\i (00:01:43) setwindow pcb
+\i (00:01:43) zoom in -26.3957 -43.9563
+\i (00:01:43) trapsize 311
+\i (00:01:44) zoom out 1 
+\i (00:01:44) setwindow pcb
+\i (00:01:44) zoom out -23.4889 -45.5774
+\i (00:01:44) trapsize 621
+\i (00:01:57) zoom out 1 
+\i (00:01:57) setwindow pcb
+\i (00:01:57) zoom out -27.5884 -43.8011
+\i (00:01:57) trapsize 1242
+\i (00:01:57) zoom out 1 
+\i (00:01:57) setwindow pcb
+\i (00:01:57) zoom out -27.5883 -43.8010
+\i (00:01:57) trapsize 2484
+\i (00:01:59) color192 
+\i (00:01:59) placementedit 
+\i (00:02:02) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Components "Ref des"
+\i (00:02:03) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" RefDes 1
+\i (00:02:03) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 5 0
+\i (00:02:03) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:02:05) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:02:06) zoom in 1 
+\i (00:02:06) setwindow pcb
+\i (00:02:06) zoom in -18.2966 -44.7948
+\i (00:02:06) trapsize 1242
+\i (00:02:07) zoom in 1 
+\i (00:02:07) setwindow pcb
+\i (00:02:07) zoom in -24.9301 -43.2793
+\i (00:02:07) trapsize 621
+\i (00:02:08) zoom in 1 
+\i (00:02:08) setwindow pcb
+\i (00:02:08) zoom in -19.8494 -43.8507
+\i (00:02:08) trapsize 311
+\i (00:02:09) zoom out 1 
+\i (00:02:09) setwindow pcb
+\i (00:02:09) zoom out -19.5512 -44.1799
+\i (00:02:09) trapsize 621
+\i (00:02:10) zoom out 1 
+\i (00:02:10) setwindow pcb
+\i (00:02:10) zoom out -24.6320 -43.0618
+\i (00:02:10) trapsize 1242
+\i (00:02:10) zoom out 1 
+\i (00:02:10) setwindow pcb
+\i (00:02:10) zoom out -24.6320 -43.0619
+\i (00:02:10) trapsize 2484
+\i (00:02:11) zoom in 1 
+\i (00:02:11) setwindow pcb
+\i (00:02:11) zoom in -22.8929 -52.9996
+\i (00:02:11) trapsize 1242
+\i (00:02:11) zoom in 1 
+\i (00:02:11) setwindow pcb
+\i (00:02:11) zoom in -22.8929 -52.9996
+\i (00:02:11) trapsize 621
+\i (00:02:12) zoom out 1 
+\i (00:02:12) setwindow pcb
+\i (00:02:12) zoom out -21.6631 -52.6766
+\i (00:02:12) trapsize 1242
+\i (00:02:12) zoom out 1 
+\i (00:02:12) setwindow pcb
+\i (00:02:12) zoom out -21.1911 -52.9996
+\i (00:02:12) trapsize 2484
+\i (00:02:21) zoom in 1 
+\i (00:02:21) setwindow pcb
+\i (00:02:21) zoom in -24.6196 -46.1922
+\i (00:02:21) trapsize 1242
+\i (00:02:21) zoom in 1 
+\i (00:02:21) setwindow pcb
+\i (00:02:21) zoom in -24.6196 -46.1922
+\i (00:02:21) trapsize 621
+\i (00:03:58) trapsize 1056
+\i (00:04:01) trapsize 621
+\i (00:04:42) xrefdes Q2 
+\i (00:04:42) xname_flush 
+\i (00:04:42) trapsize 621
+\i (00:04:49) xrefdes '!' Q2 
+\i (00:04:49) xname_flush '!' 
+\i (00:04:49) xrefdes R74 
+\i (00:04:49) xname_flush 
+\i (00:04:49) trapsize 533
+\i (00:04:51) zoom out 1 
+\i (00:04:51) setwindow pcb
+\i (00:04:51) zoom out -21.2399 -48.0610
+\i (00:04:51) trapsize 1065
+\i (00:04:51) zoom out 1 
+\i (00:04:51) setwindow pcb
+\i (00:04:51) zoom out -21.2398 -48.0609
+\i (00:04:51) trapsize 2131
+\i (00:04:52) zoom in 1 
+\i (00:04:52) setwindow pcb
+\i (00:04:52) zoom in -22.8168 -42.4778
+\i (00:04:52) trapsize 1065
+\i (00:04:52) zoom in 1 
+\i (00:04:52) setwindow pcb
+\i (00:04:52) zoom in -22.8168 -42.4778
+\i (00:04:52) trapsize 533
+\i (00:04:55) zoom out 1 
+\i (00:04:55) setwindow pcb
+\i (00:04:55) zoom out -23.8397 -45.3013
+\i (00:04:55) trapsize 1065
+\i (00:05:21) zoom out 1 
+\i (00:05:21) setwindow pcb
+\i (00:05:21) zoom out -23.8396 -43.4261
+\i (00:05:21) trapsize 2131
+\i (00:05:21) zoom in 1 
+\i (00:05:21) setwindow pcb
+\i (00:05:21) zoom in -24.0528 -43.5113
+\i (00:05:21) trapsize 1065
+\i (00:05:24) xrefdes '!' R74 
+\i (00:05:24) xname_flush '!' 
+\i (00:05:25) xrefdes Q2 
+\i (00:05:25) xname_flush 
+\i (00:05:25) trapsize 584
+\i (00:06:20) xrefdes '!' Q2 
+\i (00:06:20) xname_flush '!' 
+\i (00:06:21) xrefdes R74 
+\i (00:06:21) xname_flush 
+\i (00:06:21) trapsize 584
+\i (00:06:24) color192 
+\t (00:06:24) [09:28:38.003320] Periodic Lic check successful
+[09:28:38.003320] Feature usage summary:
+[09:28:38.003320] PCB_design_studio  
+[09:28:38.003320] Allegro_X_Designer_plus  
+[09:28:38.003320] Allegro_performance  
+[09:28:38.016624]   Allegro_PCB_HighSpeed_Option
+[09:28:38.469143]  Allegro_X_Designer_Layout_plus 
+\i (00:06:25) placementedit 
+\i (00:06:26) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:06:27) QtSignal CVDLayerTable VertHeader clickedCheckBox Bottom 1
+\i (00:06:27) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 5 0
+\i (00:06:29) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:06:30) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Bottom" PkgGeo +
+\i (00:06:30) QtSignal 1
+\i (00:06:30) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 15 0
+\i (00:06:30) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:06:33) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Components "Ref des"
+\i (00:06:35) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Bottom" RefDes +
+\i (00:06:35) QtSignal 1
+\i (00:06:35) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 4 0
+\i (00:06:35) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:06:36) zoom out 1 
+\i (00:06:36) setwindow pcb
+\i (00:06:36) zoom out -25.9586 -47.5515
+\i (00:06:36) trapsize 1169
+\i (00:06:39) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:06:40) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Design_Outline" BrdGeo 1
+\i (00:06:40) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 6 0
+\i (00:06:40) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:06:41) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Bottom" BrdGeo +
+\i (00:06:41) QtSignal 1
+\i (00:06:41) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 13 0
+\i (00:06:41) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:06:42) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:06:45) flipdesign 
+\i (00:06:46) zoom in 1 
+\i (00:06:46) setwindow pcb
+\i (00:06:46) zoom in -29.7927 -47.1775
+\i (00:06:46) trapsize 584
+\i (00:22:00) zoom out 1 
+\t (00:22:00) [09:44:14.003256] Periodic Lic check successful
+[09:44:14.003256] Feature usage summary:
+[09:44:14.003256] PCB_design_studio  
+[09:44:14.003256] Allegro_X_Designer_plus  
+[09:44:14.003256] Allegro_performance  
+[09:44:14.016560]   Allegro_PCB_HighSpeed_Option
+[09:44:14.469079]  Allegro_X_Designer_Layout_plus 
+\i (00:22:00) setwindow pcb
+\i (00:22:00) zoom out -23.5389 -48.6620
+\i (00:22:00) trapsize 1169
+\i (00:22:00) zoom out 1 
+\i (00:22:00) setwindow pcb
+\i (00:22:00) zoom out -23.5389 -48.6620
+\i (00:22:00) trapsize 2338
+\i (00:22:00) zoom out 1 
+\i (00:22:00) setwindow pcb
+\i (00:22:00) zoom out -23.5389 -48.6621
+\i (00:22:00) trapsize 4676
+\i (00:22:03) xrefdes '!' R74 
+\i (00:22:03) xname_flush '!' 
+\i (00:22:27) zoom in 1 
+\i (00:22:27) setwindow pcb
+\i (00:22:27) zoom in 0.3073 -43.8928
+\i (00:22:27) trapsize 2338
+\i (00:22:27) zoom in 1 
+\i (00:22:27) setwindow pcb
+\i (00:22:27) zoom in 0.3073 -43.8928
+\i (00:22:27) trapsize 1169
+\i (00:22:29) color192 
+\i (00:22:29) placementedit 
+\i (00:22:30) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:22:31) QtSignal CVDLayerTable VertHeader clickedCheckBox Top 1
+\i (00:22:31) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 0 0
+\i (00:22:33) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:22:34) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" PkgGeo 1
+\i (00:22:34) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 16 0
+\i (00:22:34) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:22:35) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:22:36) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox Dimension BrdGeo 1
+\i (00:22:36) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 7 0
+\i (00:22:36) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:22:36) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Design_Outline" BrdGeo 1
+\i (00:22:36) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 6 0
+\i (00:22:36) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:22:37) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" BrdGeo 1
+\i (00:22:37) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 14 0
+\i (00:22:37) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:22:39) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:22:41) flipdesign 
+\i (00:22:41) zoom out 1 
+\i (00:22:41) setwindow pcb
+\i (00:22:41) zoom out -4.7892 -44.2668
+\i (00:22:41) trapsize 2338
+\i (00:22:42) zoom in 1 
+\i (00:22:42) setwindow pcb
+\i (00:22:42) zoom in 0.4477 -39.0300
+\i (00:22:42) trapsize 1169
+\i (00:22:42) zoom in 1 
+\i (00:22:42) setwindow pcb
+\i (00:22:42) zoom in 0.4477 -39.0300
+\i (00:22:42) trapsize 584
+\i (00:22:42) zoom in 1 
+\i (00:22:42) setwindow pcb
+\i (00:22:42) zoom in 1.7452 -39.1235
+\i (00:22:42) trapsize 292
+\i (00:22:42) zoom in 1 
+\i (00:22:42) setwindow pcb
+\i (00:22:42) zoom in 1.7394 -39.1585
+\i (00:22:42) trapsize 146
+\i (00:22:42) zoom in 1 
+\i (00:22:42) setwindow pcb
+\i (00:22:42) zoom in 1.7365 -39.1907
+\i (00:22:42) trapsize 73
+\i (00:22:43) zoom out 1 
+\i (00:22:43) setwindow pcb
+\i (00:22:43) zoom out 1.1901 -38.9657
+\i (00:22:43) trapsize 146
+\i (00:22:44) zoom out 1 
+\i (00:22:44) setwindow pcb
+\i (00:22:44) zoom out 1.3068 -38.9919
+\i (00:22:44) trapsize 292
+\i (00:22:45) zoom out 1 
+\i (00:22:45) setwindow pcb
+\i (00:22:45) zoom out 2.1017 -40.4239
+\i (00:22:45) trapsize 584
+\i (00:22:46) zoom in 1 
+\i (00:22:46) setwindow pcb
+\i (00:22:46) zoom in 1.4472 -36.5079
+\i (00:22:46) trapsize 292
+\i (00:22:46) zoom in 1 
+\i (00:22:46) setwindow pcb
+\i (00:22:46) zoom in 1.4356 -36.6365
+\i (00:22:46) trapsize 146
+\i (00:22:47) zoom out 1 
+\i (00:22:47) setwindow pcb
+\i (00:22:47) zoom out 1.5349 -36.9083
+\i (00:22:47) trapsize 292
+\i (00:22:47) zoom out 1 
+\i (00:22:47) setwindow pcb
+\i (00:22:47) zoom out 1.5700 -37.0485
+\i (00:22:47) trapsize 584
+\i (00:22:47) zoom out 1 
+\i (00:22:47) setwindow pcb
+\i (00:22:47) zoom out 1.6636 -37.2706
+\i (00:22:47) trapsize 1169
+\i (00:22:48) zoom in 1 
+\i (00:22:48) setwindow pcb
+\i (00:22:48) zoom in 1.7103 -36.4056
+\i (00:22:48) trapsize 584
+\i (00:53:22) exit 
+\t (00:53:22) [10:15:35.003200] Periodic Lic check successful
+[10:15:35.003200] Feature usage summary:
+[10:15:35.003200] PCB_design_studio  
+[10:15:35.003200] Allegro_X_Designer_plus  
+[10:15:35.003200] Allegro_performance  
+[10:15:35.016504]   Allegro_PCB_HighSpeed_Option
+[10:15:35.469023]  Allegro_X_Designer_Layout_plus 
+\e (00:53:22) Do you want to save the changes you made to TMR_Tiny_Jun-3.brd?
+\i (00:53:23) fillin no 
+\t (00:53:23) Lic Summary:
+[10:15:37.001168] Cdslmd servers: D:\Microchip\MicroChipLicense.dat
+[10:15:37.001168] Feature usage summary:
+[10:15:37.001168] PCB_design_studio  
+[10:15:37.001168] Allegro_X_Designer_plus  
+[10:15:37.001168] Allegro_performance  
+[10:15:37.016520]   Allegro_PCB_HighSpeed_Option
+[10:15:37.451095]  Allegro_X_Designer_Layout_plus 
+\t (00:53:23)     Journal end - Sat Oct 10 10:15:37 2026

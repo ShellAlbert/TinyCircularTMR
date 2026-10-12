@@ -1,0 +1,64 @@
+----------------------------------------------------------------------
+Report for cell PoF_TMR_Top.TECH
+Register bits:  291 of 5280 (5.511%)
+I/O cells:      12
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               BB_B         1          100.0
+                               CCU2       118          100.0
+                            FD1P3XZ       291          100.0
+                                 IB         2          100.0
+                               LUT4       607          100.0
+                                 OB        10          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                 ZAD7988_Controller         1
+                               ZPLL         1
+ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                 ZTMP117_Controller         1
+          ZUART_Tx(Freq_divider=12)         1
+                              TOTAL      1035
+----------------------------------------------------------------------
+Report for cell ZUART_Tx(Freq_divider=12).v1
+Instance Path : uart_u1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        19           16.1
+                            FD1P3XZ        34           11.7
+                               LUT4        66           10.9
+                              TOTAL       119
+----------------------------------------------------------------------
+Report for cell ZAD7988_Controller.v1
+Instance Path : u1_ad7988
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        10            8.5
+                            FD1P3XZ        35           12.0
+                               LUT4        52            8.6
+                              TOTAL        97
+----------------------------------------------------------------------
+Report for cell ZTMP117_Controller.v1
+Instance Path : myTMP117
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               BB_B         1          100.0
+                                FA2        19           16.1
+                            FD1P3XZ        44           15.1
+                               LUT4       276           45.5
+                              TOTAL       340
+----------------------------------------------------------------------
+Report for cell ZPLL.v1
+Instance Path : ic_pll
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+SUB MODULES
+ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell ZPLL_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000").v1
+Instance Path : ic_pll.lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1

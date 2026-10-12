@@ -108,8 +108,12 @@ end
 //sample data at 100KHz from AD7988.
 /////////////////////////////////////////////////
 //AD7988-1. Maximum Throughput Rate:100KHz.
-localparam TICK_MAX=480; //48MHz/100KHz=480. //single pulse.
+//localparam TICK_MAX=480; //48MHz/100KHz=480. //single pulse.
 //localparam TICK_MAX=240; //48MHz/100KHz/2=240.  //50% Duty Cycle.
+
+//downgrade sample frequency to 4Khz for 50Hz signal.
+//50Hz*50Times=2500Hz=2.5kHz.
+localparam TICK_MAX=12000; //48MHz/4KHz=12000. //single pulse.
 
 reg [15:0] cnt_100KHz;
 always @(posedge clk_48MHz_Global or negedge rst_n) 

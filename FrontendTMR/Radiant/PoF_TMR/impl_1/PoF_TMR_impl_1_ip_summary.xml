@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LatticeIPSummary>
+    <IpInfo IP_Module_Name="ZPLL" IP_Name="PLL" License_Feature="-" License_Status="-" Vendor="latticesemi.com" Version="1.0.1" Vlnv="latticesemi.com:module:pll:1.0.1"/>
+</LatticeIPSummary>

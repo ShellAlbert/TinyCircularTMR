@@ -1,6 +1,6 @@
 (ExpressProject "PSU"
   (ProjectVersion "19981106")
-  (SoftwareVersion "25.1 S020 (4396590)  [2/5/2026]-[07/17/26]")
+  (SoftwareVersion "25.1 S050 (4459063)  [7/18/2026]-[07/17/26]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -226,14 +226,14 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 601"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 563"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1501 24 619")
-        (Scroll "263 412")
-        (Zoom "184")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1501 24 581")
+        (Scroll "2330 1452")
+        (Zoom "352")
         (Occurrence "/"))
       (Path
          "Z:\MYMANJARO\HDISK\MYGITHUB\TINYCIRCULARTMR\FRONTENDTMR-ENHANCEDVERSION\SCHEMATIC\FRONTENDTMR.DSN")
