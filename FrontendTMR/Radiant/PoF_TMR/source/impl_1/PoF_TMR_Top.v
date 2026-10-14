@@ -108,12 +108,11 @@ end
 //sample data at 100KHz from AD7988.
 /////////////////////////////////////////////////
 //AD7988-1. Maximum Throughput Rate:100KHz.
-//localparam TICK_MAX=480; //48MHz/100KHz=480. //single pulse.
-//localparam TICK_MAX=240; //48MHz/100KHz/2=240.  //50% Duty Cycle.
 
-//downgrade sample frequency to 4Khz for 50Hz signal.
-//50Hz*50Times=2500Hz=2.5kHz.
-localparam TICK_MAX=12000; //48MHz/4KHz=12000. //single pulse.
+/* the actual signal TMR is 50Hz */
+/* we use 200 times to sample it, then Fs=50Hz*200=10kHz. */
+//localparam TICK_MAX=4800; //48MHz/4800=10KHz.  //10kHz/50Hz=200.
+localparam TICK_MAX=4800; //48MHz/2400=20KHz.   //20kHz/50Hz=400.
 
 reg [15:0] cnt_100KHz;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
@@ -145,6 +144,7 @@ ZAD7988_Controller u1_ad7988(
 	.oDataValid(adc_valid)
 );
 /////////////////////////////////////////////////
+/* Operate ADC at a fixed frequency. */
 reg [2:0] fsmADC;
 reg [15:0] captured_data;
 reg [31:0] LED_ADC_Working;
@@ -152,26 +152,25 @@ always @(posedge clk_48MHz_Global or negedge rst_n)
 if(!rst_n) begin fsmADC<=0; oCap_FPS<=0; LED_ADC_Working<=0; end
 else begin
     case(fsmADC)
-    0: 
+    0:  /* waiting for trigger signal */
         begin fsmADC<=(capPulse)?(fsmADC+1):(fsmADC); end
-    1: 
+    1: /* enable ADC, after done, then disable it. */
         if(adc_valid) begin adc_en<=0; captured_data<=adc_data; fsmADC<=fsmADC+1; end
         else begin adc_en<=1; end
-    2:
+    2: /* additional clock period */
         begin 
-            LED_ADC_Working<=(LED_ADC_Working==32'd6000)?(0):(LED_ADC_Working+1);
+            LED_ADC_Working<=(LED_ADC_Working==32'd1000)?(0):(LED_ADC_Working+1);
             oCap_FPS<=~oCap_FPS;
             fsmADC<=0; 
         end
     endcase
 end
-assign oLED0=(LED_ADC_Working>32'd2000)?(1):(0);
+assign oLED0=(LED_ADC_Working>32'd400)?(1):(0);
 
 //////////////////////////////////////////////////////////////////////////
 reg [7:0] temp_Latest; //the latest temperature.
 //////////////////////////////////////////////////////////////////////
-//Since the temperature changes slowly, acquires it every 1 second.
-//TMP117 Temperature Sensor.
+/* Since the temperature changes slowly, acquires it every 1 second. */
 reg TMP117_En;
 wire TMP117_DataValid;
 reg [1:0] TMP117_Cmd;
@@ -276,10 +275,11 @@ else begin
 end
 assign oLED2=LED_Temp_Working; 
 
-//Tx Random UART Data at 1Mbps.
-//generate 1MHz Clock, //48MHz/1MHz=48.
-//generate 4MHz Clock, //48MHz/4MHz=12.
-//generate 8MHz Clock, //48MHz/8MHz=6.
+/* -------- UART Transmit Module -------- */
+/* generate 1MHz Clock, //48MHz/1MHz=48. */
+/* generate 4MHz Clock, //48MHz/4MHz=12. */
+/* generate 8MHz Clock, //48MHz/8MHz=6. */
+reg tx_en;
 reg [7:0] tx_data;
 wire tx_done;
 ZUART_Tx #(.Freq_divider(12)) uart_u1
@@ -288,8 +288,8 @@ ZUART_Tx #(.Freq_divider(12)) uart_u1
 	.iRst_N(rst_n),
 	.iData(tx_data),
 	
-	//pull down iEn to start transmition until pulse done oDone was issued.
-	.iEn(1), //always enable Tx Module.
+	/* pull down iEn to start transmition until pulse done oDone was issued. */
+	.iEn(tx_en),
 	.oDone(tx_done),
 	.oTxD(oData_TxD)
 );
@@ -297,24 +297,39 @@ ZUART_Tx #(.Freq_divider(12)) uart_u1
 reg [7:0] fsmUART;
 reg [31:0] LED_UART_Working;
 always @(posedge clk_48MHz_Global or negedge rst_n) 
-if(!rst_n) begin fsmUART<=0; tx_data<=8'h55; LED_UART_Working<=0; oTx_FPS<=0; end
+if(!rst_n) begin 
+	fsmUART<=0; tx_en<=0; LED_UART_Working<=0; oTx_FPS<=0; 
+end
 else begin
     case(fsmUART)
-    0: //update tx buffer immediately after tx_done.
-        if(tx_done) begin tx_data<=captured_data[15:8]/*8'h19*/; fsmUART<=fsmUART+1; end
-    1: //transmit high 8 bits. //update tx buffer immediately after tx_done.
-        if(tx_done) begin tx_data<=captured_data[7:0]/*8'h87*/; fsmUART<=fsmUART+1; end
-    2: //Tx Temperature byte. -127 degree celsius ~ +128 degree celsius.
-        if(tx_done) begin tx_data<=temp_Latest/*8'h09*/; fsmUART<=fsmUART+1; end
-    3: //sync head bytes.
-        if(tx_done) begin 
-            tx_data<=8'h55; LED_UART_Working<=(LED_UART_Working==32'd5000)?(0):(LED_UART_Working+1); 
-            oTx_FPS<=~oTx_FPS;
+	0: /* waiting for trigger */
+        begin fsmUART<=(adc_valid)?(fsmUART+1):(fsmUART); end
+
+	1: /* transmit fixed head byte 0x55 */
+        if(tx_done) begin tx_en<=0; fsmUART<=fsmUART+1; end
+		else begin tx_en<=1; tx_data<=8'h55; end
+			
+    2: /* transmit the high 8 bits of ADC */
+        if(tx_done) begin tx_en<=0; fsmUART<=fsmUART+1; end
+		else begin tx_en<=1; tx_data<=captured_data[15:8]/*8'h19*/; end
+			
+    3: /* transmit the low 8 bits of ADC */
+	    if(tx_done) begin tx_en<=0; fsmUART<=fsmUART+1; end
+		else begin tx_en<=1; tx_data<=captured_data[7:0]/*8'h87*/; end
+			
+    4: /* transmit Temperature byte. -127 degree celsius ~ +128 degree celsius. */
+		if(tx_done) begin tx_en<=0; fsmUART<=fsmUART+1; end
+		else begin tx_en<=1; tx_data<=temp_Latest/*8'h09*/; end
+
+    5: /* addition clock period */
+		begin 
+			LED_UART_Working<=(LED_UART_Working==32'd1000)?(0):(LED_UART_Working+1); 
+			oTx_FPS<=~oTx_FPS;
             fsmUART<=0; 
-        end
+		end
     default:
-            begin fsmUART<=0; tx_data<=8'h55; end
+            begin fsmUART<=0; end
     endcase
 end
-assign oLED1=(LED_ADC_Working>32'd700)?(1):(0);
+assign oLED1=(LED_ADC_Working>32'd300)?(1):(0);
 endmodule
