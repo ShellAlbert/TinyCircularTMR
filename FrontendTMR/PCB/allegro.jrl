@@ -1,0 +1,137 @@
+\t (00:00:25) allegro 25.1 S050 (4462275) [7/27/2026] Windows SPB 64-bit Edition
+\t (00:00:25)     Journal start - Thu Oct 22 16:48:55 2026
+\t (00:00:25)         Host=DESKTOP-JTH5DQV User=SNIPER Pid=4368 CPUs=8
+\t (00:00:25) CmdLine= d:\myapp\tools\bin\allegro.exe Z:\MyManjaro\HDisk\MyGithub\TinyCircularTMR\FrontendTMR\PCB\TMR_Tiny_Jun-3.brd
+\t (00:00:25) 
+\t (00:00:25) Loading axlcore.cxt 
+\t (00:00:26) Opening existing design...
+\i (00:00:27) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "TMR_Tiny_Jun-3"
+\d (00:00:27) Design opened: Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/PCB/TMR_Tiny_Jun-3.brd
+\i (00:00:27) trapsize 9063
+\i (00:00:27) trapsize 9451
+\i (00:00:27) trapsize 7163
+\i (00:00:27) trapsize 7163
+\i (00:00:28) trapsize 4969
+\i (00:00:28) updateport SearchPane
+\i (00:00:28) placementedit 
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom in -7.4394 -49.6772
+\i (00:00:29) trapsize 2484
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom out 3.3927 -42.2735
+\i (00:00:29) trapsize 4969
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom out 3.3928 -42.2735
+\i (00:00:30) trapsize 9938
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom out 3.3928 -42.2736
+\i (00:00:30) trapsize 19875
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom out 4.9828 -43.8635
+\i (00:00:30) trapsize 39751
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom in 6.5728 10.1978
+\i (00:00:30) trapsize 19875
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom in 5.7778 7.8128
+\i (00:00:30) trapsize 9938
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow pcb
+\i (00:00:30) zoom in 7.1691 1.8502
+\i (00:00:30) trapsize 4969
+\i (00:00:34) color192 
+\i (00:00:35) placementedit 
+\i (00:00:36) QtSignal CVDLayerContainer CVDVisibilityOff clicked
+\i (00:00:37) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox Top Pin 1
+\i (00:00:37) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 0 0
+\i (00:00:37) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:39) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Package geometry"
+\i (00:00:40) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" PkgGeo 1
+\i (00:00:40) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 16 0
+\i (00:00:40) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:42) QtSignal CVDLayerSplitter CVDLayersTree itemSelectionChanged Geometry "Board geometry"
+\i (00:00:42) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Silkscreen_Top" BrdGeo 1
+\i (00:00:42) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 14 0
+\i (00:00:43) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:44) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox "Design_Outline" BrdGeo 1
+\i (00:00:44) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 6 0
+\i (00:00:45) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:45) QtSignal CVDLayerTable CVDLayerTableDelegate clickedBox Dimension BrdGeo 1
+\i (00:00:45) QtSignal CVDLayerSplitter CVDLayerTable dataChanged 7 0
+\i (00:00:45) QtSignal CVDLayerSplitter CVDLayerTable selectionChanged
+\i (00:00:46) QtSignal ColorVisibilityDialog CVDOkButton clicked
+\i (00:00:46) zoom out 1 
+\i (00:00:46) setwindow pcb
+\i (00:00:46) zoom out 1.4053 2.0490
+\i (00:00:46) trapsize 9938
+\i (00:00:47) zoom in 1 
+\i (00:00:47) setwindow pcb
+\i (00:00:47) zoom in -2.5699 -60.3600
+\i (00:00:47) trapsize 4969
+\i (00:00:47) zoom in 1 
+\i (00:00:47) setwindow pcb
+\i (00:00:47) zoom in -0.9799 -58.6706
+\i (00:00:47) trapsize 2484
+\i (00:00:48) zoom in 1 
+\i (00:00:48) setwindow pcb
+\i (00:00:48) zoom in -2.7687 -53.2048
+\i (00:00:48) trapsize 1242
+\i (00:00:48) zoom in 1 
+\i (00:00:48) setwindow pcb
+\i (00:00:48) zoom in -2.2967 -52.3104
+\i (00:00:48) trapsize 621
+\i (00:00:48) zoom in 1 
+\i (00:00:48) setwindow pcb
+\i (00:00:48) zoom in -2.3960 -52.1613
+\i (00:00:48) trapsize 311
+\i (00:00:48) zoom in 1 
+\i (00:00:48) setwindow pcb
+\i (00:00:48) zoom in -2.3960 -52.1613
+\i (00:00:48) trapsize 155
+\i (00:00:49) zoom in 1 
+\i (00:00:49) setwindow pcb
+\i (00:00:49) zoom in -2.3432 -52.0867
+\i (00:00:49) trapsize 78
+\i (00:00:49) zoom out 1 
+\i (00:00:49) setwindow pcb
+\i (00:00:49) zoom out -2.5792 -52.0308
+\i (00:00:49) trapsize 155
+\i (00:00:49) zoom out 1 
+\i (00:00:49) setwindow pcb
+\i (00:00:49) zoom out -2.5793 -52.0308
+\i (00:00:49) trapsize 311
+\i (00:00:51) zoom in 1 
+\i (00:00:51) setwindow pcb
+\i (00:00:51) zoom in -2.1881 -51.9811
+\i (00:00:51) trapsize 155
+\i (00:00:55) zoom out 1 
+\i (00:00:55) setwindow pcb
+\i (00:00:55) zoom out -1.8744 -52.3227
+\i (00:00:55) trapsize 311
+\i (00:01:24) zoom out 1 
+\i (00:01:24) setwindow pcb
+\i (00:01:24) zoom out 2.7591 -49.4655
+\i (00:01:24) trapsize 621
+\i (00:01:24) zoom out 1 
+\i (00:01:24) setwindow pcb
+\i (00:01:24) zoom out 2.7591 -49.4654
+\i (00:01:24) trapsize 1242
+\i (00:01:25) exit 
+\e (00:01:25) Do you want to save the changes you made to TMR_Tiny_Jun-3.brd?
+\i (00:01:26) fillin no 
+\t (00:01:27) Lic Summary:
+[16:49:57.001288] Cdslmd servers: D:\Microchip\MicroChipLicense.dat
+[16:49:57.001288] Feature usage summary:
+[16:49:57.001288] PCB_design_studio  
+[16:49:57.001288] Allegro_X_Designer_plus  
+[16:49:57.001288] Allegro_performance  
+[16:49:57.016640]   Allegro_PCB_HighSpeed_Option
+[16:49:57.451215]  Allegro_X_Designer_Layout_plus 
+\t (00:01:27)     Journal end - Thu Oct 22 16:49:57 2026

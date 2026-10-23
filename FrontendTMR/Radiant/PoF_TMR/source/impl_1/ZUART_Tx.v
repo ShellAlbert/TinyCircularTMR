@@ -31,7 +31,13 @@ reg [15:0] cntBps;
 always @(posedge iClk or negedge iRst_N)
 if(!iRst_N) begin cntBps<=0; end
 else begin 
-	cntBps<=(iEn)?((cntBps==Freq_divider-1)?(0):(cntBps+1)):(0);
+	if(iEn) begin 
+				if(cntBps==Freq_divider-1) begin cntBps<=0; end
+				else begin cntBps<=cntBps+1; end
+			end
+	else begin 
+		cntBps<=0;
+	end
 end
 
 wire tickTx;
@@ -62,16 +68,16 @@ else begin
 					oTxD<=iData[cntBits]; //LSB first.
 
 					cntBits<=(cntBits==8-1)?(0):(cntBits+1);
-					cntFSM<=(cntBits==8-1)?(cntFSM+1):(cntFSM);	
+					cntFSM<=(cntBits==8-1)?(cntFSM+1):(cntFSM);
+					//issue done signal at previous clock.
+					oDone<=(cntBits==8-1)?(1):(0);		
 				end
 			2: //stop bit(1).
 				begin
-					if(tickTx) begin oTxD<=1; cntFSM<=cntFSM+1; end
+					if(tickTx) begin oTxD<=1; cntFSM<=0; end
+					/////////////////////////////////////////////////////
+					oDone<=0; 
 				end
-			3: 
-				if(tickTx) begin oDone<=1; cntFSM<=cntFSM+1; end
-			4:
-				begin oDone<=0; cntFSM<=0; end
 			default:
 				begin oTxD<=1; oDone<=0; cntFSM<=0; end
 		endcase

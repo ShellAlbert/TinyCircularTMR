@@ -1,0 +1,8 @@
+-ver "C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2025.2/ip/pmi/pmi_iCE40UP.vhd"
+-ver "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO/rtl/ZFIFO.v"
+-sdc "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO/constraints/ZFIFO.ldc"
+-path "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR/source/IPCore/ZFIFO" "Z:/MyManjaro/HDisk/MyGithub/TinyCircularTMR/FrontendTMR/Radiant/PoF_TMR"
+-top ZFIFO
+-a "iCE40UP"
+-t "iCE40UP5K"
